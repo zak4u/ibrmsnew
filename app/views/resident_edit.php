@@ -76,9 +76,9 @@
             <div class="form-group">
               <div class="col-lg-5 no-pad-left">
                 <label for="Bloodtype">Bloodtype <span class="req">*</span></label>
-                <select class="form-control">
-                  <option value=" ">-- Please Select --</option>
-                  <option value="A+">A+</option>
+                <select class="form-control select2"  data-placeholder="Please Select Bloodtype" style="width: 100%;">
+                    <option value=" " disabled="disabled">Please Select Bloodtype</option>
+                   <option value="A+">A+</option>
                   <option value="AB+">AB+</option>
                   <option value="B+" selected="selected">B+</option>
                   <option value="O+">O+</option>

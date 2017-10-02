@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-10"><a href="issue_clearance" class="btn btn-success disabled">Issue Clearance</a> <a href="edit" class="btn btn-warning">Edit Profile</a></div>
+  <div class="col-lg-10"><a href="<?php echo base_url();?>clearance/clearance_resident" class="btn btn-success">Issue Clearance</a> <a href="edit" class="btn btn-warning">Edit Profile</a></div>
   <div class="col-lg-2 text-right"><a href="#" class="btn btn-danger">Delete Profile</a></div>
   <div class="clearBoth"></div>
 </div><br/>
@@ -89,9 +89,9 @@
             <div class="form-group">
               <div class="col-lg-5 no-pad-left">
                 <label for="Bloodtype">Bloodtype <span class="req">*</span></label>
-                <select class="form-control">
-                  <option value=" ">-- Please Select --</option>
-                  <option value="A+">A+</option>
+                <select class="form-control select2"  data-placeholder="Please Select Bloodtype" style="width: 100%;">
+                    <option value=" " disabled="disabled">Please Select Bloodtype</option>
+                   <option value="A+">A+</option>
                   <option value="AB+">AB+</option>
                   <option value="B+" selected="selected">B+</option>
                   <option value="O+">O+</option>

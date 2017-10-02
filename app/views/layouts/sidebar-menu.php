@@ -5,15 +5,20 @@
         <li class="treeview"> <a href="#"><i class="fa fa-address-card"></i> <span>Residents</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url();?>residents">Manage Residents</a></li>
-            <li><a href="<?php echo base_url();?>residents/clearance">Issue Clearance</a></li>
             <li><a href="<?php echo base_url();?>residents/reports">Reports</a></li>
+          </ul>
+        </li>
+        <li class="treeview"><a href="#"><i class="fa fa-print"></i> <span>Issue Clearance</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url();?>clearance/clearance_resident">Resident Clearance</a></li>
+            <li><a href="<?php echo base_url();?>clearance/clearance_business">Business Clearance</a></li>
+            <li><a href="<?php echo base_url();?>clearance/clearance_reports">Reports</a></li>
           </ul>
         </li>
         <li class="treeview"><a href="#"><i class="fa fa-balance-scale"></i> <span>Judicial Cases</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo base_url();?>#">Manage Judicial Cases</a></li>
-            <li><a href="<?php echo base_url();?>#">Forms</a></li>
-            <li><a href="<?php echo base_url();?>#">Reports</a></li>
+            <li><a href="<?php echo base_url();?>judicial">Manage Judicial Cases</a></li>
+            <li><a href="<?php echo base_url();?>judicial/reports">Reports</a></li>
           </ul>
         </li>
         <li class="treeview"><a href="#"><i class="fa fa-plus-square"></i> <span>Medical/Healthcare</span> <span class="pull-right-container"> <i class="fa fa-angle-left pull-right"></i> </span> </a>

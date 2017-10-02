@@ -15,15 +15,16 @@
     <div class="clearboth"></div>
     <br/><br/><br/><br/>
     <div class="col-lg-12">
+        <h4>Resident List</h4>
         <table id="dataTableResident" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
             <thead>
                 <tr>
-                    <th width="10%">ID Num</th>
+                    <th width="15%">ID Num</th>
                     <th width="30%">Last Name</th>
                     <th width="30%">First Name</th>
                     <th width="5%">Gender</th>
                     <th width="5%">Age</th>
-                    <th width="20%">&nbsp;</th>
+                    <th width="15%">&nbsp;</th>
                 </tr>
             </thead>
             <tfoot>
@@ -43,7 +44,7 @@
                     <td>Juan</td>
                     <td>Male</td>
                     <td>41</td>
-                    <td class="text-right"><span title="Pending Case" data-toggle="tooltip" data-placement="top"   class="fa fa-balance-scale casebtn text-danger"></span> <a title="View" data-toggle="tooltip" data-placement="top"  href="residents/view" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> 
+                    <td class="text-right"><span title="Pending Case(s)" data-toggle="tooltip" data-placement="top"   class="fa fa-balance-scale casebtn text-danger"></span> <a title="View" data-toggle="tooltip" data-placement="top"  href="residents/view" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> 
                         <a title="Edit" data-toggle="tooltip" data-placement="top" href="residents/edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> 
                         <a title="Delete" data-toggle="tooltip" data-placement="top" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a>
                     </td>
