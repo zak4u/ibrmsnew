@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+date_default_timezone_set('Asia/Manila');
 ?>
 <!DOCTYPE html>
 <!--
@@ -8,7 +9,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html>
 <head>
-<title>Dashboard | IBRMS</title>
+<title><?php echo $pagename.' '.$pagesubname ?> | IBRMS</title>
 
 <!-- Head Include -->
 <?php $this->load->view('layouts/head-include'); ?>

@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-lg-10"><a href="<?php echo base_url();?>clearance/clearance_resident" class="btn btn-success">Issue Clearance</a> <a href="edit" class="btn btn-warning">Edit Profile</a></div>
+  <div class="col-lg-10"><a href="<?php echo base_url();?>clearance/clearance_resident_issue" class="btn btn-success disabled">Issue Clearance</a> <a href="<?php echo base_url();?>residents/edit" class="btn btn-warning">Edit Profile</a> <a href="<?php echo base_url();?>judicial/judicial_cases" class="btn btn-vk">View Case(s)</a></div>
   <div class="col-lg-2 text-right"><a href="#" class="btn btn-danger">Delete Profile</a></div>
   <div class="clearBoth"></div>
 </div><br/>

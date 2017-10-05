@@ -10,51 +10,69 @@ class Judicial extends CI_Controller {
 
 		$this->load->view('layouts/main',$data);
     }
-    public function add()	{
+    public function judicial_cases()	{
         
-        $data['main_content'] = 'judicial_add';
+        $data['main_content'] = 'judicial_resident_cases';
+		$data['pagename'] = 'Resident Judicial Cases';
+		$data['pagesubname'] = 'Barangay Judicial Cases List';
+
+		$this->load->view('layouts/main',$data);
+    }
+    public function kp07add()	{
+        
+        $data['main_content'] = 'judicial_kp07add';
 		$data['pagename'] = 'Add New Case';
-		$data['pagesubname'] = '';
+		$data['pagesubname'] = 'KP Form No. 07 - Complaint';
 
 		$this->load->view('layouts/main',$data);
     }
-    public function view()	{
+    public function kp07edit()	{
         
-        $data['main_content'] = 'resident_view';
-		$data['pagename'] = 'View Resident Record';
-		$data['pagesubname'] = 'View Resident Profile';
+        $data['main_content'] = 'judicial_kp07edit';
+		$data['pagename'] = 'Edit Case';
+		$data['pagesubname'] = 'KP Form No. 07 - Complaint';
 
 		$this->load->view('layouts/main',$data);
     }
-    public function edit()	{
+    
+    public function kp08add()	{
         
-        $data['main_content'] = 'resident_edit';
-		$data['pagename'] = 'Edit Resident Record';
-		$data['pagesubname'] = 'Edit Resident Profile';
+        $data['main_content'] = 'judicial_kp08add';
+		$data['pagename'] = 'Add New Case';
+		$data['pagesubname'] = 'KP Form No. 08 - Notice of Hearing';
 
 		$this->load->view('layouts/main',$data);
     }
-
-    public function clearance()	{
+    public function kp08edit()	{
         
-        $data['main_content'] = 'resident_clearance';
-		$data['pagename'] = 'Clearance';
-		$data['pagesubname'] = 'Barangay Clearance Resquest';
+        $data['main_content'] = 'judicial_kp08edit';
+		$data['pagename'] = 'Edit Case';
+		$data['pagesubname'] = 'KP Form No. 08 - Notice of Hearing';
 
 		$this->load->view('layouts/main',$data);
     }
-    public function issue_clearance()	{
+    
+    public function kp09add()	{
         
-        $data['main_content'] = 'resident_clearance_issue';
-		$data['pagename'] = 'Clearance';
-		$data['pagesubname'] = 'Barangay Clearance Resquest';
+        $data['main_content'] = 'judicial_kp09add';
+		$data['pagename'] = 'Add New Case';
+		$data['pagesubname'] = 'KP Form No. 09 - Summons';
 
 		$this->load->view('layouts/main',$data);
     }
+    public function kp09edit()	{
+        
+        $data['main_content'] = 'judicial_kp09edit';
+		$data['pagename'] = 'Edit Case';
+		$data['pagesubname'] = 'KP Form No. 09 - Summons';
+
+		$this->load->view('layouts/main',$data);
+    }
+    
     public function reports()	{
         
-        $data['main_content'] = 'resident_reports';
-		$data['pagename'] = 'Reports';
+        $data['main_content'] = 'judicial_reports';
+		$data['pagename'] = 'Judicial Reports';
 		$data['pagesubname'] = '';
 
 		$this->load->view('layouts/main',$data);

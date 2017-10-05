@@ -34,27 +34,10 @@ class Residents extends CI_Controller {
 
 		$this->load->view('layouts/main',$data);
     }
-
-    public function clearance()	{
-        
-        $data['main_content'] = 'resident_clearance';
-		$data['pagename'] = 'Clearance';
-		$data['pagesubname'] = 'Barangay Clearance Resquest';
-
-		$this->load->view('layouts/main',$data);
-    }
-    public function issue_clearance()	{
-        
-        $data['main_content'] = 'resident_clearance_issue';
-		$data['pagename'] = 'Clearance';
-		$data['pagesubname'] = 'Barangay Clearance Resquest';
-
-		$this->load->view('layouts/main',$data);
-    }
     public function reports()	{
         
         $data['main_content'] = 'resident_reports';
-		$data['pagename'] = 'Reports';
+		$data['pagename'] = 'Residents Reports';
 		$data['pagesubname'] = '';
 
 		$this->load->view('layouts/main',$data);

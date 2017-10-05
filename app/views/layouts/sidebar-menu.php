@@ -33,9 +33,10 @@
             <li><a href="<?php echo base_url();?>#">Reports</a></li>
           </ul>
         </li>
+        <li><a href="#"><i class="fa fa-copy"></i> <span>Barangay Forms</span></a> </li>
         <li><a href="#"><i class="fa fa-calendar"></i> <span>Events Calendar</span></a> </li>
         <li class="header">SETTINGS</li>
-        <li><a href="#"><i class="fa fa-users"></i> <span>Users</span></a></li>
+        <li><a href="<?php echo base_url();?>users"><i class="fa fa-users"></i> <span>Users</span></a></li>
         <li><a href="#"><i class="fa fa-building"></i> <span>Brgy Profile</span></a></li>
         <li><a href="#"><i class="fa fa-building-o"></i> <span>Purok</span></a></li>
         <li><a href="#"><i class="fa fa-save"></i> <span>Backups</span></a></li>
