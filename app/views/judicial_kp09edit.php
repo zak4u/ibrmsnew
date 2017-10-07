@@ -3,8 +3,11 @@
     <div class="col-lg-12">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Case Details | Case ID No.:
-            <input type="text" class="readonly readonlyfld" readonly value="KP09-17-1005184527" />
+          <h3 class="box-title">Form Details | KP Form No.:
+            <input type="text" class="readonly readonlyfld" readonly value="KP09-17-1007144525" />
+            For Case No.:
+            <input type="text" class="readonly readonlyfld" readonly value="BCN-17-1007144525" />
+            
           </h3>
         </div>
         
@@ -54,12 +57,11 @@
             </div>
           <div class="form-group">
             <label for="DateIssued">Date/Time created and filed <span class="req">*</span></label>
-            <input type="text" class="readonly readonlyfld" readonly value="10/05/2017 - 06:45:27pm" />
+            <input type="text" class="readonly readonlyfld" readonly value="<?php echo date('m/d/Y - h:i:sa '); ?>" />
             <div class="clearBoth"></div>
           </div>
-            <div class=" form-group  text-right">Resolved? <input type="checkbox" name="resolved" class="minimal" value="Yes" />&nbsp; &nbsp; &nbsp; &nbsp;</div>
           <div class="form-group text-right">
-            <input type="submit" value="Edit Case" class="btn btn-success" />
+            <input type="submit" value="Edit Form" class="btn btn-success" />
           </div>
         </div>
         <!-- right END -->

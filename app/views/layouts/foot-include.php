@@ -29,6 +29,11 @@
 
 <!-- Select2 -->
 <script src="<?php echo base_url(); ?>template/bower_components/select2/dist/js/select2.full.min.js"></script>
+
+<!-- fullCalendar -->
+<script src="<?php echo base_url(); ?>template/bower_components/moment/moment.js"></script>
+<script src="<?php echo base_url(); ?>template/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
+
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>template/dist/js/adminlte.min.js"></script>
 <script src="<?php echo base_url(); ?>template/sourcefiles/js/custom.js"></script>

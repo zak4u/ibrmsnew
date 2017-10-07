@@ -1,0 +1,1 @@
+clearance_resident_print

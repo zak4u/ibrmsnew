@@ -60,3 +60,13 @@ h3.box-title .readonlyfld{
     display: inline-block;
     width: 95%;
 }
+.resprofile{
+    font-size: 16px;
+    line-height: 26px;
+}
+.resprofile .res-photo img{
+    margin: auto;
+    display: block;
+    max-width: 200px;
+    margin-bottom: 20px;
+}

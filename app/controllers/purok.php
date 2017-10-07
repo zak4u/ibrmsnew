@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Users extends CI_Controller {
+class Purok extends CI_Controller {
 
     var $data;
 
@@ -18,32 +18,26 @@ class Users extends CI_Controller {
 
     public function index() {
         $data = $this->data;
-        $data['main_content'] = 'user_list';
-        $data['pagename'] = 'Users';
-        $data['pagesubname'] = 'System Access';
-
-
+        $data['main_content'] = 'purok_profiles';
+        $data['pagename'] = 'Purok Profiles';
+        $data['pagesubname'] = '';
 
         $this->load->view('layouts/main', $data);
     }
-
+    
     public function add() {
         $data = $this->data;
-        $data['main_content'] = 'user_add';
-        $data['pagename'] = 'Add New User';
-        $data['pagesubname'] = 'System Access';
-
+        $data['main_content'] = 'purok_add';
+        $data['pagename'] = 'Add New Purok Details';
+        $data['pagesubname'] = 'Purok Profile';
 
         $this->load->view('layouts/main', $data);
     }
-
     public function edit() {
         $data = $this->data;
-        $data['main_content'] = 'user_edit';
-        $data['pagename'] = 'Edit User';
-        $data['pagesubname'] = 'System Access';
-
-
+        $data['main_content'] = 'purok_edit';
+        $data['pagename'] = 'Edit Purok Details';
+        $data['pagesubname'] = 'Purok Profile';
 
         $this->load->view('layouts/main', $data);
     }

@@ -3,8 +3,10 @@
     <div class="col-lg-12">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Case Details | Case ID No.:
-            <input type="text" class="readonly readonlyfld" readonly value="KP07-17-1005173755" />
+          <h3 class="box-title">Form Details | KP Form No.:
+            <input type="text" class="readonly readonlyfld" readonly value="KP07-17-1007144525" />
+            For Case No.:
+            <input type="text" class="readonly readonlyfld" readonly value="BCN-17-1007144525" />
           </h3>
         </div>
         
@@ -43,9 +45,9 @@
             <input type="text" class="readonly readonlyfld" readonly value="10/05/2017 - 05:37:55pm" />
             <div class="clearBoth"></div>
           </div>
-            <div class=" form-group  text-right">Resolved? <input type="checkbox" name="resolved" class="minimal" value="Yes" />&nbsp; &nbsp; &nbsp; &nbsp;</div>
+             
           <div class="form-group text-right">
-            <input type="submit" value="Edit Case" class="btn btn-success" />
+            <input type="submit" value="Edit Form" class="btn btn-success" />
           </div>
         </div>
         <!-- right END -->

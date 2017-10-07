@@ -4,8 +4,9 @@
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Case Details | Case No.:
-            <input type="text" class="readonly readonlyfld" readonly value="BCN-<?php echo date('y') . '-' . date('mdHis'); ?>" /> | KP Form No.:
-            <input type="text" class="readonly readonlyfld" readonly value="KP07-<?php echo date('y') . '-' . date('mdHis'); ?>" />
+            <input type="text" class="readonly readonlyfld" readonly value="BCN-17-1007144525" />
+            | KP Form No.:
+            <input type="text" class="readonly readonlyfld" readonly value="KP07-17-1007144525" />
           </h3>
         </div>
         
@@ -41,11 +42,14 @@
           </div>
           <div class="form-group">
             <label for="DateIssued">Date/Time created and filed <span class="req">*</span></label>
-            <input type="text" class="readonly readonlyfld" readonly value="<?php echo date('m/d/Y - h:i:sa '); ?>" />
+            <input type="text" class="readonly readonlyfld" readonly value="10/07/2017 - 02:45:25pm" />
             <div class="clearBoth"></div>
           </div>
+          <div class=" form-group  text-right">Resolved?
+            <input type="checkbox" name="resolved" class="minimal" value="Yes" />
+            &nbsp; &nbsp; &nbsp; &nbsp;</div>
           <div class="form-group text-right">
-            <input type="submit" value="Add Case" class="btn btn-success" />
+            <input type="submit" value="Edit Case" class="btn btn-success" />
           </div>
         </div>
         <!-- right END -->

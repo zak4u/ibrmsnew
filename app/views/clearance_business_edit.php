@@ -64,7 +64,7 @@
             <div class="clearBoth"></div>
           </div>
           <div class="form-group text-right">
-            <input type="submit" value="Add Clearance" class="btn btn-success" />
+            <input type="submit" value="Edit Clearance" class="btn btn-success" />
           </div>
         </div>
         <!-- right END -->

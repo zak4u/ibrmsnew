@@ -3,8 +3,9 @@
     <div class="col-lg-12">
       <div class="box box-primary">
         <div class="box-header with-border">
-          <h3 class="box-title">Case Details | Case ID No.:
-            <input type="text" class="readonly readonlyfld" readonly value="KP08-<?php echo date('y') . '-' . date('mdHis'); ?>" />
+          <h3 class="box-title">Form Details | KP Form No.:
+            <input type="text" class="readonly readonlyfld" readonly value="KP08-<?php echo date('y') . '-' . date('mdHis'); ?>" /> For Case No.:
+            <input type="text" class="readonly readonlyfld" readonly value="BCN-17-1007144525" />
           </h3>
         </div>
         
@@ -51,7 +52,7 @@
             <div class="clearBoth"></div>
           </div>
           <div class="form-group text-right">
-            <input type="submit" value="Add Case" class="btn btn-success" />
+            <input type="submit" value="Add Form" class="btn btn-success" />
           </div>
         </div>
         <!-- right END -->

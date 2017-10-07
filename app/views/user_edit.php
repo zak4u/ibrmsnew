@@ -69,7 +69,7 @@
               <div class="clearBoth"></div>
             </div>
             <div class="form-group text-right">
-              <input type="submit" value="Add User" class="btn btn-success" />
+              <input type="submit" value="Edit User" class="btn btn-success" />
             </div>
             
             <!-- /.form-group --> 

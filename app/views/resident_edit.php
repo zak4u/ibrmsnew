@@ -7,7 +7,7 @@
             <h3 class="box-title">Personal Details | Resident ID No.:
             <input type="text" class="readonly readonlyfld" readonly="readonly" value="17-1004165643" /></h3>
             </div>
-            <div class="col-lg-6 text-right"><input type="submit" value="Update Resident" class="btn btn-success" /></div>
+            <div class="col-lg-6 text-right"><input type="submit" value="Edit Resident" class="btn btn-success" /></div>
             <div class="clearBoth"></div>
         </div>
           
@@ -228,7 +228,7 @@
               <input type="text" class="form-control" value="hello@facebook.com" />
             </div>
             <div class="form-group text-right">
-              <input type="submit" value="Update Resident" class="btn btn-success" />
+              <input type="submit" value="Edit Resident" class="btn btn-success" />
             </div>
             <!-- /.form-group --> 
           </div>

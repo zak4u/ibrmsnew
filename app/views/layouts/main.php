@@ -10,7 +10,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <html>
 <head>
 <title><?php echo $pagename.' '.$pagesubname ?> | IBRMS</title>
-
+<!-- page specific HEAD -->
+<?php $this->load->view($foot_content); ?>
+<!-- page specific HEAD end -->
 <!-- Head Include -->
 <?php $this->load->view('layouts/head-include'); ?>
 <!-- /.Head Include -->
@@ -121,6 +123,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <!-- Foot Include -->
 <?php $this->load->view('layouts/foot-include'); ?>
+<!-- page specific FOOT -->
+<?php $this->load->view($foot_content); ?>
+<!-- page specific FOOT end -->
 <!-- /.Foot Include -->
 </body>
 </html>
