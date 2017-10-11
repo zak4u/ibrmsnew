@@ -41,3 +41,13 @@
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
                 Both of these plugins are recommended to enhance the
                 user experience. -->
+
+
+<script type="text/javascript">
+//logout after some time
+    function getlogout() {
+        alert('Session Ended! You have been logged out from the system!');
+        window.location = '<?php echo base_url(); ?>';
+    }
+    setTimeout(getlogout, 600000);
+</script>

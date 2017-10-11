@@ -1,24 +1,35 @@
-<form>
+<form name="kp08_form" class="validate">
   <div class="row">
     <div class="col-lg-12">
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Form Details | KP Form No.:
-            <input type="text" class="readonly readonlyfld" readonly value="KP08-17-1007144525" />
+            <input name="kp08Num" type="text" class="readonly readonlyfld" readonly value="KP08-17-1007144525" />
             For Case No.:
-            <input type="text" class="readonly readonlyfld" readonly value="BCN-17-1007144525" />
+            <input name="CaseNum" type="text" class="readonly readonlyfld" readonly value="BCN-17-1007144525" />
           </h3>
         </div>
         
         <!-- left -->
         <div class="col-lg-6">
           <div class="box-body">
-            <div class="form-group">
-              <div class="complainant_fields_wrap">
-                <label for="Complainant">Complainant(s)</label>
-                <input type="text" name="complainant[]" class="form-control" placeholder="Enter Complainant Name" />
+             <div class="form-group">
+              <label for="HearingDate">Hearing Date and Time <span class="req">*</span></label>
+              <div class="clearBoth"></div>
+              <div class="col-lg-6">
+                  <input name="HearingDate" type="text" class="form-control"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask />
               </div>
-              <div class="text-right"> <a href="#" class="fa fa-plus-circle btn btn-vk add_complainant_button"> add complainant</a></div>
+              <div class="col-lg-3">
+                  <input name="HearingDateTime" type="text" class="form-control"  placeholder="HH:MM" />
+              </div>
+              <div class="col-lg-3">
+                  <select name="HearingDateA" class="form-control select2"  data-placeholder="AM/PM" style="width: 100%;">
+                  <option value="" selected="selected">AM/PM</option>
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+              </div>
+              <div class="clearBoth"></div>
             </div>
             
             <!-- /.form-group --> 
@@ -29,30 +40,12 @@
         <!-- right -->
         
         <div class="col-lg-6">
-            <div class="form-group">
-              <label for="DateIssued">Hearing Date and Time <span class="req">*</span></label>
-              <div class="clearBoth"></div>
-              <div class="col-lg-6">
-                <input type="text" class="form-control"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask />
-              </div>
-              <div class="col-lg-3">
-                <input type="text" class="form-control"  placeholder="HH:MM" />
-              </div>
-              <div class="col-lg-3">
-                <select class="form-control select2"  data-placeholder="AM/PM" style="width: 100%;">
-                  <option value=" " selected="selected" disabled="disabled">AM/PM</option>
-                  <option value="AM">AM</option>
-                  <option value="PM">PM</option>
-                </select>
-              </div>
-              <div class="clearBoth"></div>
-            </div>
-          <div class="form-group">
-            <label for="DateIssued">Date/Time created and filed <span class="req">*</span></label>
-            <input type="text" class="readonly readonlyfld" readonly value="10/05/2017 - 06:35:52pm" />
+            
+          <div class="form-group"><br>
+            <label for="DateIssued">Date/Time created and filed <span class="req">*</span></label><br>
+            <input name="DateIssued" type="text" class="readonly readonlyfld" readonly value="" />
             <div class="clearBoth"></div>
           </div>
-            
           <div class="form-group text-right">
             <input type="submit" value="Edit Form" class="btn btn-success" />
           </div>

@@ -68,13 +68,253 @@ jQuery(function () {
 
 
 
-// validations
+// ################# FORM validations
 jQuery(document).ready(function () {
     jQuery('.deletebtn').click(function () {
         confirm("Are you sure you want to delete this record?");
     });
 });
+//resident
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="resident_form"]').attr("onsubmit", "return check_resident_form(this)");
+});
+function check_resident_form(theform) {
+    var why = '';
+    if (theform.ResIDNUm.value == '') {
+        why += "- ResIDNUm should not be empty\n";
+    }
+    if (theform.FirstName.value == '') {
+        why += "- First Name should not be empty\n";
+    }
+    if (theform.MiddleName.value == '') {
+        why += "- Middle Name should not be empty\n";
+    }
+    if (theform.LastName.value == '') {
+        why += "- Last Name should not be empty\n";
+    }
+    if (theform.DOB.value == '') {
+        why += "- Date of Birth should not be empty\n";
+    }
+    if (theform.POB.value == '') {
+        why += "- Place of Birth should not be empty\n";
+    }
+    if (theform.Nationality.value == '') {
+        why += "- Nationality should not be empty\n";
+    }
+    if (theform.Religion.value == '') {
+        why += "- Religion should not be empty\n";
+    }
+    if (theform.gender.value == '') {
+        why += "- Gender should not be empty\n";
+    }
+    if (theform.Bloodtype.value == '') {
+        why += "- Bloodtype should not be empty\n";
+    }
+    if (theform.CivilStatus.value == '') {
+        why += "- Civil Status should not be empty\n";
+    }
+    if (theform.CivilStatus.value == 'Married') {
+        if (theform.Spouse.value == '') {
+            why += "- Spouse should not be empty\n";
+        }
+    }
+    if (theform.FathersName.value == '') {
+        why += "- Father's Name should not be empty\n";
+    }
+    if (theform.MothersName.value == '') {
+        why += "- Mother's Name should not be empty\n";
+    }
+    if (theform.HomeOwnership.value == '') {
+        why += "- Home Ownership should not be empty\n";
+    }
+    if (theform.Purok.value == '') {
+        why += "- Purok should not be empty\n";
+    }
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//resident END
+// login
+function check_login(theform) {
+    var why = '';
+    if (theform.login_name.value == '') {
+        why += "- Username should not be empty\n";
+    }
+    if (theform.login_password.value == '') {
+        why += "- Password should not be empty\n";
+    }
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//login END
+//resident clearance
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="resident_clearance_form"]').attr("onsubmit", "return check_resident_clearance_form(this)");
+});
+function check_resident_clearance_form(theform) {
+    var why = '';
+    if (theform.ResidentName.value == '') {
+        why += "- Resident Name should not be empty\n";
+    }
+    if (theform.Age.value == '') {
+        why += "- Age should not be empty\n";
+    }
+    if (theform.Address.value == '') {
+        why += "- Address should not be empty\n";
+    }
+    if (theform.PurposeOfClearance.value == '') {
+        why += "- Purpose of Clearance should not be empty\n";
+    }
+    if (theform.DateIssued.value == '') {
+        why += "- Date Issued should not be empty\n";
+    }
+    if (theform.DateExpire.value == '') {
+        why += "- Validity should not be empty\n";
+    }
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//resident clearance END
+//business clearance
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="business_clearance_form"]').attr("onsubmit", "return check_business_clearance_form(this)");
+});
+function check_business_clearance_form(theform) {
+    var why = '';
+    if (theform.Title.value == '') {
+        why += "- Title should not be empty\n";
+    }
+    if (theform.OwnersName.value == '') {
+        why += "- Owner's Name should not be empty\n";
+    }
+    if (theform.Address.value == '') {
+        why += "- Address should not be empty\n";
+    }
+    if (theform.BusinessType.value == '') {
+        why += "- Business Type should not be empty\n";
+    }
+    if (theform.BusinessAddress.value == '') {
+        why += "- Business Address should not be empty\n";
+    }
+    if (theform.ORNumber.value == '') {
+        why += "- O.R. Number should not be empty\n";
+    }
+    if (theform.DateIssued.value == '') {
+        why += "- Date Issued should not be empty\n";
+    }
+    if (theform.DateExpire.value == '') {
+        why += "- Validity should not be empty\n";
+    }
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//business clearance END
 
+//judicial
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="judicial_form"]').attr("onsubmit", "return check_judicial_form(this)");
+});
+function check_judicial_form(theform) {
+    var why = '';
+    if (theform.CaseNum.value == '') {
+        why += "- Case No. should not be empty\n";
+    }
+    if (theform.kp07Num.value == '') {
+        why += "- Form No. should not be empty\n";
+    }
+    if (jQuery(".complainant").val() == '') {
+        why += "- Complainant should not be empty\n";
+    }
+    if (jQuery(".respondent").val() == '') {
+        why += "- Rsespondent should not be empty\n";
+    }
+    if (theform.Complaint.value == '') {
+        why += "- Complaint Details should not be empty\n";
+    }
+    if (theform.DateIssued.value == '') {
+        why += "- Date Issued should not be empty\n";
+    }
+
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//judicial END
+
+//KP08
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="kp08_form"]').attr("onsubmit", "return check_kp08_form(this)");
+});
+function check_kp08_form(theform) {
+    var why = '';
+    if (theform.kp08Num.value == '') {
+        why += "- Form No. should not be empty\n";
+    }
+    if (theform.CaseNum.value == '') {
+        why += "- Case No. should not be empty\n";
+    }
+    if (theform.HearingDate.value == '') {
+        why += "- Hearing Date should not be empty\n";
+    }
+    if (theform.HearingDateTime.value == '') {
+        why += "- Hearing Time should not be empty\n";
+    }
+    if (theform.HearingDateA.value == '') {
+        why += "- Select morning or afternoon\n";
+    }
+    if (theform.DateIssued.value == '') {
+        why += "- Date Issued should not be empty\n";
+    }
+
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//KP08 END
+
+//KP09
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="kp09_form"]').attr("onsubmit", "return check_kp09_form(this)");
+});
+function check_kp09_form(theform) {
+    var why = '';
+    if (theform.kp09Num.value == '') {
+        why += "- Form No. should not be empty\n";
+    }
+    if (theform.CaseNum.value == '') {
+        why += "- Case No. should not be empty\n";
+    }
+    if (theform.AppearanceDate.value == '') {
+        why += "- Appearance Date should not be empty\n";
+    }
+    if (theform.AppearanceDateTime.value == '') {
+        why += "- Appearance Time should not be empty\n";
+    }
+    if (theform.AppearanceDateA.value == '') {
+        why += "- Select morning or afternoon\n";
+    }
+    if (theform.DateIssued.value == '') {
+        why += "- Date Issued should not be empty\n";
+    }
+
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//KP09 END
+
+// ################# FORM validations END
 
 // civil status
 jQuery(document).ready(function () {
@@ -210,6 +450,7 @@ $(document).ready(function () {
         }
     });
 });
-
-
-
+/*disable forms after submit*/
+$('.content form').submit(function(){
+    $(this).children('input[type="submit"]').prop('disabled', true);
+});

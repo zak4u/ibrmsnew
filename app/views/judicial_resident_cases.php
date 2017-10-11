@@ -1,6 +1,10 @@
 <div class="row">
     <div class="col-lg-12">
-        <h4>Case No.: <strong>BCN-17-1234567</strong> | Respondent: Juan dela Cruz</h4>
+        <h4>Case No.: <strong>BCN-17-1234567</strong></h4>
+        <div class="col-lg-4"><h4>Complainant(s):</h4><p>Juan dela Cruz</p></div>
+        <div class="col-lg-4"><h4>Respondent(s):</h4><p>Juan dela Cruz</p></div>
+        <div class="clearboth"></div>
+        
     </div>
 
     <br/>

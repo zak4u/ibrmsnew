@@ -1,11 +1,11 @@
-<form>
+<form name="resident_form" class="validate">
   <div class="row">
     <div class="col-lg-12">
       <div class="box box-primary">
         <div class="box-header with-border">
             <div class="col-lg-6">
             <h3 class="box-title">Personal Details | Resident ID No.:
-            <input type="text" class="readonly readonlyfld" readonly="readonly" value="17-1004165643" /></h3>
+            <input name="ResIDNUm"  type="text" class="readonly readonlyfld" readonly="readonly" value="17-1004165643" /></h3>
             </div>
             <div class="col-lg-6 text-right"><input type="submit" value="Edit Resident" class="btn btn-success" /></div>
             <div class="clearBoth"></div>
@@ -16,39 +16,39 @@
           <div class="box-body">
             <div class="form-group">
               <label for="FirstName">First Name <span class="req">*</span></label>
-              <input type="text" class="form-control" value="Lyndon" />
+              <input type="text" name="FirstName" class="form-control" placeholder="Enter First Name" />
             </div>
             <div class="form-group">
               <label for="MiddleName">Middle Name <span class="req">*</span></label>
-              <input type="text" class="form-control"  value="Mondragon"  />
+              <input type="text" name="MiddleName" class="form-control" placeholder="Enter Middle Name" />
             </div>
             <div class="form-group">
               <label for="LastName">Last Name <span class="req">*</span></label>
-              <input type="text" class="form-control"  value="Astorga"  />
+              <input type="text" name="LastName" class="form-control" placeholder="Enter Last Name" />
             </div>
             <div class="form-group">
               <label for="Extension">Extension</label>
-              <input type="text" class="form-control"  value="III"  />
+              <input type="text" class="form-control" placeholder="Enter Sr., Jr., III, etc" />
             </div>
             <div class="form-group">
               <label for="DOB">Date of Birth <span class="req">*</span></label>
-              <input type="text" class="form-control"  value="01/21/1912" />
+              <input type="text" name="DOB" class="form-control"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask />
             </div>
             <div class="form-group">
               <label for="POB">Place of Birth <span class="req">*</span></label>
-              <input type="text" class="form-control" value="Cadiz City"  />
+              <input type="text" name="POB" class="form-control" placeholder="Enter Place of Birth" />
             </div>
             <div class="form-group">
               <label for="Nationality">Nationality <span class="req">*</span></label>
-              <input type="text" class="form-control"  value="Filipino"  />
+              <input type="text" name="Nationality" class="form-control" placeholder="Enter Nationality (Filipino, Australian, etc)" />
             </div>
             <div class="form-group">
               <label for="Religion">Religion <span class="req">*</span></label>
-              <input type="text" class="form-control"  value=""  />
+              <input type="text" name="Religion" class="form-control" placeholder="Enter Religion" />
             </div>
             <div class="form-group">
               <label for="Occupation">Occupation</label>
-              <input type="text" class="form-control"  value="Janitor"  />
+              <input type="text" class="form-control" placeholder="Enter Occupation" />
             </div>
             <!-- /.form-group --> 
           </div>
@@ -56,14 +56,13 @@
         <!-- left END --> 
         
         <!-- right -->
-        
         <div class="col-lg-6">
           <div class="box-body">
             <div class="form-group">
               <div class="col-lg-5 no-pad-left">
                 <label>Gender <span class="req">*</span></label>
                 <br/>
-                <input type="radio" name="gender" class="minimal" value="Male" checked="checked">
+                <input type="radio" name="gender" class="minimal" value="Male">
                 Male &nbsp;&nbsp;&nbsp;
                 <input type="radio" name="gender" class="minimal" value="Female">
                 Female </div>
@@ -82,21 +81,21 @@
             <div class="form-group">
               <div class="col-lg-5 no-pad-left">
                 <label for="Bloodtype">Bloodtype <span class="req">*</span></label>
-                <select class="form-control select2"  data-placeholder="Please Select Bloodtype" style="width: 100%;">
-                  <option value=" " disabled="disabled">Please Select Bloodtype</option>
+                <select name="Bloodtype" class="form-control select2"  data-placeholder="Please Select Bloodtype" style="width: 100%;">
+                  <option value="" selected="selected">Please Select Bloodtype</option>
                   <option value="A+">A+</option>
                   <option value="AB+">AB+</option>
-                  <option value="B+" selected="selected">B+</option>
+                  <option value="B+">B+</option>
                   <option value="O+">O+</option>
                 </select>
               </div>
               <div class="col-lg-3">
                 <label for="Height">Height</label>
-                <input type="text" class="form-control" value="5' 10"  />
+                <input type="text" class="form-control"  placeholder="ft' in''" />
               </div>
               <div class="col-lg-3">
                 <label for="Weight">Weight</label>
-                <input type="text" class="form-control"  value="75 kg"  />
+                <input type="text" class="form-control" placeholder="... kgs." />
               </div>
               <div class="clearBoth"></div>
             </div>
@@ -105,45 +104,44 @@
               <br/>
               <input type="radio" name="CivilStatus" class="minimal" value="Single">
               Single &nbsp;&nbsp;&nbsp;
-              <input type="radio" name="CivilStatus" class="minimal" value="Married" checked="checked">
+              <input type="radio" name="CivilStatus" class="minimal" value="Married">
               Married &nbsp;&nbsp;&nbsp;
               <input type="radio" name="CivilStatus" class="minimal" value="Separated">
               Separated &nbsp;&nbsp;&nbsp;
               <input type="radio" name="CivilStatus" class="minimal" value="Widow or Widower">
               Widow/Widower </div>
-             
             <div class="subform-group isMarried hideOnload">
               <div class="form-group ">
-                <label for="Spouse">Spouse (if married)</label>
-                <input type="text" class="form-control" placeholder="Enter Spouse Name" />
+                <label for="Spouse">Spouse (if married) <span class="req">*</span></label>
+                <input name="Spouse" type="text" class="form-control" placeholder="Enter Spouse Name" />
               </div>
+              
+            </div>
               <div class="form-group">
                 <div class="child_fields_wrap">
-                  <label for="Children">Children (if married)</label>
+                  <label for="Children">Children </label>
                   <input type="text" name="child[]" class="form-control" placeholder="Enter Child Name" />
                 </div>
                 <div class="text-right"> <a href="#" class="fa fa-plus-circle btn btn-vk add_child_button"> add child</a></div>
               </div>
-            </div>
             <div class="form-group">
               <label for="FathersName">Father's Name <span class="req">*</span></label>
-              <input type="text" class="form-control" value="Noel Astorga"  />
+              <input name="FathersName" type="text" class="form-control" placeholder="Enter Father's Name" />
             </div>
             <div class="form-group">
               <label for="MothersName">Mother's Name <span class="req">*</span></label>
-              <input type="text" class="form-control"  value="Jasmin Astorga"  />
+              <input name="MothersName" type="text" class="form-control" placeholder="Enter Mother's Name" />
             </div>
             <div class="form-group res-photo">
               <div class="col-lg-5">
-                <label for="UploadPhoto">Update Photo</label>
+                <label for="UploadPhoto">Upload Photo</label>
                 <input type="file" id=""/>
               </div>
               <div class="col-lg-1">&nbsp;</div>
               <div class="col-lg-4"><br/>
                 or <a href="#" class="btn btn-vk fa fa-camera"> take photo</a></div>
               <div class="clearBoth"></div>
-              <br/>
-              <img style="width: 70px" src="<?php echo base_url(); ?>resident-photo/lyndon-astorga-200.jpg" alt="" /> </div>
+            </div>
             <!-- /.form-group --> 
           </div>
         </div>
@@ -165,7 +163,7 @@
             <div class="form-group">
               <label>Home Ownership <span class="req">*</span></label>
               <br/>
-              <input type="radio" name="HomeOwnership" class="minimal" value="Owned"  checked="checked">
+              <input type="radio" name="HomeOwnership" class="minimal" value="Owned">
               Owned &nbsp;&nbsp;&nbsp;
               <input type="radio" name="HomeOwnership" class="minimal" value="Mortgaged">
               Mortgaged &nbsp;&nbsp;&nbsp;
@@ -176,16 +174,15 @@
             <div class="clearBoth"></div>
             <div class="form-group">
               <label for="Address">House No./Block/Lot</label>
-              <input type="text" class="form-control" value="B212 L65" />
+              <input type="text" class="form-control" placeholder="Enter Block, Lot, House #" />
             </div>
             <div class="form-group">
               <label for="Street">Street</label>
-              <input type="text" class="form-control" value="Draft Street" />
+              <input type="text" class="form-control" placeholder="Enter Street" />
             </div>
             <div class="form-group">
               <label for="Purok">Purok <span class="req">*</span></label>
-
-              <input type="text" class="form-control" value="Moonlighting" />
+              <input name="Purok" type="text" class="form-control" placeholder="Enter Purok" />
             </div>
             <div class="form-group">
               <label for="Barangay">Barangay <span class="req">*</span></label>
@@ -221,14 +218,14 @@
             </div>
             <div class="form-group">
               <label for="ContactNumber">Contact Number</label>
-              <input type="text" class="form-control" value="0919 999 9999" />
+              <input type="text" class="form-control" placeholder="Enter Contact Number" />
             </div>
             <div class="form-group">
               <label for="Email">Email</label>
-              <input type="text" class="form-control" value="hello@facebook.com" />
+              <input type="text" class="form-control" placeholder="Enter Email Address" />
             </div>
             <div class="form-group text-right">
-              <input type="submit" value="Edit Resident" class="btn btn-success" />
+              <input type="submit" value="Editt Resident" class="btn btn-success" />
             </div>
             <!-- /.form-group --> 
           </div>

@@ -41,13 +41,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="login-box-body">
       <p class="login-box-msg">Please enter your log in details</p>
 
-      <form action="#" method="post">
+      <form action="#" method="post" name="loginform" class="validate_form">
         <div class="form-group has-feedback">
-          <input type="text" class="form-control" placeholder="Username">
+            <input type="text" class="form-control" placeholder="Username" name="login_name">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password">
+            <input type="password" class="form-control" placeholder="Password" name="login_password">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
@@ -92,6 +92,26 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         increaseArea: '20%' // optional
       });
     });
+  </script>
+  <script type="text/javascript">
+      
+jQuery(document).ready(function(){
+    jQuery('form[name="loginform"]').attr("onsubmit","return check_login(this)");
+});
+function check_login(theform){
+	var why = '';
+	if(theform.login_name.value == ''){
+		why += "- Username should not be empty\n";
+	}
+	if(theform.login_password.value == ''){
+		why += "- Password should not be empty\n";
+	}
+	if(why != ""){
+		alert(why);
+		return false;
+	}
+}
+  
   </script>
 </body>
 

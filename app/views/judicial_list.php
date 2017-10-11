@@ -55,6 +55,13 @@
           <td>Resolved</td>
           <td class="text-right"><a title="View" data-toggle="tooltip" data-placement="top"  href="<?php echo base_url(); ?>judicial/judicial_resident_cases" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> <a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url(); ?>judicial/edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" data-placement="top" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
         </tr>
+        <tr>
+          <td>BCN-17-1234567</td>
+          <td>de la Cruz, Mondragon, Khan</td>
+          <td>06/12/2016</td>
+          <td>Dismissed</td>
+          <td class="text-right"><a title="View" data-toggle="tooltip" data-placement="top"  href="<?php echo base_url(); ?>judicial/judicial_resident_cases" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> <a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url(); ?>judicial/edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" data-placement="top" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
+        </tr>
       </tbody>
     </table>
   </div>

@@ -1,4 +1,4 @@
-<form>
+<form name="resident_clearance_form" class="validate">
   <div class="row">
     <div class="col-lg-12">
       <div class="box box-primary">
@@ -12,15 +12,15 @@
           <div class="box-body">
             <div class="form-group">
               <label for="ResidentName">Resident Name <span class="req">*</span></label>
-              <input type="text" class="form-control" />
+              <input name="ResidentName" type="text" class="form-control" placeholder="Enter Resident Name" />
             </div>
             <div class="form-group">
               <label for="Age">Age <span class="req">*</span></label>
-              <input type="text" class="form-control" />
+              <input name="Age" type="text" class="form-control" value="" />
             </div>
             <div class="form-group">
               <label for="Address">Address <span class="req">*</span></label>
-              <input type="text" class="form-control" />
+              <input name="Address" type="text" class="form-control" value="" />
             </div>
             
             <!-- /.form-group --> 
@@ -33,16 +33,16 @@
         <div class="col-lg-6">
           <div class="form-group">
             <label for="PurposeOfClearance">Clearance Purpose <span class="req">*</span></label>
-            <textarea type="text" class="form-control"  style="height: 100px;"></textarea>
+            <textarea name="PurposeOfClearance" type="text" class="form-control" placeholder="Enter Purpose" style="height: 100px;"></textarea>
           </div>
           <div class="form-group">
             <div class="col-lg-6 no-pad-left">
-              <label for="DateIssued">Date Today <span class="req">*</span></label>
-              <input type="text" class="readonly readonlyfld" readonly value="" />
+              <label for="DateIssued">Date Issued <span class="req">*</span></label>
+              <input name="DateIssued" type="text" class="readonly readonlyfld" readonly value="" />
             </div>
             <div class="col-lg-6">
-              <label for="DateExpire">Valid Issued <span class="req">*</span></label>
-              <input type="text" class="readonly readonlyfld" readonly value="" />
+              <label for="DateExpire">Valid Until <span class="req">*</span></label>
+              <input name="DateExpire" type="text" class="readonly readonlyfld" readonly value="" />
             </div>
             <div class="clearBoth"></div>
           </div>

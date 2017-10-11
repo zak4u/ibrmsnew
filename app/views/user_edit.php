@@ -31,7 +31,7 @@
             <div class="form-group">
               <label for="Gender">Gender <span class="req">*</span></label>
               <select class="form-control select2"  data-placeholder="Please Select Gender" style="width: 100%;">
-                <option value=" " selected="selected" disabled="disabled">Please Select Gender</option>
+                <option value="" selected="selected">Please Select Gender</option>
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
               </select>
@@ -61,7 +61,7 @@
             <div class="form-group">
                 <label for="Role">Role <span class="req">*</span></label>
               <select class="form-control select2"  data-placeholder="Please Select Role" style="width: 100%;">
-                <option value=" " selected="selected" disabled="disabled">Please Select Role</option>
+                <option value="" selected="selected">Please Select Role</option>
                 <option value="Administrator">Administrator</option>
                 <option value="System Manager">System Manager</option>
                 <option value="Encoder">Encoder</option>

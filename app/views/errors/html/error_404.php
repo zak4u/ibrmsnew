@@ -53,12 +53,13 @@ code {
 p {
 	margin: 12px 15px 12px 15px;
 }
+a{color: #cc0000; text-decoration: none;}
 </style>
 </head>
 <body>
 	<div id="container">
 		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
+		<?php echo $message; ?><p><a href="./dashboard">&Leftarrow; Go back to the Dashboard</a>.</p>
 	</div>
 </body>
 </html>
