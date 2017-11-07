@@ -7,7 +7,7 @@
         </div>
         
         <!-- left -->
-        <div class="col-lg-6">
+         <div class="col-lg-6">
           <div class="box-body">
             <div class="form-group">
               <label for="PurokName">Purok Name <span class="req">*</span></label>
@@ -15,7 +15,13 @@
             </div>
               <div class="form-group">
               <label for="PurokAddress">Purok Address <span class="req">*</span></label>
-              <textarea type="text" class="form-control" placeholder="Enter Address" style="height: 200px;"></textarea>
+              <textarea type="text" class="form-control" placeholder="Enter Address"></textarea>
+            </div>
+              
+              <div class="form-group">
+              <label for="PurokName">Coordinates </label>
+              <input type="text" class="form-control" placeholder="Enter Latitude" />
+              <input type="text" class="form-control" placeholder="Enter Longitude" />
             </div>
             
             <!-- /.form-group --> 

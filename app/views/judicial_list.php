@@ -20,11 +20,13 @@
   <br/>
   <br/>
   <div class="col-lg-12">
+      <div class="box box-solid">
+      <div class="box-body">
     <h4>Cases List</h4>
     <table id="dataTableResident" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
       <thead>
         <tr>
-          <th width="15%">Case Num</th>
+          <th width="15%">Case No.</th>
           <th width="40%">Parties Involved</th>
           <th width="10%">Date</th>
           <th width="10%">Status</th>
@@ -33,7 +35,7 @@
       </thead>
       <tfoot>
         <tr>
-          <th>Case Num</th>
+          <th>Case No.</th>
           <th>Parties Involved</th>
           <th>Date</th>
           <th>Status</th>
@@ -64,5 +66,7 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
   </div>
 </div>

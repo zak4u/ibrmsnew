@@ -7,6 +7,8 @@
     <div class="clearboth"></div>
     <br/><br/><br/><br/>
     <div class="col-lg-12">
+        <div class="box box-solid">
+      <div class="box-body">
         <h4>Purok Profile List</h4>
         <table id="dataTableResident" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
             <thead>
@@ -31,7 +33,7 @@
                 <tr>
 
                     <td>Mabuot</td>
-                    <td>Mabuout Street</td>
+                    <td>Mabuout Street &nbsp;&nbsp;<a href="#" target="_blank" title="View on map" data-toggle="tooltip" data-placement="top"><i class="fa fa-map-marker"></i></a></td>
                     <td><strong>Pres:</strong> Juan Mapisan<br><strong>V-Pres:</strong> Juana Tamaran<br><strong>Sec:</strong> Sisa Tarong<br><strong>Treas:</strong> Bob Piso</td>
 
                     <td class="text-right"><a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url(); ?>purok/edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> 
@@ -43,4 +45,4 @@
             </tbody>
         </table>
     </div>
-</div>
+        </div></div></div>

@@ -10,6 +10,8 @@
   <br/>
   <br/>
   <div class="col-lg-12">
+      <div class="box box-solid">
+      <div class="box-body">
     <h4>User List</h4>
     <table id="dataTableResident" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
       <thead>
@@ -39,3 +41,4 @@
     </table>
   </div>
 </div>
+  </div></div>

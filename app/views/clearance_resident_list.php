@@ -18,11 +18,13 @@
   <br/>
   <br/>
   <div class="col-lg-12">
+      <div class="box box-solid">
+      <div class="box-body">
     <h4>Latest Resident Clearance Request</h4>
     <table id="dataTableResident" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%">
       <thead>
         <tr>
-          <th width="10%">Clearance ID</th>
+          <th width="10%">Clearance ID No.</th>
           <th width="30%">Resident Name</th>
           <th width="5%">Date Issued</th>
           <th width="5%">Valid Until</th>
@@ -31,7 +33,7 @@
       </thead>
       <tfoot>
         <tr>
-          <th>Clearance ID</th>
+          <th>Clearance ID No.</th>
           <th>Resident Name</th>
           <th>Date Issued</th>
           <th>Valid Until</th>
@@ -78,3 +80,4 @@
     </table>
   </div>
 </div>
+  </div></div>

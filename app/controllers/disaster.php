@@ -26,6 +26,39 @@ class Disaster extends CI_Controller {
 
         $this->load->view('layouts/main', $data);
     }
+    
+    public function add() {
+        $data = $this->data;
+        $data['main_content'] = 'disaster_add';
+        $data['pagename'] = 'Add Case';
+        $data['pagesubname'] = 'Disaster Case';
+
+
+
+        $this->load->view('layouts/main', $data);
+    }
+    
+    public function edit() {
+        $data = $this->data;
+        $data['main_content'] = 'disaster_edit';
+        $data['pagename'] = 'Edit Case';
+        $data['pagesubname'] = 'Disaster Case';
+
+
+
+        $this->load->view('layouts/main', $data);
+    }
+    
+    public function print_case() {
+        $data = $this->data;
+        $data['main_content'] = 'disaster_print';
+        $data['pagename'] = 'Print Case';
+        $data['pagesubname'] = 'Disaster Case';
+
+
+
+        $this->load->view('layouts/main', $data);
+    }
 
     public function disaster_reports() {
         $data = $this->data;

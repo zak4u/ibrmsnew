@@ -44,12 +44,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- Menu Toggle Button --> 
             <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
             <!-- The user image in the navbar--> 
-            <img src="<?php echo base_url(); ?>template/sourcefiles/images/resident/lyndon-astorga-200.jpg" class="user-image" alt="User Image"> 
+            <span class="userstatus"></span>
             <!-- hidden-xs hides the username on small devices so only the image appears. --> 
             <span class="hidden-xs">Lyndon Astorga</span> </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
-              <li class="user-header"> <img src="<?php echo base_url(); ?>template/sourcefiles/images/resident/lyndon-astorga-200.jpg" class="img-circle" alt="User Image">
+              <li class="user-header">
                 <p> Lyndon Astorga - Clerk <small>Member since Nov. 2012</small> </p>
               </li>
               <!-- Menu Body --> 

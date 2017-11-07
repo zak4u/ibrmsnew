@@ -319,42 +319,42 @@ function check_kp09_form(theform) {
 // civil status
 jQuery(document).ready(function () {
 
-    if ($("input[name='CivilStatus']:checked").val() == "Married") {
-        $('.isMarried').show(500);
+    if (jQuery("input[name='CivilStatus']:checked").val() == "Married") {
+        jQuery('.isMarried').show(500);
     } else {
-        $('.isMarried').hide(500);
+        jQuery('.isMarried').hide(500);
     }
 
 
-    $("input[name='CivilStatus']").on('ifChecked', function (event) {
-        if ($(this).val() == "Married") {
-            $('.isMarried').slideDown(500);
+    jQuery("input[name='CivilStatus']").on('ifChecked', function (event) {
+        if (jQuery(this).val() == "Married") {
+            jQuery('.isMarried').slideDown(500);
         } else {
-            $('.isMarried').slideUp(500);
+            jQuery('.isMarried').slideUp(500);
         }
     });
 });
 
 // child fields
-$(document).ready(function () {
+jQuery(document).ready(function () {
     var max_fields = 15; //maximum input boxes allowed
-    var wrapper = $(".child_fields_wrap"); //Fields wrapper
-    var add_button = $(".add_child_button"); //Add button ID
+    var wrapper = jQuery(".child_fields_wrap"); //Fields wrapper
+    var add_button = jQuery(".add_child_button"); //Add button ID
 
     var x = 1; //initlal text box count
-    $(add_button).click(function (e) { //on add input button click
+    jQuery(add_button).click(function (e) { //on add input button click
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div class="inputplus"><input type="text" class="form-control" placeholder="Enter Child Name" name="child[]"/> <a href="#" class="remove_child fa fa-minus-circle text-danger"></a></div>'); //add input box
+            jQuery(wrapper).append('<div class="inputplus"><input type="text" class="form-control" placeholder="Enter Child Name" name="child[]"/> <a href="#" class="remove_child fa fa-minus-circle text-danger"></a></div>'); //add input box
         } else {
             add_button.hide();
         }
     });
 
-    $(wrapper).on("click", ".remove_child", function (e) { //user click on remove text
+    jQuery(wrapper).on("click", ".remove_child", function (e) { //user click on remove text
         e.preventDefault();
-        $(this).parent('div').remove();
+        jQuery(this).parent('div').remove();
         x--;
         if (max_fields > x) {
             add_button.show();
@@ -363,25 +363,25 @@ $(document).ready(function () {
 });
 
 // neighbor fields
-$(document).ready(function () {
+jQuery(document).ready(function () {
     var max_fields = 5; //maximum input boxes allowed
-    var wrapper = $(".neighbors_fields_wrap"); //Fields wrapper
-    var add_button = $(".add_neighbor_button"); //Add button ID
+    var wrapper = jQuery(".neighbors_fields_wrap"); //Fields wrapper
+    var add_button = jQuery(".add_neighbor_button"); //Add button ID
 
     var x = 1; //initlal text box count
-    $(add_button).click(function (e) { //on add input button click
+    jQuery(add_button).click(function (e) { //on add input button click
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div class="inputplus"><input type="text" class="form-control" placeholder="Enter Neighbors\' Name" name="neighbor[]"/> <a href="#" class="remove_neighbor fa fa-minus-circle text-danger"></a></div>'); //add input box
+            jQuery(wrapper).append('<div class="inputplus"><input type="text" class="form-control" placeholder="Enter Neighbors\' Name" name="neighbor[]"/> <a href="#" class="remove_neighbor fa fa-minus-circle text-danger"></a></div>'); //add input box
         } else {
             add_button.hide();
         }
     });
 
-    $(wrapper).on("click", ".remove_neighbor", function (e) { //user click on remove text
+    jQuery(wrapper).on("click", ".remove_neighbor", function (e) { //user click on remove text
         e.preventDefault();
-        $(this).parent('div').remove();
+        jQuery(this).parent('div').remove();
         x--;
         if (max_fields > x) {
             add_button.show();
@@ -393,30 +393,30 @@ $(document).ready(function () {
 jQuery(document).ready(function () {
     jQuery("select.kpselect").on('change', function () {
         jQuery('.kpdivs').slideUp(300);
-        jQuery("#" + $(this).val()).slideDown(600);
+        jQuery("#" + jQuery(this).val()).slideDown(600);
     });
 });
 
 // complainant fields
-$(document).ready(function () {
+jQuery(document).ready(function () {
     var max_fields = 5; //maximum input boxes allowed
-    var wrapper = $(".complainant_fields_wrap"); //Fields wrapper
-    var add_button = $(".add_complainant_button"); //Add button ID
+    var wrapper = jQuery(".complainant_fields_wrap"); //Fields wrapper
+    var add_button = jQuery(".add_complainant_button"); //Add button ID
 
     var x = 1; //initlal text box count
-    $(add_button).click(function (e) { //on add input button click
+    jQuery(add_button).click(function (e) { //on add input button click
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div class="inputplus"><input type="text" class="form-control" placeholder="Enter Complainant Name" name="complainant[]"/> <a href="#" class="remove_complainant fa fa-minus-circle text-danger"></a></div>'); //add input box
+            jQuery(wrapper).append('<div class="inputplus"><input type="text" class="form-control" placeholder="Enter Complainant Name" name="complainant[]"/> <a href="#" class="remove_complainant fa fa-minus-circle text-danger"></a></div>'); //add input box
         } else {
             add_button.hide();
         }
     });
 
-    $(wrapper).on("click", ".remove_complainant", function (e) { //user click on remove text
+    jQuery(wrapper).on("click", ".remove_complainant", function (e) { //user click on remove text
         e.preventDefault();
-        $(this).parent('div').remove();
+        jQuery(this).parent('div').remove();
         x--;
         if (max_fields > x) {
             add_button.show();
@@ -425,25 +425,25 @@ $(document).ready(function () {
 });
 
 // respondent fields
-$(document).ready(function () {
+jQuery(document).ready(function () {
     var max_fields = 5; //maximum input boxes allowed
-    var wrapper = $(".respondent_fields_wrap"); //Fields wrapper
-    var add_button = $(".add_respondent_button"); //Add button ID
+    var wrapper = jQuery(".respondent_fields_wrap"); //Fields wrapper
+    var add_button = jQuery(".add_respondent_button"); //Add button ID
 
     var x = 1; //initlal text box count
-    $(add_button).click(function (e) { //on add input button click
+    jQuery(add_button).click(function (e) { //on add input button click
         e.preventDefault();
         if (x < max_fields) { //max input box allowed
             x++; //text box increment
-            $(wrapper).append('<div class="inputplus"><input type="text" class="form-control" placeholder="Enter Respondent Name" name="respondent[]"/> <a href="#" class="remove_respondent fa fa-minus-circle text-danger"></a></div>'); //add input box
+            jQuery(wrapper).append('<div class="inputplus"><input type="text" class="form-control" placeholder="Enter Respondent Name" name="respondent[]"/> <a href="#" class="remove_respondent fa fa-minus-circle text-danger"></a></div>'); //add input box
         } else {
             add_button.hide();
         }
     });
 
-    $(wrapper).on("click", ".remove_respondent", function (e) { //user click on remove text
+    jQuery(wrapper).on("click", ".remove_respondent", function (e) { //user click on remove text
         e.preventDefault();
-        $(this).parent('div').remove();
+        jQuery(this).parent('div').remove();
         x--;
         if (max_fields > x) {
             add_button.show();
@@ -451,6 +451,38 @@ $(document).ready(function () {
     });
 });
 /*disable forms after submit*/
-$('.content form').submit(function(){
-    $(this).children('input[type="submit"]').prop('disabled', true);
+jQuery('.content form').submit(function(){
+    jQuery(this).children('input[type="submit"]').prop('disabled', true);
 });
+
+
+// medical isReferral
+// civil status
+jQuery(document).ready(function () {
+
+    if (jQuery("input[name='ModeofTransaction']:checked").val() == "Referral") {
+        jQuery('.isReferral').show(500);
+    } else {
+        jQuery('.isReferral').hide(500);
+    }
+
+
+    jQuery("input[name='ModeofTransaction']").on('ifChecked', function (event) {
+        if (jQuery(this).val() == "Referral") {
+            jQuery('.isReferral').slideDown(500);
+        } else {
+            jQuery('.isReferral').slideUp(500);
+        }
+    });
+});
+
+//timepicker
+jQuery(function (){
+jQuery('.timepicker').timepicker({
+    showInputs: false
+  });
+  $('.daterangepicker').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' });
+  $('.datepicker').datepicker({
+      autoclose: true
+    })
+  });

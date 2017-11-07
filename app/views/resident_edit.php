@@ -46,10 +46,7 @@
               <label for="Religion">Religion <span class="req">*</span></label>
               <input type="text" name="Religion" class="form-control" placeholder="Enter Religion" />
             </div>
-            <div class="form-group">
-              <label for="Occupation">Occupation</label>
-              <input type="text" class="form-control" placeholder="Enter Occupation" />
-            </div>
+            
             <!-- /.form-group --> 
           </div>
         </div>
@@ -91,7 +88,7 @@
               </div>
               <div class="col-lg-3">
                 <label for="Height">Height</label>
-                <input type="text" class="form-control"  placeholder="ft' in''" />
+                <input type="text" class="form-control"  placeholder="... cm" />
               </div>
               <div class="col-lg-3">
                 <label for="Weight">Weight</label>
@@ -102,28 +99,36 @@
             <div class="form-group">
               <label>Civil Status <span class="req">*</span></label>
               <br/>
-              <input type="radio" name="CivilStatus" class="minimal" value="Single">
-              Single &nbsp;&nbsp;&nbsp;
-              <input type="radio" name="CivilStatus" class="minimal" value="Married">
-              Married &nbsp;&nbsp;&nbsp;
-              <input type="radio" name="CivilStatus" class="minimal" value="Separated">
-              Separated &nbsp;&nbsp;&nbsp;
-              <input type="radio" name="CivilStatus" class="minimal" value="Widow or Widower">
-              Widow/Widower </div>
+              <div class="col-lg-4">
+                <input type="radio" name="CivilStatus" class="minimal" value="Single">
+                Single<br>
+                <input type="radio" name="CivilStatus" class="minimal" value="Separated">
+                Separated</div>
+              <div class="col-lg-4">
+                <input type="radio" name="CivilStatus" class="minimal" value="Married">
+                Married<br>
+                <input type="radio" name="CivilStatus" class="minimal" value="Annulled">
+                Annulled</div>
+              <div class="col-lg-4">
+                <input type="radio" name="CivilStatus" class="minimal" value="Co-habitation">
+                Co-habitation<br>
+                <input type="radio" name="CivilStatus" class="minimal" value="Widow or Widower">
+                Widow/Widower</div>
+              <div class="clearBoth"></div>
+            </div>
             <div class="subform-group isMarried hideOnload">
               <div class="form-group ">
                 <label for="Spouse">Spouse (if married) <span class="req">*</span></label>
                 <input name="Spouse" type="text" class="form-control" placeholder="Enter Spouse Name" />
               </div>
-              
             </div>
-              <div class="form-group">
-                <div class="child_fields_wrap">
-                  <label for="Children">Children </label>
-                  <input type="text" name="child[]" class="form-control" placeholder="Enter Child Name" />
-                </div>
-                <div class="text-right"> <a href="#" class="fa fa-plus-circle btn btn-vk add_child_button"> add child</a></div>
+            <div class="form-group">
+              <div class="child_fields_wrap">
+                <label for="Children">Children</label>
+                <input type="text" name="child[]" class="form-control" placeholder="Enter Child Name" />
               </div>
+              <div class="text-right"> <a href="#" class="fa fa-plus-circle btn btn-vk add_child_button"> add child</a></div>
+            </div>
             <div class="form-group">
               <label for="FathersName">Father's Name <span class="req">*</span></label>
               <input name="FathersName" type="text" class="form-control" placeholder="Enter Father's Name" />
@@ -152,7 +157,7 @@
     </div>
     
     <!-- address -->
-    <div class="col-lg-12">
+     <div class="col-lg-12">
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Home Address</h3>
@@ -170,7 +175,9 @@
               <input type="radio" name="HomeOwnership" class="minimal" value="Rented">
               Rented &nbsp;&nbsp;&nbsp;
               <input type="radio" name="HomeOwnership" class="minimal" value="Living with parents">
-              Living with parents </div>
+              Living with parents &nbsp;&nbsp;&nbsp;
+              <input type="radio" name="HomeOwnership" class="minimal" value="Other">
+              Other </div>
             <div class="clearBoth"></div>
             <div class="form-group">
               <label for="Address">House No./Block/Lot</label>
@@ -192,6 +199,14 @@
               <label for="City">City <span class="req">*</span></label>
               <input type="text" class="form-control" disabled="disabled" value="Cadiz City" />
             </div>
+            <div class="form-group">
+              <label for="Province">Province <span class="req">*</span></label>
+              <input type="text" class="form-control" disabled="disabled" value="Negros Occidental" />
+            </div>
+            <div class="form-group">
+              <label for="Region">Region <span class="req">*</span></label>
+              <input type="text" class="form-control" disabled="disabled" value="Region VI" />
+            </div>
             
             <!-- /.form-group --> 
           </div>
@@ -202,12 +217,12 @@
         <div class="col-lg-6">
           <div class="box-body">
             <div class="form-group">
-              <label for="Province">Province <span class="req">*</span></label>
-              <input type="text" class="form-control" disabled="disabled" value="Negros Occidental" />
+              <label for="Household">Household ID No. </label>
+              <input name="Household" type="text" class="form-control" placeholder="Enter Household ID No." />
             </div>
             <div class="form-group">
-              <label for="Region">Region <span class="req">*</span></label>
-              <input type="text" class="form-control" disabled="disabled" value="Region VI" />
+              <label for="FamilySerialNo">Family Serial No. </label>
+              <input name="FamilySerialNo" disabled="disabled" type="text" class="form-control"/>
             </div>
             <div class="form-group">
               <div class="neighbors_fields_wrap">
@@ -224,8 +239,113 @@
               <label for="Email">Email</label>
               <input type="text" class="form-control" placeholder="Enter Email Address" />
             </div>
+            
+            <!-- /.form-group --> 
+          </div>
+        </div>
+        <!-- right END -->
+        
+        <div class="clearBoth"></div>
+      </div>
+    </div>
+    
+    
+    <!-- other details -->
+    
+    <div class="col-lg-12">
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Other Details</h3>
+        </div>
+        <!-- left -->
+        <div class="col-lg-6">
+          <div class="box-body">
+            <div class="form-group">
+              <label>Educational Attainment </label>
+              <br>
+              <div class="col-lg-3 no-pad-left">
+                <input type="radio" name="EducationalAttainment" class="minimal" value="Elementary">
+                Elementary<br>
+                <input type="radio" name="EducationalAttainment" class="minimal" value="High School">
+                High School</div>
+              <div class="col-lg-4">
+                <input type="radio" name="EducationalAttainment" class="minimal" value="College">
+                College<br>
+                <input type="radio" name="EducationalAttainment" class="minimal" value="Post-graduate">
+                Post-graduate</div>
+              <div class="col-lg-5">
+                <input type="radio" name="EducationalAttainment" class="minimal" value="Vocational">
+                Vocational<br>
+                <input type="radio" name="EducationalAttainment" class="minimal" value="No Formal Eductaion">
+                No Formal Eductaion</div>
+              <div class="clearBoth"></div>
+            </div>
+            <div class="clearBoth"></div>
+            <div class="form-group">
+              <label>Employment Status</label>
+              <br>
+              <div class="col-lg-3 no-pad-left">
+                <input type="radio" name="EmploymentStatus" class="minimal" value="Student">
+                Student<br>
+                <input type="radio" name="EmploymentStatus" class="minimal" value="Employed">
+                Employed</div>
+              <div class="col-lg-4">
+                <input type="radio" name="EmploymentStatus" class="minimal" value="Retired">
+                Retired<br>
+                <input type="radio" name="EmploymentStatus" class="minimal" value="Unknown">
+                Unknown</div>
+              <div class="col-lg-5">
+                <input type="radio" name="EmploymentStatus" class="minimal" value="Un-employed">
+                Un-employed<br>
+              </div>
+              <div class="clearBoth"></div>
+            </div>
+            <div class="clearBoth"></div>
+            <div class="form-group">
+              <div class="col-lg-3 no-pad-left">
+                <label>DSWD NHTS?</label>
+                <br/>
+                <input type="checkbox" name="NHTS" class="minimal" value="Yes">
+                Yes </div>
+              <div class="col-lg-3">
+                <label>4Ps Member?</label>
+                <br/>
+                <input type="checkbox" name="4Ps" class="minimal" value="Yes">
+                Yes </div>
+              <div class="clearBoth"></div>
+            </div>
+            
+            <!-- /.form-group --> 
+          </div>
+        </div>
+        <!-- left END --> 
+        
+        <!-- right -->
+        <div class="col-lg-6">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="PhilHealth">PhilHealth No.</label>
+              <input type="text" class="form-control" placeholder="Enter PhilHealth No." />
+            </div>
+            <div class="form-group">
+              <label>PhilHealth Category</label>
+              <br>
+              <input type="radio" name="PhilHealthCategory" class="minimal" value="FE-Private">
+              FE-Private &nbsp;
+              <input type="radio" name="PhilHealthCategory" class="minimal" value="FE-Government">
+              FE-Government &nbsp;
+              <input type="radio" name="PhilHealthCategory" class="minimal" value="IE">
+              IE &nbsp;
+              <input type="radio" name="PhilHealthCategory" class="minimal" value="Other">
+              Other </div>
+            <div class="clearBoth"></div>
+            <div class="form-group">
+              <label>Primary Care Benefit (PCB) Member?</label>
+              <br/>
+              <input type="checkbox" name="pcb" class="minimal" value="Yes">
+              Yes </div>
             <div class="form-group text-right">
-              <input type="submit" value="Editt Resident" class="btn btn-success" />
+              <input type="submit" value="Add Resident" class="btn btn-success" />
             </div>
             <!-- /.form-group --> 
           </div>
