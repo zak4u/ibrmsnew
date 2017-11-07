@@ -13,21 +13,14 @@
         <!-- left -->
         <div class="col-lg-6">
           <div class="box-body">
-             <div class="form-group">
-              <label for="HearingDate">Hearing Date and Time <span class="req">*</span></label>
-              <div class="clearBoth"></div>
-              <div class="col-lg-6">
-                  <input name="HearingDate" type="text" class="form-control"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask />
+            <div class="form-group">
+              <div class="col-lg-6 no-pad-left">
+                <label for="ConsultationDate">Hearing Date <span class="req">*</span></label>
+                <input type="text" name="ConsultationDate" class="form-control datepicker" />
               </div>
-              <div class="col-lg-3">
-                  <input name="HearingDateTime" type="text" class="form-control"  placeholder="HH:MM" />
-              </div>
-              <div class="col-lg-3">
-                  <select name="HearingDateA" class="form-control select2"  data-placeholder="AM/PM" style="width: 100%;">
-                  <option value="" selected="selected">AM/PM</option>
-                  <option value="AM">AM</option>
-                  <option value="PM">PM</option>
-                </select>
+              <div class="col-lg-6 bootstrap-timepicker">
+                <label for="ConsultationTime">Hearing Time <span class="req">*</span></label>
+                <input type="text" name="ConsultationTime" class="form-control timepicker timepicker-orient-bottom"  />
               </div>
               <div class="clearBoth"></div>
             </div>
@@ -40,14 +33,14 @@
         <!-- right -->
         
         <div class="col-lg-6">
-            
           <div class="form-group"><br>
-            <label for="DateIssued">Date/Time created and filed <span class="req">*</span></label><br>
-            <input name="DateIssued" type="text" class="readonly readonlyfld" readonly value="" />
+            <label for="DateIssued">Date/Time created and filed <span class="req">*</span></label>
+            <br>
+            <input name="DateIssued" type="text" class="readonly readonlyfld" readonly value="<?php echo date('m/d/Y - h:i:sa '); ?>" />
             <div class="clearBoth"></div>
           </div>
           <div class="form-group text-right">
-            <input type="submit" value="Edit Form" class="btn btn-success" />
+            <input type="submit" value="Add Form" class="btn btn-success" />
           </div>
         </div>
         <!-- right END -->

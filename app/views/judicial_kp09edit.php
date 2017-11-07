@@ -15,20 +15,13 @@
         <div class="col-lg-6">
           <div class="box-body">
             <div class="form-group">
-              <label for="AppearanceDate">Appearance Date and Time <span class="req">*</span></label>
-              <div class="clearBoth"></div>
-              <div class="col-lg-6">
-                <input name="AppearanceDate" type="text" class="form-control"  data-inputmask="'alias': 'mm/dd/yyyy'" data-mask />
+              <div class="col-lg-6 no-pad-left">
+                <label for="ConsultationDate">Appearance Date <span class="req">*</span></label>
+                <input type="text" name="ConsultationDate" class="form-control datepicker" />
               </div>
-              <div class="col-lg-3">
-                <input name="AppearanceDateTime" type="text" class="form-control"  placeholder="HH:MM" />
-              </div>
-              <div class="col-lg-3">
-                <select name="AppearanceDateA" class="form-control select2"  data-placeholder="AM/PM" style="width: 100%;">
-                  <option value="" selected="selected">AM/PM</option>
-                  <option value="AM">AM</option>
-                  <option value="PM">PM</option>
-                </select>
+              <div class="col-lg-6 bootstrap-timepicker">
+                <label for="ConsultationTime">Appearance Time <span class="req">*</span></label>
+                <input type="text" name="ConsultationTime" class="form-control timepicker timepicker-orient-bottom"  />
               </div>
               <div class="clearBoth"></div>
             </div>

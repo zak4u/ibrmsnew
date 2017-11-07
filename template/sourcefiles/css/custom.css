@@ -84,3 +84,15 @@ h3.box-title .readonlyfld{
     top: 1px;
     position: relative;
 }
+
+.btn.disabled, .btn[disabled]{
+    background: #E6E6E6;
+    border: 1px solid #444;
+    opacity: .4;
+    box-shadow: none;
+    color: #444;
+}
+.nav-tabs-custom > .nav-tabs > li{
+    margin-right: 0 !important;
+    background: #E6E6E6;
+}
