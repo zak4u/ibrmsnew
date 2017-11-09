@@ -112,7 +112,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Footer -->
   <footer class="main-footer">
   <!-- To the right -->
-  <div class="pull-right text-right">Copyright &copy; 2017 <a href="#">???</a>.</strong> All rights reserved.<br>
+  <div class="pull-right text-right">Copyright &copy; 2017 <a href="http://www.bytelogiq.com/">ByteLogiq</a>.</strong> All rights reserved.<br>
     Ver. 1.0</div>
   <!-- Default to the left --> 
   Integrated Barangay Records Management System<br>
