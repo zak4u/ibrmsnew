@@ -74,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <!-- /.login-box-body -->
     <div class="text-center" style="text-align: center; color: #919191"><br/>&copy; Integrated Barangay Records Management System<br/>For Barangay Zone 2, Cadiz City, Neg. Occ.<br/>Developed
-      by ???<br/>Ver. 1.0</div>
+      by ByteLogiq<br/>Ver. 1.0</div>
   </div>
   <!-- /.login-box -->
 

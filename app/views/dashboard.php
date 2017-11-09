@@ -77,7 +77,7 @@
     <div class="box-body text-center">
         <p>IBRMS - Ver. 1.0</p>
         <p>Integrated Barangay Records Management System</p>
-        <p>Developed by <a href="<?php echo base_url(); ?>">???</a></p>
+        <p>Developed by <a href="http://www.bytelogiq.com/">ByteLogiq</a></p>
         <p>For Brgy. Zone 2, Cadiz City, Neg. Occ.</p>
         
       

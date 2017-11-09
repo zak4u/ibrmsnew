@@ -26,7 +26,7 @@ echo sha1($serial);
             <div class="form-group">
               <p><strong>Name:</strong> IBRMS (Integrated Barangay Records Management System)</p>
               <p><strong>Version:</strong> 1.0</p>
-              <p><strong>Developer:</strong> ??? <a href="#" target="_blank" title="Email" data-toggle="tooltip" data-placement="top"><i class="fa fa-envelope"></i></a> <a href="#" target="_blank"title="Facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a> <a href="#" target="_blank" title="Website" data-toggle="tooltip" data-placement="top"><i class="fa fa-chrome"></i></a></p>
+              <p><strong>Developer:</strong> ByteLogiq Software Solutions&nbsp;&nbsp;&nbsp;<a href="#" target="_blank" title="Email" data-toggle="tooltip" data-placement="top"><i class="fa fa-envelope"></i></a> <a href="#" target="_blank"title="Facebook" data-toggle="tooltip" data-placement="top"><i class="fa fa-facebook"></i></a> <a href="http://www.bytelogiq.com/" target="_blank" title="Website" data-toggle="tooltip" data-placement="top"><i class="fa fa-chrome"></i></a></p>
               <br/>
               <p><strong>Client:</strong> Brgy. Zone 2</p>
               <p><strong>Address:</strong> Cadiz City, Neg. Occ.</p>
