@@ -1,6 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 date_default_timezone_set('Asia/Manila');
+
+$session_data = $this->session->userdata('logged_in');
+
+
+if($session_data['is_logged_in']!=1){
+        $redirectURL = base_url().'login';
+        header("Location:  $redirectURL"); /* Redirect browser */
+        session_destroy();
+        exit();
+    }
+
+   
 ?>
 <!DOCTYPE html>
 <!--
@@ -11,7 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
 <title><?php echo $pagename.' '.$pagesubname ?> | IBRMS</title>
 <!-- page specific HEAD -->
-<?php $this->load->view($foot_content); ?>
+<?php $this->load->view($head_content); ?>
 <!-- page specific HEAD end -->
 <!-- Head Include -->
 <?php $this->load->view('layouts/head-include'); ?>
@@ -19,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini <?php echo $session_data['user_role'];?>">
 <div class="wrapper"> 
   
   <!-- Main Header -->
@@ -46,17 +58,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- The user image in the navbar--> 
             <span class="userstatus"></span>
             <!-- hidden-xs hides the username on small devices so only the image appears. --> 
-            <span class="hidden-xs">Lyndon Astorga</span> </a>
+            <span class="hidden-xs"><?php echo $session_data['user_firstname'].' '.$session_data['user_lastname'];?></span> </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <p> Lyndon Astorga - Clerk <small>Member since Nov. 2012</small> </p>
+                <p><?php echo $session_data['user_firstname'].' '.$session_data['user_lastname'].' - '.$session_data['user_role']; ?>
+                    <small>Member since <?php echo date('M Y',$session_data['user_created']); ?></small> </p>
               </li>
               <!-- Menu Body --> 
               
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-right"> <a href="#" class="btn btn-default btn-flat">Sign out</a> </div>
+                <div class="pull-right"> <a href="<?php echo base_url('logout'); ?>" class="btn btn-default btn-flat">Sign out</a> </div>
               </li>
             </ul>
           </li>

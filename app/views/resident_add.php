@@ -1,11 +1,11 @@
-<form name="resident_form" class="validate">
+<form  action="<?php echo base_url('residents/add_resident'); ?>" method="post" name="resident_form" class="validate">
   <div class="row">
     <div class="col-lg-12">
       <div class="box box-primary">
         <div class="box-header with-border">
           <div class="col-lg-6">
             <h3 class="box-title">Personal Details | Resident ID No.:
-              <input name="ResIDNUm" type="text" class="readonly readonlyfld" readonly value="<?php echo date('y') . '-' . date('mdHis'); ?>" />
+              <input name="res_id_num" type="text" class="readonly readonlyfld" readonly value="<?php echo date('y') . '-' . date('mdHis'); ?>" />
             </h3>
           </div>
           <div class="col-lg-6 text-right">
@@ -31,7 +31,7 @@
             </div>
             <div class="form-group">
               <label for="Extension">Extension</label>
-              <input type="text" class="form-control" placeholder="Enter Sr., Jr., III, etc" />
+              <input name="Extension" type="text" class="form-control" placeholder="Enter Sr., Jr., III, etc" />
             </div>
             <div class="form-group">
               <label for="DOB">Date of Birth <span class="req">*</span></label>
@@ -70,12 +70,12 @@
               <div class="col-lg-3">
                 <label>PWD?</label>
                 <br/>
-                <input type="checkbox" name="pwd" class="minimal" value="Yes">
+                <input type="checkbox" name="pwd" class="minimal" value="1">
                 Yes </div>
               <div class="col-lg-3">
                 <label>Deceased?</label>
                 <br/>
-                <input type="checkbox" name="pwd" class="minimal" value="Yes">
+                <input type="checkbox" name="deceased" class="minimal" value="1">
                 Yes </div>
               <div class="clearBoth"></div>
             </div>
@@ -92,11 +92,11 @@
               </div>
               <div class="col-lg-3">
                 <label for="Height">Height</label>
-                <input type="text" class="form-control"  placeholder="... cm" />
+                <input name="Height" type="text" class="form-control"  placeholder="... cm" />
               </div>
               <div class="col-lg-3">
                 <label for="Weight">Weight</label>
-                <input type="text" class="form-control" placeholder="... kgs." />
+                <input name="Weight" type="text" class="form-control" placeholder="... kgs." />
               </div>
               <div class="clearBoth"></div>
             </div>
@@ -144,7 +144,7 @@
             <div class="form-group res-photo">
               <div class="col-lg-5">
                 <label for="UploadPhoto">Upload Photo</label>
-                <input type="file" id=""/>
+                <input name="UploadPhoto" type="file" id=""/>
               </div>
               <div class="col-lg-1">&nbsp;</div>
               <div class="col-lg-4"><br/>
@@ -185,11 +185,11 @@
             <div class="clearBoth"></div>
             <div class="form-group">
               <label for="Address">House No./Block/Lot</label>
-              <input type="text" class="form-control" placeholder="Enter Block, Lot, House #" />
+              <input name="Address" type="text" class="form-control" placeholder="Enter Block, Lot, House #" />
             </div>
             <div class="form-group">
               <label for="Street">Street</label>
-              <input type="text" class="form-control" placeholder="Enter Street" />
+              <input name="Street" type="text" class="form-control" placeholder="Enter Street" />
             </div>
             <div class="form-group">
               <label for="Purok">Purok <span class="req">*</span></label>
@@ -197,19 +197,19 @@
             </div>
             <div class="form-group">
               <label for="Barangay">Barangay <span class="req">*</span></label>
-              <input type="text" class="form-control" disabled="disabled" value="Barangay Zone 2" />
+              <input name="Barangay" type="text" class="form-control" readonly="readonly" value="Barangay Zone 2" />
             </div>
             <div class="form-group">
               <label for="City">City <span class="req">*</span></label>
-              <input type="text" class="form-control" disabled="disabled" value="Cadiz City" />
+              <input name="City" type="text" class="form-control" readonly="readonly" value="Cadiz City" />
             </div>
             <div class="form-group">
               <label for="Province">Province <span class="req">*</span></label>
-              <input type="text" class="form-control" disabled="disabled" value="Negros Occidental" />
+              <input name="Province" type="text" class="form-control" readonly="readonly" value="Negros Occidental" />
             </div>
             <div class="form-group">
               <label for="Region">Region <span class="req">*</span></label>
-              <input type="text" class="form-control" disabled="disabled" value="Region VI" />
+              <input name="Region" type="text" class="form-control" readonly="readonly" value="Region VI" />
             </div>
             
             <!-- /.form-group --> 
@@ -226,7 +226,7 @@
             </div>
             <div class="form-group">
               <label for="FamilySerialNo">Family Serial No. </label>
-              <input name="FamilySerialNo" disabled="disabled" type="text" class="form-control"/>
+              <input name="FamilySerialNo" readonly="readonly" type="text" class="form-control"/>
             </div>
             <div class="form-group">
               <div class="neighbors_fields_wrap">
@@ -237,11 +237,11 @@
             </div>
             <div class="form-group">
               <label for="ContactNumber">Contact Number</label>
-              <input type="text" class="form-control" placeholder="Enter Contact Number" />
+              <input name="ContactNumber" type="text" class="form-control" placeholder="Enter Contact Number" />
             </div>
             <div class="form-group">
               <label for="Email">Email</label>
-              <input type="text" class="form-control" placeholder="Enter Email Address" />
+              <input name="Email" type="text" class="form-control" placeholder="Enter Email Address" />
             </div>
             
             <!-- /.form-group --> 
@@ -308,12 +308,12 @@
               <div class="col-lg-3 no-pad-left">
                 <label>DSWD NHTS?</label>
                 <br/>
-                <input type="checkbox" name="NHTS" class="minimal" value="Yes">
+                <input type="checkbox" name="NHTS" class="minimal" value="1">
                 Yes </div>
               <div class="col-lg-3">
                 <label>4Ps Member?</label>
                 <br/>
-                <input type="checkbox" name="4Ps" class="minimal" value="Yes">
+                <input type="checkbox" name="4Ps" class="minimal" value="1">
                 Yes </div>
               <div class="clearBoth"></div>
             </div>
@@ -328,7 +328,7 @@
           <div class="box-body">
             <div class="form-group">
               <label for="PhilHealth">PhilHealth No.</label>
-              <input type="text" class="form-control" placeholder="Enter PhilHealth No." />
+              <input name="PhilHealth" type="text" class="form-control" placeholder="Enter PhilHealth No." />
             </div>
             <div class="form-group">
               <label>PhilHealth Category</label>
@@ -345,7 +345,7 @@
             <div class="form-group">
               <label>Primary Care Benefit (PCB) Member?</label>
               <br/>
-              <input type="checkbox" name="pcb" class="minimal" value="Yes">
+              <input type="checkbox" name="pcb" class="minimal" value="1">
               Yes </div>
             <div class="form-group text-right">
               <input type="submit" value="Add Resident" class="btn btn-success" />

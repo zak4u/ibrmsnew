@@ -14,6 +14,7 @@ class Household extends CI_Controller {
             'foot_content' => 'layouts/page_specific/blank'
         );
         // $this->data can be accessed from anywhere in the controller.
+        $this->load->model('household_m', 'household_m');
     }
 
     public function index() {
@@ -21,13 +22,15 @@ class Household extends CI_Controller {
         $data = $this->data;
 
 
-        $data['main_content'] = 'household';
+        $data['main_content'] = 'household_list';
         $data['pagename'] = 'Household';
         $data['pagesubname'] = '';
 
+        $data['lists'] = $this->household_m->list_household_m();
+
         $this->load->view('layouts/main', $data);
     }
-    
+
     public function add() {
 
         $data = $this->data;
@@ -39,17 +42,48 @@ class Household extends CI_Controller {
 
         $this->load->view('layouts/main', $data);
     }
-    
-    public function edit() {
 
+    public function add_household() {
+        $result = $this->household_m->add_household_m();
+        if ($result == FALSE) {
+            $this->session->set_flashdata('msg', "Failed!");
+        } else {
+            $this->session->set_flashdata('msg', "User successfully added!");
+        }
+
+        redirect('household');
+    }
+
+    public function edit($hid) {
         $data = $this->data;
-
 
         $data['main_content'] = 'household_edit';
         $data['pagename'] = 'Edit Household';
         $data['pagesubname'] = '';
 
+        $data['lists'] = $this->household_m->get_household_m($hid);
+
         $this->load->view('layouts/main', $data);
+    }
+
+    public function edit_household($hid) {
+        $result = $this->household_m->edit_household_m();
+        if ($result == FALSE) {
+            $this->session->set_flashdata('msg', "Failed!");
+        } else {
+            $this->session->set_flashdata('msg', "User updated!");
+        }
+        redirect('household');
+    }
+
+    public function delete($hid) {
+        $result = $this->household_m->delete_household_m($hid);
+        if ($result == FALSE) {
+            $this->session->set_flashdata('msg', "Failed!");
+        } else {
+            $this->session->set_flashdata('msg', "User removed!");
+        }
+        redirect('household');
     }
 
 }

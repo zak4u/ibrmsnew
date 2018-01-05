@@ -7,7 +7,7 @@
 
         <p>
             We could not find the page you were looking for.
-            <br><a href="dashboard">Return to dashboard</a> 
+            <br><a href="<?php echo base_url();?>dashboard">Return to dashboard</a> 
         </p>
     </div>
     <!-- /.error-content -->

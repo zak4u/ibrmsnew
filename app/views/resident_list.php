@@ -1,3 +1,6 @@
+
+kulang:: view edit, links on fields ()
+
 <div class="row">
   <div class="col-lg-4 col-xs-12"> 
     <!-- search form (Optional) -->
@@ -30,7 +33,7 @@
               <th width="30%">Last Name</th>
               <th width="30%">First Name</th>
               <th width="5%">Gender</th>
-              <th width="5%">Age</th>
+              <th width="5%">DOB</th>
               <th width="15%">&nbsp;</th>
             </tr>
           </thead>
@@ -40,50 +43,45 @@
               <th>Last Name</th>
               <th>First Name</th>
               <th>Gender</th>
-              <th>Age</th>
+              <th>DOB</th>
               <th>&nbsp;</th>
             </tr>
           </tfoot>
           <tbody>
+              
+               <?php
+                        if ($lists) {
+                            foreach ($lists as $list) {
+                                ?>
+              
+              
+              
+           
             <tr>
+              <td><?php echo $list->res_idnumber; ?></td>
+              <td><?php echo $list->res_lastname; ?></td>
+              <td><?php echo $list->res_firstname; ?></td>
+              <td><?php echo $list->res_gender; ?></td>
+              <td><?php echo $list->res_dob; ?></td>
+              <td class="text-right"><a title="View" data-toggle="tooltip" data-placement="top"  href="<?php echo base_url('residents/view/'.$list->res_id); ?>" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> <a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url('residents/edit/'.$list->res_id); ?>" class="glyphicon glyphicon-pencil editbtn text-green"></a><a title="Delete" data-toggle="tooltip" data-placement="top" href="<?php echo base_url('residents/delete/'.$list->res_id); ?>" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
+            </tr>
+             
+            
+            
+            <?php } }else{
+                            echo 'No record(s) to display.';
+                            
+                        }?>
+            
+            
+            
+             <tr>
               <td>2017-1234567</td>
               <td>de la Cruz</td>
               <td>Juan</td>
               <td>Male</td>
               <td>41</td>
               <td class="text-right"><a href="<?php echo base_url();?>judicial/judicial_resident_cases" title="Pending Case(s)" data-toggle="tooltip" data-placement="top"   class="fa fa-balance-scale casebtn text-danger"></a> <a title="View" data-toggle="tooltip" data-placement="top"  href="<?php echo base_url();?>residents/view" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> <a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url();?>residents/edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" data-placement="top" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-            </tr>
-            <tr>
-              <td>2017-1234568</td>
-              <td>de la Cruz</td>
-              <td>Juana</td>
-              <td>Female</td>
-              <td>32</td>
-              <td class="text-right"><a href="<?php echo base_url();?>judicial/judicial_resident_cases" title="Pending Case(s)" data-toggle="tooltip" data-placement="top"   class="fa fa-balance-scale casebtn text-danger"></a> <a title="View" data-toggle="tooltip" data-placement="top"  href="<?php echo base_url();?>residents/view" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> <a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url();?>residents/edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" data-placement="top" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-            </tr>
-            <tr>
-              <td>2017-1234569</td>
-              <td>Mondragon</td>
-              <td>Felix III</td>
-              <td>Male</td>
-              <td>46</td>
-              <td class="text-right"><a title="View" data-toggle="tooltip" data-placement="top"  href="<?php echo base_url();?>residents/view" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> <a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url();?>residents/edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" data-placement="top" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-            </tr>
-            <tr>
-              <td>2017-1234570</td>
-              <td>de la Cruz</td>
-              <td>Juan</td>
-              <td>Male</td>
-              <td>41</td>
-              <td class="text-right"><a title="View" data-toggle="tooltip" data-placement="top"  href="<?php echo base_url();?>residents/view" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> <a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url();?>residents/edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" data-placement="top" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-            </tr>
-            <tr>
-              <td>2017-1234571</td>
-              <td>de la Cruz</td>
-              <td>Juan</td>
-              <td>Male</td>
-              <td>41</td>
-              <td class="text-right"><a title="View" data-toggle="tooltip" data-placement="top"  href="<?php echo base_url();?>residents/view" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> <a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url();?>residents/edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" data-placement="top" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
             </tr>
           </tbody>
         </table>

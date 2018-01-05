@@ -14,6 +14,7 @@ class Residents extends CI_Controller {
             'foot_content' => 'layouts/page_specific/blank'
         );
         // $this->data can be accessed from anywhere in the controller.
+        $this->load->model('resident_m', 'resident_m');
     }
 
     public function index() {
@@ -22,7 +23,7 @@ class Residents extends CI_Controller {
         $data['pagename'] = 'Residents';
         $data['pagesubname'] = 'List of Barangay Residents';
 
-
+        $data['lists'] = $this->resident_m->list_resident_m();
 
         $this->load->view('layouts/main', $data);
     }
@@ -38,13 +39,24 @@ class Residents extends CI_Controller {
         $this->load->view('layouts/main', $data);
     }
 
-    public function view() {
+    public function add_resident() {
+        $result = $this->resident_m->add_resident_m();
+        if ($result == FALSE) {
+            $this->session->set_flashdata('msg', "Failed!");
+        } else {
+            $this->session->set_flashdata('msg', "User successfully added!");
+        }
+
+        redirect('residents');
+    }
+
+    public function view($rid) {
         $data = $this->data;
         $data['main_content'] = 'resident_view';
         $data['pagename'] = 'View Resident Record';
         $data['pagesubname'] = 'View Resident Profile';
 
-
+        $data['lists'] = $this->resident_m->get_resident_m($rid);
 
         $this->load->view('layouts/main', $data);
     }
@@ -58,6 +70,16 @@ class Residents extends CI_Controller {
 
 
         $this->load->view('layouts/main', $data);
+    }
+
+    public function delete($rid) {
+        $result = $this->resident_m->delete_resident_m($rid);
+        if ($result == FALSE) {
+            $this->session->set_flashdata('msg', "Failed!");
+        } else {
+            $this->session->set_flashdata('msg', "User removed!");
+        }
+        redirect('residents');
     }
 
     public function resident_reports() {

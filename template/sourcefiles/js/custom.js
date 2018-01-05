@@ -71,7 +71,11 @@ jQuery(function () {
 // ################# FORM validations
 jQuery(document).ready(function () {
     jQuery('.deletebtn').click(function () {
-        confirm("Are you sure you want to delete this record?");
+        if (confirm("Are you sure you want to delete this record?") == true) {
+            return true;
+        } else {
+            return false;
+        }
     });
 });
 //resident
@@ -451,7 +455,7 @@ jQuery(document).ready(function () {
     });
 });
 /*disable forms after submit*/
-jQuery('.content form').submit(function(){
+jQuery('.content form').submit(function () {
     jQuery(this).children('input[type="submit"]').prop('disabled', true);
 });
 
@@ -477,12 +481,232 @@ jQuery(document).ready(function () {
 });
 
 //timepicker
-jQuery(function (){
-jQuery('.timepicker').timepicker({
-    showInputs: false
-  });
-  $('.daterangepicker').daterangepicker({ timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A' });
-  $('.datepicker').datepicker({
-      autoclose: true
+jQuery(function () {
+    jQuery('.timepicker').timepicker({
+        showInputs: false
+    });
+    $('.daterangepicker').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+    $('.datepicker').datepicker({
+        autoclose: true
     })
-  });
+});
+
+
+// user
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="user_form"]').attr("onsubmit", "return check_user_form(this)");
+});
+function check_user_form(theform) {
+    var why = '';
+    if (theform.user_firstname.value == '') {
+        why += "- Firstname should not be empty\n";
+    }
+    if (theform.user_lastname.value == '') {
+        why += "- Lastname should not be empty\n";
+    }
+    if (theform.user_dob.value == '') {
+        why += "- Date of birth should not be empty\n";
+    }
+    if (theform.user_gender.value == '') {
+        why += "- Gender should not be empty\n";
+    }
+    if (theform.user_name.value == '') {
+        why += "- Username should not be empty\n";
+    } else if (theform.user_name.value.length <= 7) {
+        why += "- Username should be at least 8 charaters\n";
+    }
+    if (theform.user_password.value == '') {
+        why += "- Password should not be empty\n";
+    } else if (theform.user_password.value.length <= 7) {
+        why += "- Password should be at least 8 charaters\n";
+    }
+    if (theform.user_password_confirm.value == '') {
+        why += "- Password confirm should not be empty\n";
+    } else if (theform.user_password.value != theform.user_password_confirm.value) {
+        why += "- Password shoud be the same as password confirm\n";
+    }
+    if (theform.user_role.value == '') {
+        why += "- Role should not be empty\n";
+    }
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//user END
+
+// brgy
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="brgy_form"]').attr("onsubmit", "return check_brgy_form(this)");
+});
+function check_brgy_form(theform) {
+    var why = '';
+    if (theform.bp_name.value == '') {
+        why += "- Brgy name should not be empty\n";
+    }
+    if (theform.bp_captain.value == '') {
+        why += "- Brgy captain should not be empty\n";
+    }
+    if (theform.bp_k1.value == '') {
+        why += "- Kagawad 1 should not be empty\n";
+    }
+    if (theform.bp_k2.value == '') {
+        why += "- Kagawad 2 should not be empty\n";
+    }
+    if (theform.bp_k3.value == '') {
+        why += "- Kagawad 3 should not be empty\n";
+    }
+    if (theform.bp_k4.value == '') {
+        why += "- Kagawad 4 should not be empty\n";
+    }
+    if (theform.bp_k5.value == '') {
+        why += "- Kagawad 5 should not be empty\n";
+    }
+    if (theform.bp_k6.value == '') {
+        why += "- Kagawad 6 should not be empty\n";
+    }
+    if (theform.bp_k7.value == '') {
+        why += "- Kagawad 7 should not be empty\n";
+    }
+    if (theform.bp_secretary.value == '') {
+        why += "- Secretary should not be empty\n";
+    }
+    if (theform.bp_treasurer.value == '') {
+        why += "- Treasurer should not be empty\n";
+    }
+    if (theform.bp_address.value == '') {
+        why += "- Brgy address should not be empty\n";
+    }
+    if (theform.bp_city.value == '') {
+        why += "- City should not be empty\n";
+    }
+    if (theform.bp_province.value == '') {
+        why += "- Province should not be empty\n";
+    }
+    if (theform.bp_region.value == '') {
+        why += "- Region should not be empty\n";
+    }
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//brgy END
+
+
+// purok
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="purok_form"]').attr("onsubmit", "return check_purok_form(this)");
+});
+function check_purok_form(theform) {
+    var why = '';
+    if (theform.purok_id_num.value == '') {
+        why += "- Purok ID Number should not be empty\n";
+    }
+    if (theform.purok_name.value == '') {
+        why += "- Purok Name should not be empty\n";
+    }
+    if (theform.purok_president.value == '') {
+        why += "- Purok President should not be empty\n";
+    }
+    if (theform.purok_vice_president.value == '') {
+        why += "- Purok Vice President should not be empty\n";
+    }
+    if (theform.purok_secretary.value == '') {
+        why += "- Purok Secretary should not be empty\n";
+    }
+    if (theform.purok_treasurer.value == '') {
+        why += "- Purok Treasurer should not be empty\n";
+    }
+    
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//purok END
+
+// household
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="household_form"]').attr("onsubmit", "return check_household_form(this)");
+});
+function check_household_form(theform) {
+    var why = '';
+    if (theform.household_id_num.value == '') {
+        why += "- Household ID Number should not be empty\n";
+    }
+    if (theform.family_serial_num.value == '') {
+        why += "- Family Serial Number should not be empty\n";
+    }
+    
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//household END
+
+
+// resident
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="resident_form"]').attr("onsubmit", "return check_resident_form(this)");
+});
+function check_resident_form(theform) {
+    var why = '';
+    if (theform.res_id_num.value == '') {
+        why += "- Resident ID Number should not be empty\n";
+    }
+    if (theform.FirstName.value == '') {
+        why += "- First Name should not be empty\n";
+    }
+    if (theform.MiddleName.value == '') {
+        why += "- Middle Name should not be empty\n";
+    }
+    if (theform.LastName.value == '') {
+        why += "- Last Name should not be empty\n";
+    }
+    if (theform.DOB.value == '') {
+        why += "- Date of Birth should not be empty\n";
+    }
+    if (theform.POB.value == '') {
+        why += "- Place of Birth should not be empty\n";
+    }
+    if (theform.Nationality.value == '') {
+        why += "- Nationality should not be empty\n";
+    }
+    if (theform.Religion.value == '') {
+        why += "- Religion should not be empty\n";
+    }
+    if (theform.gender.value == '') {
+        why += "- Gender should be selected\n";
+    }
+    if (theform.Bloodtype.value == '') {
+        why += "- Bloodtype should be selected\n";
+    }
+    if (theform.CivilStatus.value == '') {
+        why += "- Civil Status should not be empty\n";
+    }
+    if (theform.CivilStatus.value == 'Married') {
+        if (theform.Spouse.value == '') {
+            why += "- Spouse should not be empty\n";
+        }
+    }
+    if (theform.FathersName.value == '') {
+        why += "- Father's Name should not be empty\n";
+    }
+    if (theform.MothersName.value == '') {
+        why += "- Mother's Name should not be empty\n";
+    }
+    if (theform.HomeOwnership.value == '') {
+        why += "- Home Ownership should not be empty\n";
+    }
+    if (theform.Purok.value == '') {
+        why += "- Purok Name should not be empty\n";
+    }
+    
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//household END

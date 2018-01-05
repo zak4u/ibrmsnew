@@ -39,9 +39,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
+    <?php 
+        if(isset($_SESSION['msg']))
+            echo '<p class="login-box-msg bg-red">'.$_SESSION['msg'].'</p>';
+            unset($_SESSION['msg']);
+    ?>
       <p class="login-box-msg">Please enter your log in details</p>
-
-      <form action="#" method="post" name="loginform" class="validate_form">
+      
+      <form action="<?php echo base_url('login/check_login'); ?>" method="post" name="loginform" class="validate_form">
         <div class="form-group has-feedback">
             <input type="text" class="form-control" placeholder="Username" name="login_name">
           <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -54,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <div class="col-xs-8">
             <div class="checkbox icheck">
               <label>
-              <input type="checkbox"> Remember Me
+              
             </label>
             </div>
           </div>

@@ -10,34 +10,32 @@ and open the template in the editor.
 
 
 
-.dataTable a.glyphicon{
+.dataTable a.glyphicon {
     font-size: 15px;
     padding: 0 0 0 5px;
     display: inline-block;
-
 }
-.dataTable a.glyphicon.deletebtn{
-    padding:0 15px 0 20px;
+.dataTable a.glyphicon.deletebtn {
+    padding: 0 15px 0 20px;
 }
-
-span.req{
+span.req {
     color: #cc0000;
 }
-.form-group p{
-    font-size:  16px;
+.form-group p {
+    font-size: 16px;
 }
-.res-photo img{
+.res-photo img {
     max-width: 180px;
     border: 1px solid #cecece;
     padding: 5px;
 }
-.disableflds .form-group *{
+.disableflds .form-group * {
     cursor: not-allowed;
 }
-h3.box-title .readonlyfld{
+h3.box-title .readonlyfld {
     width: 180px;
 }
-.readonlyfld{
+.readonlyfld {
     background: #222d32;
     border: 0;
     color: #ffffff;
@@ -45,36 +43,36 @@ h3.box-title .readonlyfld{
     text-align: center;
     padding: 2px;
 }
-.hideOnload{
+.hideOnload {
     display: none;
 }
-.subform-group{
+.subform-group {
     padding: 10px 20px;
     background: #f1f1f1;
     margin: 0 0 30px 0;
 }
-.inputplus{
+.inputplus {
     margin: 5px 0;
 }
-.inputplus input.form-control{
+.inputplus input.form-control {
     display: inline-block;
     width: 95%;
 }
-.resprofile{
+.resprofile {
     font-size: 16px;
     line-height: 26px;
 }
-.resprofile .res-photo img{
+.resprofile .res-photo img {
     margin: auto;
     display: block;
     max-width: 200px;
     margin-bottom: 20px;
 }
-.btn-padded{
+.btn-padded {
     display: inline-block;
     padding: 2px 10px;
 }
-.userstatus{
+.userstatus {
     background: #49bb03;
     width: 11px;
     height: 11px;
@@ -84,15 +82,20 @@ h3.box-title .readonlyfld{
     top: 1px;
     position: relative;
 }
-
-.btn.disabled, .btn[disabled]{
+.btn.disabled, .btn[disabled] {
     background: #E6E6E6;
     border: 1px solid #444;
     opacity: .4;
     box-shadow: none;
     color: #444;
 }
-.nav-tabs-custom > .nav-tabs > li{
+.nav-tabs-custom > .nav-tabs > li {
     margin-right: 0 !important;
     background: #E6E6E6;
+}
+.fa-male {
+    color: #0073b7 !important;
+}
+.fa-female {
+    color: #f012be !important;
 }

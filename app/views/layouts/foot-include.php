@@ -48,6 +48,7 @@
     function getlogout() {
         alert('Session Ended! You have been logged out from the system!');
         window.location = '<?php echo base_url(); ?>';
+        session_destroy();
     }
-    setTimeout(getlogout, 600000);
+    //setTimeout(getlogout, 600000);
 </script>

@@ -14,17 +14,20 @@ class Purok extends CI_Controller {
             'foot_content' => 'layouts/page_specific/blank'
         );
         // $this->data can be accessed from anywhere in the controller.
+        $this->load->model('purok_m', 'purok_m');
     }
 
     public function index() {
         $data = $this->data;
-        $data['main_content'] = 'purok_profiles';
+        $data['main_content'] = 'purok_list';
         $data['pagename'] = 'Purok Profiles';
         $data['pagesubname'] = '';
 
+        $data['lists'] = $this->purok_m->list_purok_m();
+
         $this->load->view('layouts/main', $data);
     }
-    
+
     public function add() {
         $data = $this->data;
         $data['main_content'] = 'purok_add';
@@ -33,13 +36,47 @@ class Purok extends CI_Controller {
 
         $this->load->view('layouts/main', $data);
     }
-    public function edit() {
+    
+    public function add_purok() {
+        $result = $this->purok_m->add_purok_m();
+        if ($result == FALSE) {
+            $this->session->set_flashdata('msg', "Failed!");
+        } else {
+            $this->session->set_flashdata('msg', "User successfully added!");
+        }
+
+        redirect('purok');
+    }
+
+    public function edit($pid) {
         $data = $this->data;
         $data['main_content'] = 'purok_edit';
         $data['pagename'] = 'Edit Purok Details';
         $data['pagesubname'] = 'Purok Profile';
+        
+        $data['lists'] = $this->purok_m->get_purok_m($pid);
 
         $this->load->view('layouts/main', $data);
     }
+    public function edit_purok($pid) {
+        $result = $this->purok_m->edit_purok_m();
+        if($result == FALSE){
+             $this->session->set_flashdata('msg',"Failed!");
+        }else{
+             $this->session->set_flashdata('msg',"User updated!");
+        }
+        redirect('purok');
+    }
+    
+    public function delete($pid) {
+        $result = $this->purok_m->delete_purok_m($pid);
+        if($result == FALSE){
+             $this->session->set_flashdata('msg',"Failed!");
+        }else{
+             $this->session->set_flashdata('msg',"User removed!");
+        }
+        redirect('purok');
+    }
+    
 
 }
