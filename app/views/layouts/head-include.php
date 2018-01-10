@@ -16,6 +16,7 @@
 <!-- iCheck for checkboxes and radio inputs -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>template/plugins/iCheck/all.css">
 
+
 <!-- bootstrap datepicker -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>template/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
   
@@ -56,3 +57,17 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 
 
+
+
+
+<!-- jQuery 3 -->
+<script src="<?php echo base_url(); ?>template/bower_components/jquery/dist/jquery.min.js"></script>
+
+<!-- iCheck 1.0.1 -->
+<script src="<?php echo base_url(); ?>template/plugins/iCheck/icheck.min.js"></script>
+
+<!-- Bootstrap 3.3.7 -->
+<script src="<?php echo base_url(); ?>template/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- typeAhead -->
+<script src="<?php echo base_url(); ?>template/sourcefiles/js/bootstrap3-typeahead.js"></script>

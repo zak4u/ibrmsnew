@@ -42,7 +42,7 @@ class Purok extends CI_Controller {
         if ($result == FALSE) {
             $this->session->set_flashdata('msg', "Failed!");
         } else {
-            $this->session->set_flashdata('msg', "User successfully added!");
+            $this->session->set_flashdata('msg', "Purok successfully added!");
         }
 
         redirect('purok');
@@ -63,7 +63,7 @@ class Purok extends CI_Controller {
         if($result == FALSE){
              $this->session->set_flashdata('msg',"Failed!");
         }else{
-             $this->session->set_flashdata('msg',"User updated!");
+             $this->session->set_flashdata('msg',"Purok updated!");
         }
         redirect('purok');
     }
@@ -73,7 +73,7 @@ class Purok extends CI_Controller {
         if($result == FALSE){
              $this->session->set_flashdata('msg',"Failed!");
         }else{
-             $this->session->set_flashdata('msg',"User removed!");
+             $this->session->set_flashdata('msg',"Purok removed!");
         }
         redirect('purok');
     }

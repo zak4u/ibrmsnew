@@ -91,11 +91,11 @@
                 </select>
               </div>
               <div class="col-lg-3">
-                <label for="Height">Height</label>
+                <label for="Height">Height (cm)</label>
                 <input name="Height" type="text" class="form-control"  placeholder="... cm" />
               </div>
               <div class="col-lg-3">
-                <label for="Weight">Weight</label>
+                <label for="Weight">Weight (kgs.)</label>
                 <input name="Weight" type="text" class="form-control" placeholder="... kgs." />
               </div>
               <div class="clearBoth"></div>

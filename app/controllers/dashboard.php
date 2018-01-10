@@ -14,6 +14,7 @@ class Dashboard extends CI_Controller {
             'foot_content' => 'layouts/page_specific/dashboard_foot'
         );
         // $this->data can be accessed from anywhere in the controller.
+        $this->load->model('dashboard_m', 'dashboard_m');
     }
 
     public function index() {
@@ -22,7 +23,8 @@ class Dashboard extends CI_Controller {
         $data['pagename'] = 'Dashboard';
         $data['pagesubname'] = 'System Overview';
 
-
+        $data['count_res'] = $this->dashboard_m->count_data('resident','res_id!=0');
+        
         $this->load->view('layouts/main', $data);
     }
 	

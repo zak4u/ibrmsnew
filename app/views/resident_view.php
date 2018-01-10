@@ -21,8 +21,8 @@ if ($lists) {
         
         ?>
 <div class="row">
-  <div class="col-lg-10"><a href="<?php echo base_url(); ?>clearance/clearance_resident_issue" class="btn btn-success disabled">Issue Clearance</a> <a href="<?php echo base_url(); ?>residents/edit" class="btn btn-warning">Edit Profile</a> <a href="<?php echo base_url(); ?>judicial/judicial_resident_cases" class="btn btn-vk">View Case(s)</a></div>
-  <div class="col-lg-2 text-right"><a href="#" class="btn btn-danger">Delete Profile</a></div>
+  <div class="col-lg-10"><a href="<?php echo base_url(); ?>clearance/clearance_resident_issue" class="btn btn-success disabled">Issue Clearance</a> <a href="<?php echo base_url('residents/edit/'.$list->res_id); ?>" class="btn btn-warning">Edit Profile</a> <a href="<?php echo base_url(); ?>judicial/judicial_resident_cases" class="btn btn-vk">View Case(s)</a></div>
+  <div class="col-lg-2 text-right"><a href="<?php echo base_url('residents/delete/'.$list->res_id); ?>" class="btn btn-danger deletebtn">Delete Profile</a></div>
   <div class="clearBoth"></div>
 </div>
 <br/>
@@ -51,7 +51,7 @@ if ($lists) {
               <?php echo $list->res_dob; ?> &bull; <?php echo $ageDiff->format('%y'); ?> yrs old<br>
               Born in <?php echo $list->res_pob; ?> &bull; <?php echo $list->res_nationality; ?><br>
               Religion: <?php echo $list->res_religion; ?><br>
-              <span class="fa fa-<?php echo strtolower($list->res_gender); ?>" title="<?php echo $list->res_gender; ?>"></span></div>
+              Gender: <span class="fa fa-<?php echo strtolower($list->res_gender); ?>" title="<?php echo $list->res_gender; ?>"></span></div>
             <div class="clearBoth"></div>
           </div>
           <!-- /.form-group --> 

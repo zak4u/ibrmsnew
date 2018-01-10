@@ -25,7 +25,7 @@
       <thead>
         <tr>
           <th width="10%">Clearance ID No.</th>
-          <th width="30%">Business Name</th>
+          <th width="30%">Business Name / Owner's Name</th>
           <th width="5%">Date Issued</th>
           <th width="5%">Valid Until</th>
           <th width="10%">&nbsp;</th>
@@ -34,48 +34,30 @@
       <tfoot>
         <tr>
           <th>Clearance ID No.</th>
-          <th>Business Name</th>
+          <th>Business Name / Owner's Name</th>
           <th>Date Issued</th>
           <th>Valid Until</th>
           <th>&nbsp;</th>
         </tr>
       </tfoot>
       <tbody>
+          
+          <?php
+                        if ($lists) {
+                            foreach ($lists as $list) {
+                                ?>
         <tr>
-          <td>BBC-2017-1234567</td>
-          <td>Sari- Store</td>
-          <td>01/01/2017</td>
-          <td>12/31/2017</td>
-          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url();?>clearance/clearance_business_print" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url();?>clearance/clearance_business_edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
+          <td><?php echo $list->bc_idnumber; ?></td>
+          <td><?php echo $list->bc_business_name; ?> / <?php echo $list->bc_name; ?></td>
+          <td><?php echo $list->bc_issued; ?></td>
+          <td><?php echo $list->bc_validity; ?></td>
+          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url('clearance/clearance_business_print/' . $list->bc_id); ?>" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url('clearance/clearance_business_edit/' . $list->bc_id); ?>" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="<?php echo base_url('clearance/clearance_business_delete/' . $list->bc_id); ?>" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
         </tr>
-        <tr>
-          <td>BBC-2017-1234567</td>
-          <td>Sari- Store</td>
-          <td>01/01/2017</td>
-          <td>12/31/2017</td>
-          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url();?>clearance/clearance_business_print" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url();?>clearance/clearance_business_edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-        </tr>
-        <tr>
-          <td>BBC-2017-1234567</td>
-          <td>Sari- Store</td>
-          <td>01/01/2017</td>
-          <td>12/31/2017</td>
-          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url();?>clearance/clearance_business_print" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url();?>clearance/clearance_business_edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-        </tr>
-        <tr>
-          <td>BBC-2017-1234567</td>
-          <td>Sari- Store</td>
-          <td>01/01/2017</td>
-          <td>12/31/2017</td>
-          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url();?>clearance/clearance_business_print" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url();?>clearance/clearance_business_edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-        </tr>
-        <tr>
-          <td>BBC-2017-1234567</td>
-          <td>Sari- Store</td>
-          <td>01/01/2017</td>
-          <td>12/31/2017</td>
-          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url();?>clearance/clearance_business_print" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url();?>clearance/clearance_business_edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-        </tr>
+         
+        <?php } }else{
+                            echo 'No record(s) to display.';
+                            
+                        }?>
       </tbody>
     </table>
   </div>

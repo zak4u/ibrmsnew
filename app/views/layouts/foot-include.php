@@ -1,13 +1,8 @@
-<!-- jQuery 3 -->
-<script src="<?php echo base_url(); ?>template/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url(); ?>template/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 <!-- DataTables -->
 <script src="<?php echo base_url(); ?>template/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="<?php echo base_url(); ?>template/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<!-- iCheck 1.0.1 -->
-<script src="<?php echo base_url(); ?>template/plugins/iCheck/icheck.min.js"></script>
+
 <!-- Morris.js charts -->
 <script src="<?php echo base_url(); ?>template/bower_components/raphael/raphael.min.js"></script>
 <script src="<?php echo base_url(); ?>template/bower_components/morris.js/morris.min.js"></script>
@@ -34,8 +29,14 @@
 <script src="<?php echo base_url(); ?>template/bower_components/moment/moment.js"></script>
 <script src="<?php echo base_url(); ?>template/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
 
+<!-- typeAhead -->
+<script src="<?php echo base_url(); ?>template/sourcefiles/js/typesearch.js"></script>
+
+
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>template/dist/js/adminlte.min.js"></script>
+
+
 <script src="<?php echo base_url(); ?>template/sourcefiles/js/custom.js"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.

@@ -3,7 +3,7 @@
     <!-- small box -->
     <div class="small-box bg-aqua">
       <div class="inner">
-        <h3>1582</h3>
+        <h3><?php echo $count_res; ?></h3>
         <p>Total Residents</p>
       </div>
       <div class="icon"> <i class="ion ion-person-stalker"></i> </div>

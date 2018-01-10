@@ -709,4 +709,83 @@ function check_resident_form(theform) {
         return false;
     }
 }
-//household END
+//resident END
+
+// clearance resident
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="resident_clearance_form"]').attr("onsubmit", "return check_resident_clearance_form(this)");
+});
+function check_resident_clearance_form(theform) {
+    var why = '';
+    if (theform.clearance_resident_id.value == '') {
+        why += "- Clearance ID Number should not be empty\n";
+    }
+    if (theform.ResidentName.value == '') {
+        why += "- Resident Name should not be empty\n";
+    }
+    if (theform.Age.value == '') {
+        why += "- Age should not be empty\n";
+    }
+    if (theform.Address.value == '') {
+        why += "- Address should not be empty\n";
+    }
+    if (theform.PurposeOfClearance.value == '') {
+        why += "- Clearance Purpose should not be empty\n";
+    }
+    if (theform.DateIssued.value == '') {
+        why += "- Date Issued should not be empty\n";
+    }
+    if (theform.DateExpire.value == '') {
+        why += "- Expiry Date Purpose should not be empty\n";
+    }
+    
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+// clearance resident END
+
+// clearance business
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="business_clearance_form"]').attr("onsubmit", "return check_business_clearance_form(this)");
+});
+function check_business_clearance_form(theform) {
+    var why = '';
+    if (theform.clearance_business_id.value == '') {
+        why += "- Clearance ID Number should not be empty\n";
+    }
+    if (theform.Title.value == '') {
+        why += "- Title should not be empty\n";
+    }
+    if (theform.OwnersName.value == '') {
+        why += "- Owner's Name should not be empty\n";
+    }
+    if (theform.Address.value == '') {
+        why += "- Owner's Address should not be empty\n";
+    }
+    if (theform.ORNumber.value == '') {
+        why += "- OR Number should not be empty\n";
+    }
+    if (theform.BusinessName.value == '') {
+        why += "- Business Name should not be empty\n";
+    }
+    if (theform.BusinessType.value == '') {
+        why += "- Business Type should not be empty\n";
+    }
+    if (theform.BusinessAddress.value == '') {
+        why += "- Business Address should not be empty\n";
+    }
+    if (theform.DateIssued.value == '') {
+        why += "- Date Issued should not be empty\n";
+    }
+    if (theform.DateExpire.value == '') {
+        why += "- Expiry Date Purpose should not be empty\n";
+    }
+    
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+// clearance business END

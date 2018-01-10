@@ -34,8 +34,6 @@ class Residents extends CI_Controller {
         $data['pagename'] = 'Add Resident Record';
         $data['pagesubname'] = 'New Resident Profile';
 
-
-
         $this->load->view('layouts/main', $data);
     }
 
@@ -44,7 +42,7 @@ class Residents extends CI_Controller {
         if ($result == FALSE) {
             $this->session->set_flashdata('msg', "Failed!");
         } else {
-            $this->session->set_flashdata('msg', "User successfully added!");
+            $this->session->set_flashdata('msg', "Resident successfully added!");
         }
 
         redirect('residents');
@@ -61,15 +59,24 @@ class Residents extends CI_Controller {
         $this->load->view('layouts/main', $data);
     }
 
-    public function edit() {
+    public function edit($rid) {
         $data = $this->data;
         $data['main_content'] = 'resident_edit';
         $data['pagename'] = 'Edit Resident Record';
         $data['pagesubname'] = 'Edit Resident Profile';
 
-
+        $data['lists'] = $this->resident_m->get_resident_m($rid);
 
         $this->load->view('layouts/main', $data);
+    }
+    public function edit_resident($rid) {
+        $result = $this->resident_m->edit_resident_m();
+        if($result == FALSE){
+             $this->session->set_flashdata('msg',"Failed!");
+        }else{
+             $this->session->set_flashdata('msg',"Resident updated!");
+        }
+        redirect('residents');
     }
 
     public function delete($rid) {
@@ -77,7 +84,7 @@ class Residents extends CI_Controller {
         if ($result == FALSE) {
             $this->session->set_flashdata('msg', "Failed!");
         } else {
-            $this->session->set_flashdata('msg', "User removed!");
+            $this->session->set_flashdata('msg', "Resident removed!");
         }
         redirect('residents');
     }
@@ -88,9 +95,8 @@ class Residents extends CI_Controller {
         $data['pagename'] = 'Residents Reports';
         $data['pagesubname'] = '';
 
-
-
         $this->load->view('layouts/main', $data);
     }
+
 
 }

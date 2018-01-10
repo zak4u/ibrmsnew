@@ -1,5 +1,5 @@
 
-kulang:: view edit, links on fields ()
+kulang::   links on fields ()
 
 <div class="row">
   <div class="col-lg-4 col-xs-12"> 

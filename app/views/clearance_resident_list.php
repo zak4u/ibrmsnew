@@ -41,41 +41,28 @@
         </tr>
       </tfoot>
       <tbody>
+          
+          <?php
+                        if ($lists) {
+                            foreach ($lists as $list) {
+                                ?>
+          
+          
+          
         <tr>
-          <td>RBC-2017-1234567</td>
-          <td>de la Cruz, Juan</td>
-          <td>01/01/2017</td>
-          <td>12/31/2017</td>
-          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url();?>clearance/clearance_resident_print" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url();?>clearance/clearance_resident_edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
+          <td><?php echo $list->rc_idnumber; ?></td>
+          <td><?php echo $list->rc_name; ?></td>
+          <td><?php echo $list->rc_issued; ?></td>
+          <td><?php echo $list->rc_validity; ?></td>
+          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url('clearance/clearance_resident_print/' . $list->rc_id); ?>" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url('clearance/clearance_resident_edit/' . $list->rc_id); ?>" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="<?php echo base_url('clearance/clearance_resident_delete/' . $list->rc_id); ?>" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
         </tr>
-        <tr>
-          <td>RBC-2017-1234567</td>
-          <td>de la Cruz, Juan</td>
-          <td>01/01/2017</td>
-          <td>12/31/2017</td>
-          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url();?>clearance/clearance_resident_print" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url();?>clearance/clearance_resident_edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-        </tr>
-        <tr>
-          <td>RBC-2017-1234567</td>
-          <td>de la Cruz, Juan</td>
-          <td>01/01/2017</td>
-          <td>12/31/2017</td>
-          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url();?>clearance/clearance_resident_print" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url();?>clearance/clearance_resident_edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-        </tr>
-        <tr>
-          <td>RBC-2017-1234567</td>
-          <td>de la Cruz, Juan</td>
-          <td>01/01/2017</td>
-          <td>12/31/2017</td>
-          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url();?>clearance/clearance_resident_print" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url();?>clearance/clearance_resident_edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-        </tr>
-        <tr>
-          <td>RBC-2017-1234567</td>
-          <td>de la Cruz, Juan</td>
-          <td>01/01/2017</td>
-          <td>12/31/2017</td>
-          <td class="text-right"><a title="Print Clearance" data-toggle="tooltip"  href="<?php echo base_url();?>clearance/clearance_resident_print" class="glyphicon glyphicon-print viewbtn text-success"></a> <a title="Edit Clearance" data-toggle="tooltip" href="<?php echo base_url();?>clearance/clearance_resident_edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-        </tr>
+        
+        
+        
+        <?php } }else{
+                            echo 'No record(s) to display.';
+                            
+                        }?>
       </tbody>
     </table>
   </div>

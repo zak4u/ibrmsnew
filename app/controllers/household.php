@@ -48,7 +48,7 @@ class Household extends CI_Controller {
         if ($result == FALSE) {
             $this->session->set_flashdata('msg', "Failed!");
         } else {
-            $this->session->set_flashdata('msg', "User successfully added!");
+            $this->session->set_flashdata('msg', "Household successfully added!");
         }
 
         redirect('household');
@@ -71,7 +71,7 @@ class Household extends CI_Controller {
         if ($result == FALSE) {
             $this->session->set_flashdata('msg', "Failed!");
         } else {
-            $this->session->set_flashdata('msg', "User updated!");
+            $this->session->set_flashdata('msg', "Household updated!");
         }
         redirect('household');
     }
@@ -81,7 +81,7 @@ class Household extends CI_Controller {
         if ($result == FALSE) {
             $this->session->set_flashdata('msg', "Failed!");
         } else {
-            $this->session->set_flashdata('msg', "User removed!");
+            $this->session->set_flashdata('msg', "Household removed!");
         }
         redirect('household');
     }
