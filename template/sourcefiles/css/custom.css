@@ -99,3 +99,32 @@ h3.box-title .readonlyfld {
 .fa-female {
     color: #f012be !important;
 }
+.position-relative {
+    position: relative;
+}
+.autoSuggestionsList {
+    list-style: none;
+    width: 75%;
+    margin: auto auto 0 10px;
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ccc;
+    display: none;
+    position: absolute;
+    top: 47px;
+    z-index: 999;
+}
+.dropdown-menu.txtresident {
+}
+.dropdown-menu.txtresident a {
+    cursor: pointer;
+}
+#DropdownResidentSearch {
+    margin-left: 25px !important;
+    top: 85%;
+}
+#DropdownSpouseName{   
+    margin-left: 20px !important;
+    top: 70%;
+    width: 90%;
+}

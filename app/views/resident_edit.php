@@ -1,8 +1,7 @@
 <?php
-	if($lists){
-		foreach($lists as $list){
-
-?>
+if ($lists) {
+    foreach ($lists as $list) {
+        ?>
 
 <form  action="<?php echo base_url('residents/edit_resident'); ?>" method="post" name="resident_form" class="validate">
   <div class="row">
@@ -73,36 +72,33 @@
                 Male &nbsp;&nbsp;&nbsp;
                 <input type="radio" name="gender" class="minimal gender" value="Female">
                 Female 
-              
                 <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".gender[value='<?php echo $list->res_gender; ?>']").iCheck('check');
-                   });
-                </script>
-              
-              
+                                            jQuery(document).ready(function () {
+                                                $(".gender[value='<?php echo $list->res_gender; ?>']").iCheck('check');
+                                            });
+                                        </script> 
               </div>
               <div class="col-lg-3">
                 <label>PWD?</label>
                 <br/>
                 <input type="checkbox" name="pwd" class="minimal pwd" value="1">
                 Yes 
-              <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".pwd[value='<?php echo $list->res_is_pwd; ?>']").iCheck('check');
-                   });
-                </script>
+                <script type="text/javascript">
+                                            jQuery(document).ready(function () {
+                                                $(".pwd[value='<?php echo $list->res_is_pwd; ?>']").iCheck('check');
+                                            });
+                                        </script> 
               </div>
               <div class="col-lg-3">
                 <label>Deceased?</label>
                 <br/>
                 <input type="checkbox" name="deceased" class="minimal deceased" value="1">
-                Yes
-              <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".deceased[value='<?php echo $list->res_is_deceased; ?>']").iCheck('check');
-                   });
-                </script></div>
+                Yes 
+                <script type="text/javascript">
+                                            jQuery(document).ready(function () {
+                                                $(".deceased[value='<?php echo $list->res_is_deceased; ?>']").iCheck('check');
+                                            });
+                                        </script></div>
               <div class="clearBoth"></div>
             </div>
             <div class="form-group">
@@ -115,10 +111,9 @@
                   <option value="B+">B+</option>
                   <option value="O+">O+</option>
                 </select>
-                
                 <script type="text/javascript">
-                document.getElementById("Bloodtype_sel").value="<?php echo $list->res_bloodtype; ?>";
-                </script>
+                                            document.getElementById("Bloodtype_sel").value = "<?php echo $list->res_bloodtype; ?>";
+                                        </script> 
               </div>
               <div class="col-lg-3">
                 <label for="Height">Height (cm)</label>
@@ -148,34 +143,42 @@
                 Co-habitation<br>
                 <input type="radio" name="CivilStatus" class="minimal CivilStatus" value="Widow or Widower">
                 Widow/Widower</div>
-              
               <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".CivilStatus[value='<?php echo $list->res_civil_status; ?>']").iCheck('check');
-                   });
-                </script>
+                                        jQuery(document).ready(function () {
+                                            $(".CivilStatus[value='<?php echo $list->res_civil_status; ?>']").iCheck('check');
+                                        });
+                                    </script>
               <div class="clearBoth"></div>
             </div>
             <div class="subform-group isMarried hideOnload">
-              <div class="form-group ">
+              <div class="form-group position-relative">
                 <label for="Spouse">Spouse (if married) <span class="req">*</span></label>
-                <input name="Spouse" type="text" class="form-control" value="<?php echo $list->res_spouse; ?>" />
+                <input name="SpouseName" id="SpouseName" type="text" class="form-control" value="<?php echo $list->res_spouse; ?>" />
+                <ul class="dropdown-menu txtresident" style="margin-left:15px;margin-right:0px;" role="menu" aria-labelledby="dropdownMenu"  id="DropdownSpouseName">
+                </ul>
+                <input type="hidden" class="form-control" name="SpouseNameID" id="SpouseNameID">
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group hide">
               <div class="child_fields_wrap">
                 <label for="Children">Children</label>
                 <input type="text" name="child[]" class="form-control" value="" />
               </div>
               <div class="text-right"> <a href="#" class="fa fa-plus-circle btn btn-vk add_child_button"> add child</a></div>
             </div>
-            <div class="form-group">
+            <div class="form-group position-relative">
               <label for="FathersName">Father's Name <span class="req">*</span></label>
-              <input name="FathersName" type="text" class="form-control" value="<?php echo $list->res_fathers_name; ?>" />
+              <input name="FathersName" id="FathersName" type="text" class="form-control"  value="<?php echo $list->res_fathers_name; ?>" autocomplete="off" />
+              <ul class="dropdown-menu txtresident" style="margin-left:15px;margin-right:0px;" role="menu" aria-labelledby="dropdownMenu"  id="DropdownFathersName">
+              </ul>
+              <input type="hidden" class="form-control" name="FathersNameID" id="FathersNameID">
             </div>
-            <div class="form-group">
+            <div class="form-group position-relative">
               <label for="MothersName">Mother's Name <span class="req">*</span></label>
-              <input name="MothersName" type="text" class="form-control" value="<?php echo $list->res_mothers_name; ?>" />
+              <input name="MothersName" id="MothersName" type="text" class="form-control" value="<?php echo $list->res_mothers_name; ?>" autocomplete="off" />
+              <ul class="dropdown-menu txtresident" style="margin-left:15px;margin-right:0px;" role="menu" aria-labelledby="dropdownMenu"  id="DropdownMothersName">
+              </ul>
+              <input type="hidden" class="form-control" name="MothersNameID" id="MothersNameID">
             </div>
             <div class="form-group res-photo">
               <div class="col-lg-5">
@@ -217,13 +220,12 @@
               <input type="radio" name="HomeOwnership" class="minimal HomeOwnership" value="Living with parents">
               Living with parents &nbsp;&nbsp;&nbsp;
               <input type="radio" name="HomeOwnership" class="minimal HomeOwnership" value="Other">
-              Other
-            
+              Other 
               <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".HomeOwnership[value='<?php echo $list->res_home_ownership; ?>']").iCheck('check');
-                   });
-                </script>
+                                        jQuery(document).ready(function () {
+                                            $(".HomeOwnership[value='<?php echo $list->res_home_ownership; ?>']").iCheck('check');
+                                        });
+                                    </script> 
             </div>
             <div class="clearBoth"></div>
             <div class="form-group">
@@ -236,7 +238,17 @@
             </div>
             <div class="form-group">
               <label for="Purok">Purok <span class="req">*</span></label>
-              <input name="Purok" type="text" class="form-control" value="<?php echo $list->res_purok; ?>" />
+              <select name="Purok" class="form-control select2" id="Purok_sel"  data-placeholder="Please Select Purok" style="width: 100%;">
+                <option value="" selected="selected">Please Select Gender</option>
+                <?php
+                                        foreach ($listpurok as $purok) {
+                                            ?>
+                <option value="<?php echo $purok->purok_id; ?>"><?php echo $purok->purok_name; ?></option>
+                <?php } ?>
+              </select>
+              <script type="text/javascript">
+                                        document.getElementById("Purok_sel").value = "<?php echo $list->res_purok; ?>";
+                                    </script> 
             </div>
             <div class="form-group">
               <label for="Barangay">Barangay <span class="req">*</span></label>
@@ -265,11 +277,26 @@
           <div class="box-body">
             <div class="form-group">
               <label for="Household">Household ID No. </label>
-              <input name="Household" type="text" class="form-control" value="<?php echo $list->res_household_id; ?>" />
+              <select name="Household" id="Household_sel" class="form-control select2"  data-placeholder="Please Select Household" style="width: 100%;">
+                <option value=" " selected="selected">Please Select Household</option>
+                <?php
+                                foreach ($listhh as $hh) {
+                                    ?>
+                <option value="<?php echo $hh->hh_idnumber; ?>" class="<?php echo $hh->hh_family_serial; ?>"><?php echo $hh->hh_idnumber; ?></option>
+                <?php } ?>
+              </select>
+              <script type="text/javascript">
+                                $('#Household_sel').on('select2:select', function (e) {
+                                    hhselval = $(this).find(":selected").attr("class");
+                                    $("#FamilySerialNo").val(hhselval);
+                                });
+                                
+                                document.getElementById("Household_sel").value = "<?php echo $list->res_household_id; ?>";
+                            </script> 
             </div>
-            <div class="form-group">
+            <div class="form-group hide">
               <label for="FamilySerialNo">Family Serial No. </label>
-              <input name="FamilySerialNo" readonly="readonly" type="text" class="form-control"/>
+              <input name="FamilySerialNo" id="FamilySerialNo" readonly="readonly" type="text" class="form-control" value = "<?php echo $list->res_household_id; ?>"/>
             </div>
             <div class="form-group">
               <div class="neighbors_fields_wrap">
@@ -324,12 +351,11 @@
                 Vocational<br>
                 <input type="radio" name="EducationalAttainment" class="minimal EducationalAttainment" value="No Formal Eductaion">
                 No Formal Eductaion</div>
-              
               <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".EducationalAttainment[value='<?php echo $list->res_education; ?>']").iCheck('check');
-                   });
-                </script>
+                                        jQuery(document).ready(function () {
+                                            $(".EducationalAttainment[value='<?php echo $list->res_education; ?>']").iCheck('check');
+                                        });
+                                    </script>
               <div class="clearBoth"></div>
             </div>
             <div class="clearBoth"></div>
@@ -351,10 +377,10 @@
                 Un-employed<br>
               </div>
               <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".EmploymentStatus[value='<?php echo $list->res_employment_status; ?>']").iCheck('check');
-                   });
-                </script>
+                                        jQuery(document).ready(function () {
+                                            $(".EmploymentStatus[value='<?php echo $list->res_employment_status; ?>']").iCheck('check');
+                                        });
+                                    </script>
               <div class="clearBoth"></div>
             </div>
             <div class="clearBoth"></div>
@@ -363,22 +389,21 @@
                 <label>DSWD NHTS?</label>
                 <br/>
                 <input type="checkbox" name="NHTS" class="minimal NHTS" value="1">
-                Yes
-              
-              <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".NHTS[value='<?php echo $list->res_is_dswdnths; ?>']").iCheck('check');
-                   });
-                </script></div>
+                Yes 
+                <script type="text/javascript">
+                                            jQuery(document).ready(function () {
+                                                $(".NHTS[value='<?php echo $list->res_is_dswdnths; ?>']").iCheck('check');
+                                            });
+                                        </script></div>
               <div class="col-lg-3">
                 <label>4Ps Member?</label>
                 <br/>
                 <input type="checkbox" name="4Ps" class="minimal 4Ps" value="1">
                 Yes <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".4Ps[value='<?php echo $list->res_is_4ps; ?>']").iCheck('check');
-                   });
-                </script> </div>
+                                            jQuery(document).ready(function () {
+                                                $(".4Ps[value='<?php echo $list->res_is_4ps; ?>']").iCheck('check');
+                                            });
+                                        </script> </div>
               <div class="clearBoth"></div>
             </div>
             
@@ -405,25 +430,24 @@
               IE &nbsp;
               <input type="radio" name="PhilHealthCategory" class="minimal PhilHealthCategory" value="Other">
               Other 
-            
-            <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".PhilHealthCategory[value='<?php echo $list->res_philhealth_category; ?>']").iCheck('check');
-                   });
-                </script></div>
+              <script type="text/javascript">
+                                        jQuery(document).ready(function () {
+                                            $(".PhilHealthCategory[value='<?php echo $list->res_philhealth_category; ?>']").iCheck('check');
+                                        });
+                                    </script></div>
             <div class="clearBoth"></div>
             <div class="form-group">
               <label>Primary Care Benefit (PCB) Member?</label>
               <br/>
               <input type="checkbox" name="pcb" class="minimal pcb" value="1">
-              Yes
-            <script type="text/javascript">
-                   jQuery(document).ready(function(){
-                        $(".pcb[value='<?php echo $list->res_is_pcb; ?>']").iCheck('check');
-                   });
-                </script></div>
+              Yes 
+              <script type="text/javascript">
+                                        jQuery(document).ready(function () {
+                                            $(".pcb[value='<?php echo $list->res_is_pcb; ?>']").iCheck('check');
+                                        });
+                                    </script></div>
             <div class="form-group text-right">
-                <input type="hidden" name="res_id" value="<?php echo $list->res_id; ?>" />
+              <input type="hidden" name="res_id" value="<?php echo $list->res_id; ?>" />
               <input type="submit" value="Edit Resident" class="btn btn-success" />
             </div>
             <!-- /.form-group --> 
@@ -437,6 +461,102 @@
   </div>
 </form>
 <?php
+    }
+}
+?>
+<script type="text/javascript">
+// father ajax lookup
+    $(document).ready(function () {
+        $("#FathersName").keyup(function () {
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url(); ?>autocomplete/get_res_val/get_row",
+                data: {
+                    keyword: $("#FathersName").val()
+                },
+                dataType: "json",
+                success: function (data) {
+                    if (data.length > 0) {
+                        $('#DropdownFathersName').empty();
+                        $('#FathersName').attr("data-toggle", "dropdown");
+                        $('#DropdownFathersName').dropdown('toggle');
+                    } else if (data.length == 0) {
+                        $('#FathersName').attr("data-toggle", "");
                     }
+                    $.each(data, function (key, value) {
+                        if (data.length >= 0)
+                            $('#DropdownFathersName').append('<li role="displayResident" ><a role="menuitem dropdownResidentli" class="dropdownlivalue" id="' + value['res_id'] + '"><span>' + value['res_firstname'] + ' ' + value['res_middlename'] + ' ' + value['res_lastname'] + ' ' + value['res_extension'] + '</span> - (' + value['res_dob'] + ')</a></li>');
+                    });
                 }
-    ?>
+            });
+        });
+        $('ul#DropdownFathersName').on('click', 'li a', function () {
+            $('#FathersName').val($(this).find("span").text());
+            $('#FathersNameID').val($(this).attr("id"));
+        });
+    });
+// father ajax lookup END
+// mother ajax lookup
+    $(document).ready(function () {
+        $("#MothersName").keyup(function () {
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url(); ?>autocomplete/get_res_val/get_row",
+                data: {
+                    keyword: $("#MothersName").val()
+                },
+                dataType: "json",
+                success: function (data) {
+                    if (data.length > 0) {
+                        $('#DropdownMothersName').empty();
+                        $('#MothersName').attr("data-toggle", "dropdown");
+                        $('#DropdownMothersName').dropdown('toggle');
+                    } else if (data.length == 0) {
+                        $('#MothersName').attr("data-toggle", "");
+                    }
+                    $.each(data, function (key, value) {
+                        if (data.length >= 0)
+                            $('#DropdownMothersName').append('<li role="displayResident" ><a role="menuitem dropdownResidentli" class="dropdownlivalue" id="' + value['res_id'] + '"><span>' + value['res_firstname'] + ' ' + value['res_middlename'] + ' ' + value['res_lastname'] + ' ' + value['res_extension'] + '</span> - (' + value['res_dob'] + ')</a></li>');
+                    });
+                }
+            });
+        });
+        $('ul#DropdownMothersName').on('click', 'li a', function () {
+            $('#MothersName').val($(this).find("span").text());
+            $('#MothersNameID').val($(this).attr("id"));
+        });
+    });
+// mother ajax lookup END
+// spouse ajax lookup
+    $(document).ready(function () {
+        $("#SpouseName").keyup(function () {
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url(); ?>autocomplete/get_res_val/get_row",
+                data: {
+                    keyword: $("#SpouseName").val()
+                },
+                dataType: "json",
+                success: function (data) {
+                    if (data.length > 0) {
+                        $('#DropdownSpouseName').empty();
+                        $('#SpouseName').attr("data-toggle", "dropdown");
+                        $('#DropdownSpouseName').dropdown('toggle');
+                    } else if (data.length == 0) {
+                        $('#SpouseName').attr("data-toggle", "");
+                    }
+                    $.each(data, function (key, value) {
+                        if (data.length >= 0)
+                            $('#DropdownSpouseName').append('<li role="displayResident" ><a role="menuitem dropdownResidentli" class="dropdownlivalue" id="' + value['res_id'] + '"><span>' + value['res_firstname'] + ' ' + value['res_middlename'] + ' ' + value['res_lastname'] + ' ' + value['res_extension'] + '</span> - (' + value['res_dob'] + ')</a></li>');
+                    });
+                }
+            });
+        });
+        $('ul#DropdownSpouseName').on('click', 'li a', function () {
+            $('#SpouseName').val($(this).find("span").text());
+            $('#SpouseNameID').val($(this).attr("id"));
+        });
+    });
+// spouse ajax lookup END
+
+</script>

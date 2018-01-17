@@ -1,11 +1,12 @@
-<form name="" class="validate">
+<form  action="<?php echo base_url('medical/add_itr/'.$resid); ?>" method="post" name="itr_form" class="validate">
     <div class="row">
         <div class="col-lg-12">
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <div class="col-lg-6">
-                        <h3 class="box-title">Patient Information | Resident ID No.:
-                            <input name="ResIDNUm" type="text" class="readonly readonlyfld" readonly value="17-1027201110" />
+                        <h3 class="box-title">ITR Case No.:
+                            <input name="CaseIDNum" type="text" class="readonly readonlyfld" readonly value="ITR-<?php echo date('y') . '-' . date('mdHis'); ?>" />
+                            <input name="ResID" type="hidden" class="readonly readonlyfld" readonly value="<?php echo $resid;?>" />
                         </h3>
                     </div>
                     <div class="col-lg-6 text-right">
@@ -21,35 +22,35 @@
                         <div class="form-group">
                             <label>Mode of Consultation <span class="req">*</span></label>
                             <br/>
-                            <input type="radio" name="ModeofTransaction" class="minimal" value="Walk-in">
+                            <input type="radio" name="ModeOfConsultation" class="minimal" value="Walk-in">
                             Walk-in &nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="ModeofTransaction" class="minimal" value="Visited">
+                            <input type="radio" name="ModeOfConsultation" class="minimal" value="Visited">
                             Visited &nbsp;&nbsp;&nbsp;
-                            <input type="radio" name="ModeofTransaction" class="minimal" value="Referral">
+                            <input type="radio" name="ModeOfConsultation" class="minimal" value="Referral">
                             Referral &nbsp;&nbsp;&nbsp; </div>
                         <div class="subform-group isReferral hideOnload">
                             <div class="form-group ">
                                 <div class="col-lg-6 no-pad-left">
-                                    <label for="ReferredF">Referred From</label>
-                                    <input name="ReferredF" type="text" class="form-control" placeholder="Referred From?" />
+                                    <label for="ReferredFrom">Referred From <span class="req">*</span></label>
+                                    <input name="ReferredFrom" type="text" class="form-control" placeholder="Referred From?" />
                                 </div>
-                                <div class="col-lg-6"><label for="ReferredT">Referred To</label>
-                                    <input name="ReferredT" type="text" class="form-control" placeholder="Referred To?" /></div>
+                                <div class="col-lg-6"><label for="ReferredTo">Referred To <span class="req">*</span></label>
+                                    <input name="ReferredTo" type="text" class="form-control" placeholder="Referred To?" /></div>
                                 <div class="clearBoth"></div>
                             </div>
                             <div class="form-group ">
-                                <label for="ReferredReasons">Reason(s) for referral</label>
-                                <input name="ReferredReasons" type="text" class="form-control" placeholder="Enter Reason(s) for referral" />
+                                <label for="ReferralReasons">Reason(s) for referral <span class="req">*</span></label>
+                                <input name="ReferralReasons" type="text" class="form-control" placeholder="Enter Reason(s) for referral" />
                             </div>
                             <div class="form-group ">
-                                <label for="ReferredBy">Referred by</label>
+                                <label for="ReferredBy">Referred by <span class="req">*</span></label>
                                 <input name="ReferredBy" type="text" class="form-control" placeholder="" />
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-lg-6 no-pad-left">
                                 <label for="ConsultationDate">Consultation Date <span class="req">*</span></label>
-                                <input type="text" name="ConsultationDate" class="form-control datepicker" />
+                                <input type="text" name="ConsultationDate" class="form-control datepicker" value="<?php echo date("m/d/Y");?>" />
                             </div>
                             <div class="col-lg-6 bootstrap-timepicker">
                                 <label for="ConsultationTime">Consultation Time <span class="req">*</span></label>
@@ -69,7 +70,7 @@
                             <div class="clearBoth"></div>
                         </div>
                         <div class="form-group ">
-                            <label for="AttendingProvider">Attending Provider</label>
+                            <label for="AttendingProvider">Attending Provider <span class="req">*</span></label>
                             <input name="AttendingProvider" type="text" class="form-control" placeholder="Enter Name of Attending Provider" />
                         </div>
                         <!-- /.form-group --> 
@@ -93,7 +94,7 @@
 
                         <div class="form-group">
 
-                            <label for="Bloodtype">Type of Consultation <span class="req">*</span></label>
+                            <label for="TypeofConsultation">Type of Consultation <span class="req">*</span></label>
                             <select name="TypeofConsultation" class="form-control select2"  data-placeholder="Please Select Type of Consultation" style="width: 100%;">
                                 <option value="" selected="selected">Please Select Type of Consultation</option>
                                 <option value="General">General</option>
@@ -147,8 +148,8 @@
                             <textarea class="form-control" name="Medication" style="height: 115px"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="HealthCareProvider">Health Care Provider</label>
-                            <input type="text" class="form-control" placeholder="Enter Name of Health Care Provider" />
+                            <label for="HealthCareProvider">Health Care Provider <span class="req">*</span></label>
+                            <input type="text" name="HealthCareProvider" class="form-control" placeholder="Enter Name of Health Care Provider" />
                         </div>
 
                         <!-- /.form-group --> 
@@ -164,7 +165,7 @@
                             <textarea class="form-control" name="LabTests" style="height: 115px"></textarea>
                         </div>
                        <div class="form-group">
-                            <label for="LabFindings">Laboratory Findings/Impressions <span class="req">*</span></label>
+                           <label for="LabFindings">Laboratory Findings/Impressions <span class="req">*</span></label>
                             <textarea class="form-control" name="LabFindings" style="height: 115px"></textarea>
                         </div>
                         <div class="form-group text-right">

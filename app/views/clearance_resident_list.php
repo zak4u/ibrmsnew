@@ -1,7 +1,8 @@
+print kulang
 <div class="row">
   <div class="col-lg-4 col-xs-12"> <!-- search form (Optional) -->
-    <form action="#" method="get" class="sidebar-form">
-      <div class="input-group">
+    <form action="#" method="get" class="sidebar-form hide">
+      <div class="input-group ">
         <input type="text" name="q" class="form-control" placeholder="Resident Clearance ID number...">
         <span class="input-group-btn">
         <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i> </button>
@@ -10,7 +11,7 @@
     <!-- /.search form --> </div>
   <div class="col-lg-4 col-xs-0">&nbsp;</div>
   <div class="col-lg-4 col-xs-12">
-    <div class="pull-right"><a href="<?php echo base_url();?>clearance/clearance_resident_issue" class="btn btn-success">Issue New Resident Clearance</a></div>
+    <div class="pull-right hide"><a href="<?php echo base_url();?>clearance/clearance_resident_issue" class="btn btn-success">Issue New Resident Clearance</a></div>
   </div>
   <div class="clearboth"></div>
   <br/>

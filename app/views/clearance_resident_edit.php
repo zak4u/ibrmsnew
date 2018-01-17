@@ -9,7 +9,7 @@
       <div class="box box-primary">
         <div class="box-header with-border">
           <h3 class="box-title">Clearance Details | Resident Clearance ID No.:
-              <input type="text" name="clearance_resident_id" class="readonly readonlyfld" readonly value="<?php echo $list->rc_idnumber; ?>" />
+              <input type="text" name="clearance_resident_id" class="readonly readonlyfld" readonly="readonly" value="<?php echo $list->rc_idnumber; ?>" />
           </h3>
         </div>
         <!-- left -->
@@ -17,15 +17,15 @@
           <div class="box-body">
             <div class="form-group">
               <label for="ResidentName">Resident Name <span class="req">*</span></label>
-              <input name="ResidentName" type="text" class="form-control" value="<?php echo $list->rc_name; ?>" />
+              <input name="ResidentName" type="text" class="form-control" value="<?php echo $list->rc_name; ?>" readonly="readonly" />
             </div>
             <div class="form-group">
               <label for="Age">Age <span class="req">*</span></label>
-              <input name="Age" type="text" class="form-control" value="<?php echo $list->rc_age; ?>" />
+              <input name="Age" type="text" class="form-control" value="<?php echo $list->rc_age; ?>" readonly="readonly" />
             </div>
             <div class="form-group">
               <label for="Address">Address <span class="req">*</span></label>
-              <input name="Address" type="text" class="form-control" value="<?php echo $list->rc_address; ?>" />
+              <input name="Address" type="text" class="form-control" value="<?php echo $list->rc_address; ?>" readonly="readonly" />
             </div>
             
             <!-- /.form-group --> 

@@ -1,3 +1,9 @@
+<!-- Bootstrap 3.3.7 -->
+<script src="<?php echo base_url(); ?>template/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+<!-- typeahead -->
+<script src="<?php echo base_url(); ?>template/plugins/bootstrap-3-typeahead/bootstrap3-typeahead.js"></script>
 
 <!-- DataTables -->
 <script src="<?php echo base_url(); ?>template/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
@@ -29,7 +35,9 @@
 <script src="<?php echo base_url(); ?>template/bower_components/moment/moment.js"></script>
 <script src="<?php echo base_url(); ?>template/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
 
-<!-- typeAhead -->
+
+
+<!-- typesearch -->
 <script src="<?php echo base_url(); ?>template/sourcefiles/js/typesearch.js"></script>
 
 

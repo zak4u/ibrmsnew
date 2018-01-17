@@ -79,4 +79,6 @@ class purok_m extends CI_Model{
         }
     }
     // delete purok END
+    
+
 }

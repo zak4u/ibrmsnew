@@ -18,21 +18,21 @@
 
 
 <!-- bootstrap datepicker -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>template/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  
-  
-  
-  <!-- daterange picker -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>template/bower_components/bootstrap-daterangepicker/daterangepicker.css">
-   
-  
-  <!-- Bootstrap Color Picker -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>template/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
-  <!-- Bootstrap time Picker -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>template/plugins/timepicker/bootstrap-timepicker.min.css">
-  
-  <!-- Select2 -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>template/bower_components/select2/dist/css/select2.min.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>template/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+
+
+
+<!-- daterange picker -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>template/bower_components/bootstrap-daterangepicker/daterangepicker.css">
+
+
+<!-- Bootstrap Color Picker -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>template/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css">
+<!-- Bootstrap time Picker -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>template/plugins/timepicker/bootstrap-timepicker.min.css">
+
+<!-- Select2 -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>template/bower_components/select2/dist/css/select2.min.css">
 
 
 
@@ -66,8 +66,3 @@
 <!-- iCheck 1.0.1 -->
 <script src="<?php echo base_url(); ?>template/plugins/iCheck/icheck.min.js"></script>
 
-<!-- Bootstrap 3.3.7 -->
-<script src="<?php echo base_url(); ?>template/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-<!-- typeAhead -->
-<script src="<?php echo base_url(); ?>template/sourcefiles/js/bootstrap3-typeahead.js"></script>

@@ -1,3 +1,4 @@
+search kg linking.. future module
 <div class="row">
   <div class="col-lg-4 col-xs-12"> 
     <!-- search form (Optional) -->

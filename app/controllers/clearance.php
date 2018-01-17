@@ -30,12 +30,12 @@ class Clearance extends CI_Controller {
         $this->load->view('layouts/main', $data);
     }
 
-    public function clearance_resident_issue() {
+    public function clearance_resident_issue($rid) {
         $data = $this->data;
         $data['main_content'] = 'clearance_resident_add';
         $data['pagename'] = 'Issue Clearance';
         $data['pagesubname'] = 'Resident Clearance Resquest';
-
+        $data['lists'] = $this->resident_m->get_resident_m($rid);
 
 
         $this->load->view('layouts/main', $data);
@@ -177,15 +177,6 @@ class Clearance extends CI_Controller {
         $data['pagesubname'] = 'Resident/Business Clearance Resquests Reports';
 
         $this->load->view('layouts/main', $data);
-    }
-
-    public function json_search_country() {
-        $query = $this->resident_m->search_resident();
-        $data = array();
-        foreach ($query as $key => $value) {
-            $data[] = array('res_id' => $value->res_id, 'res_lastname' => $value->res_lastname);
-        }
-        echo json_encode($data);
     }
 
 }

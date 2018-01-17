@@ -37,7 +37,8 @@ jQuery(function () {
         'searching': false,
         'ordering': true,
         'info': true,
-        'autoWidth': false
+        'autoWidth': false,
+        'order': [[0, "desc"]]
     });
 });
 
@@ -122,12 +123,7 @@ function check_resident_form(theform) {
             why += "- Spouse should not be empty\n";
         }
     }
-    if (theform.FathersName.value == '') {
-        why += "- Father's Name should not be empty\n";
-    }
-    if (theform.MothersName.value == '') {
-        why += "- Mother's Name should not be empty\n";
-    }
+
     if (theform.HomeOwnership.value == '') {
         why += "- Home Ownership should not be empty\n";
     }
@@ -461,17 +457,16 @@ jQuery('.content form').submit(function () {
 
 
 // medical isReferral
-// civil status
 jQuery(document).ready(function () {
 
-    if (jQuery("input[name='ModeofTransaction']:checked").val() == "Referral") {
+    if (jQuery("input[name='ModeOfConsultation']:checked").val() == "Referral") {
         jQuery('.isReferral').show(500);
     } else {
         jQuery('.isReferral').hide(500);
     }
 
 
-    jQuery("input[name='ModeofTransaction']").on('ifChecked', function (event) {
+    jQuery("input[name='ModeOfConsultation']").on('ifChecked', function (event) {
         if (jQuery(this).val() == "Referral") {
             jQuery('.isReferral').slideDown(500);
         } else {
@@ -618,7 +613,7 @@ function check_purok_form(theform) {
     if (theform.purok_treasurer.value == '') {
         why += "- Purok Treasurer should not be empty\n";
     }
-    
+
     if (why != "") {
         alert(why);
         return false;
@@ -638,7 +633,7 @@ function check_household_form(theform) {
     if (theform.family_serial_num.value == '') {
         why += "- Family Serial Number should not be empty\n";
     }
-    
+
     if (why != "") {
         alert(why);
         return false;
@@ -703,7 +698,7 @@ function check_resident_form(theform) {
     if (theform.Purok.value == '') {
         why += "- Purok Name should not be empty\n";
     }
-    
+
     if (why != "") {
         alert(why);
         return false;
@@ -738,7 +733,7 @@ function check_resident_clearance_form(theform) {
     if (theform.DateExpire.value == '') {
         why += "- Expiry Date Purpose should not be empty\n";
     }
-    
+
     if (why != "") {
         alert(why);
         return false;
@@ -782,10 +777,84 @@ function check_business_clearance_form(theform) {
     if (theform.DateExpire.value == '') {
         why += "- Expiry Date Purpose should not be empty\n";
     }
-    
+
     if (why != "") {
         alert(why);
         return false;
     }
 }
 // clearance business END
+
+
+// Medical ITR
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="itr_form"]').attr("onsubmit", "return check_itr_form(this)");
+});
+function check_itr_form(theform) {
+    var why = '';
+    if (theform.CaseIDNum.value == '') {
+        why += "- Case ID Number should not be empty\n";
+    }
+    if (theform.ModeOfConsultation.value == '') {
+        why += "- Mode Of Consultation should not be empty\n";
+    }
+    if (theform.ModeOfConsultation.value == 'Referral') {
+        if (theform.ReferredFrom.value == '') {
+            why += "- Referred From should not be empty\n";
+        }
+        if (theform.ReferredTo.value == '') {
+            why += "- Referred To should not be empty\n";
+        }
+        if (theform.ReferralReasons.value == '') {
+            why += "- Reason(s) for referral should not be empty\n";
+        }
+        if (theform.ReferredBy.value == 'Referral') {
+            why += "- Referred By should not be empty\n";
+        }
+    }
+    if (theform.ConsultationDate.value == '') {
+        why += "- Consultation Date should not be empty\n";
+    }
+    if (theform.ConsultationTime.value == '') {
+        why += "- Consultation Time should not be empty\n";
+    }
+    if (theform.BloodPressure.value == '') {
+        why += "- Blood Pressure should not be empty\n";
+    }
+    if (theform.Temperature.value == '') {
+        why += "- Temperature should not be empty\n";
+    }
+    if (theform.AttendingProvider.value == '') {
+        why += "- Attending Provider should not be empty\n";
+    }
+    if (theform.NatureofVisit.value == '') {
+        why += "- Nature of Visit should not be empty\n";
+    }
+    if (theform.TypeofConsultation.value == '') {
+        why += "- Type of Consultation should not be empty\n";
+    }
+    if (theform.ChiefComplaints.value == '') {
+        why += "- Chief Complaints should not be empty\n";
+    }
+    if (theform.Diagnosis.value == '') {
+        why += "- Diagnosis should not be empty\n";
+    }
+    if (theform.Medication.value == '') {
+        why += "- Medication should not be empty\n";
+    }
+    if (theform.HealthCareProvider.value == '') {
+        why += "- Health Care Provider should not be empty\n";
+    }
+    if (theform.LabTests.value == '') {
+        why += "- Performed Laboratory Tests should not be empty\n";
+    }
+    if (theform.LabFindings.value == '') {
+        why += "- Laboratory Findings/Impressions should not be empty\n";
+    }
+
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+// Medical ITR END

@@ -15,6 +15,9 @@ class Residents extends CI_Controller {
         );
         // $this->data can be accessed from anywhere in the controller.
         $this->load->model('resident_m', 'resident_m');
+        $this->load->model('brgy_m', 'brgy_m');
+        $this->load->model('purok_m', 'purok_m');
+        $this->load->model('household_m', 'household_m');
     }
 
     public function index() {
@@ -33,6 +36,10 @@ class Residents extends CI_Controller {
         $data['main_content'] = 'resident_add';
         $data['pagename'] = 'Add Resident Record';
         $data['pagesubname'] = 'New Resident Profile';
+        
+        $data['brgy'] = $this->brgy_m->get_brgy_m();
+        $data['listpurok'] = $this->purok_m->list_purok_m();
+        $data['listhh'] = $this->household_m->list_household_m();
 
         $this->load->view('layouts/main', $data);
     }
@@ -55,6 +62,9 @@ class Residents extends CI_Controller {
         $data['pagesubname'] = 'View Resident Profile';
 
         $data['lists'] = $this->resident_m->get_resident_m($rid);
+        $data['respurok'] = $this->resident_m->get_res_purok($rid);
+        
+        
 
         $this->load->view('layouts/main', $data);
     }
@@ -66,15 +76,18 @@ class Residents extends CI_Controller {
         $data['pagesubname'] = 'Edit Resident Profile';
 
         $data['lists'] = $this->resident_m->get_resident_m($rid);
+        $data['listpurok'] = $this->purok_m->list_purok_m();
+        $data['listhh'] = $this->household_m->list_household_m();
 
         $this->load->view('layouts/main', $data);
     }
+
     public function edit_resident($rid) {
         $result = $this->resident_m->edit_resident_m();
-        if($result == FALSE){
-             $this->session->set_flashdata('msg',"Failed!");
-        }else{
-             $this->session->set_flashdata('msg',"Resident updated!");
+        if ($result == FALSE) {
+            $this->session->set_flashdata('msg', "Failed!");
+        } else {
+            $this->session->set_flashdata('msg', "Resident updated!");
         }
         redirect('residents');
     }
@@ -97,6 +110,6 @@ class Residents extends CI_Controller {
 
         $this->load->view('layouts/main', $data);
     }
-
+    
 
 }
