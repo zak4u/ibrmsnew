@@ -18,7 +18,7 @@ class resident_m extends CI_Model {
 
     // list all resident END
     // add new resident
-    public function add_resident_m() {
+    public function add_resident_m($url) {
         $form_fields = array(
             'res_idnumber' => trim(stripslashes($this->input->post('res_id_num'))),
             'res_firstname' => ucwords(strtolower(trim(stripslashes($this->input->post('FirstName'))))),
@@ -39,7 +39,7 @@ class resident_m extends CI_Model {
             'res_spouse' => trim(stripslashes($this->input->post('SpouseName'))),
             'res_fathers_name' => trim(stripslashes($this->input->post('FathersName'))),
             'res_mothers_name' => trim(stripslashes($this->input->post('MothersName'))),
-            'res_photo' => trim(stripslashes($this->input->post('UploadPhoto'))),
+            'res_photo' =>$url,
             'res_home_ownership' => trim(stripslashes($this->input->post('HomeOwnership'))),
             'res_house_number' => trim(stripslashes($this->input->post('Address'))),
             'res_street' => trim(stripslashes($this->input->post('Street'))),
@@ -49,7 +49,7 @@ class resident_m extends CI_Model {
             'res_province' => trim(stripslashes($this->input->post('Province'))),
             'res_region' => trim(stripslashes($this->input->post('Region'))),
             'res_household_id' => trim(stripslashes($this->input->post('Household'))),
-            'res_neighbors' => trim(stripslashes($this->input->post('Neighbors'))),
+            'res_neighbors' => trim(stripslashes($this->input->post('NeighborName'))),
             'res_contact_number' => trim(stripslashes($this->input->post('ContactNumber'))),
             'res_email' => trim(stripslashes($this->input->post('Email'))),
             'res_education' => trim(stripslashes($this->input->post('EducationalAttainment'))),
@@ -81,7 +81,7 @@ class resident_m extends CI_Model {
     // get resident ID
     // edit resident
     public function edit_resident_m() {
-        $rid = $this->input->post('res_id');
+        $rid = $this->input->post('res_id');       
 
         $form_fields = array(
             'res_firstname' => ucwords(strtolower(trim(stripslashes($this->input->post('FirstName'))))),
@@ -102,7 +102,6 @@ class resident_m extends CI_Model {
             'res_spouse' => trim(stripslashes($this->input->post('SpouseName'))),
             'res_fathers_name' => trim(stripslashes($this->input->post('FathersName'))),
             'res_mothers_name' => trim(stripslashes($this->input->post('MothersName'))),
-            'res_photo' => trim(stripslashes($this->input->post('UploadPhoto'))),
             'res_home_ownership' => trim(stripslashes($this->input->post('HomeOwnership'))),
             'res_house_number' => trim(stripslashes($this->input->post('Address'))),
             'res_street' => trim(stripslashes($this->input->post('Street'))),
@@ -112,7 +111,7 @@ class resident_m extends CI_Model {
             'res_province' => trim(stripslashes($this->input->post('Province'))),
             'res_region' => trim(stripslashes($this->input->post('Region'))),
             'res_household_id' => trim(stripslashes($this->input->post('Household'))),
-            'res_neighbors' => trim(stripslashes($this->input->post('Neighbors'))),
+            'res_neighbors' => trim(stripslashes($this->input->post('NeighborName'))),
             'res_contact_number' => trim(stripslashes($this->input->post('ContactNumber'))),
             'res_email' => trim(stripslashes($this->input->post('Email'))),
             'res_education' => trim(stripslashes($this->input->post('EducationalAttainment'))),
@@ -121,7 +120,7 @@ class resident_m extends CI_Model {
             'res_is_4ps' => trim(stripslashes($this->input->post('4Ps'))),
             'res_philhealth_id' => trim(stripslashes($this->input->post('PhilHealth'))),
             'res_philhealth_category' => trim(stripslashes($this->input->post('PhilHealthCategory'))),
-            'res_is_pcb' => trim(stripslashes($this->input->post('pcb'))),
+            'res_is_pcb' => trim(stripslashes($this->input->post('pcb')))
         );
 
         $this->db->where('res_id', $rid);
@@ -135,6 +134,23 @@ class resident_m extends CI_Model {
     }
 
     // edit resident ID
+    // edit resident PHOTO
+    public function edit_resident_photo_m($rid,$url) {
+        $form_fields = array(
+            'res_photo' =>$url
+        );
+
+        $this->db->where('res_id', $rid);
+        $query = $this->db->update('resident', $form_fields);
+
+        if ($query) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    // edit resident Photo
     // delete resident
     public function delete_resident_m($rid) {
         $this->db->where('res_id', $rid);

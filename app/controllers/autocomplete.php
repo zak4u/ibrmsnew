@@ -38,6 +38,18 @@ class Autocomplete extends CI_Controller {
         $data=$this->autocomplete_m->get_row($keyword);        
         echo json_encode($data);
     }
+    
+    public function get_biz_clearance_val(){
+        $keyword=$this->input->post('keyword');
+        $data=$this->autocomplete_m->get_row_biz_clearance($keyword);        
+        echo json_encode($data);
+    }
+    
+    public function get_jcase(){
+        $keyword=$this->input->post('keyword');
+        $data=$this->autocomplete_m->get_row_jcase($keyword);        
+        echo json_encode($data);
+    }
 
 
 //    

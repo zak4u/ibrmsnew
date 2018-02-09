@@ -1,5 +1,4 @@
-EDIT NLNG WALA NA UPDATE :)
-<form  action="<?php echo base_url('residents/add_resident'); ?>" method="post" name="resident_form" class="validate">
+<form  action="<?php echo base_url('residents/add_resident'); ?>" method="post" name="resident_form"  enctype="multipart/form-data" class="validate">
     <div class="row">
         <div class="col-lg-12">
             <div class="box box-primary">
@@ -154,7 +153,8 @@ EDIT NLNG WALA NA UPDATE :)
                         <div class="form-group res-photo">
                             <div class="col-lg-5">
                                 <label for="UploadPhoto">Upload Photo</label>
-                                <input name="UploadPhoto" type="file" id=""/>
+                                <small>(max size: 3mb)</small>
+                                <input name="UploadPhoto" type="file" id="" class="imgfile"/>
                             </div>
                             <div class="col-lg-1">&nbsp;</div>
                             <div class="col-lg-4"><br/>
@@ -264,12 +264,16 @@ EDIT NLNG WALA NA UPDATE :)
                             <label for="FamilySerialNo">Family Serial No. </label>
                             <input name="FamilySerialNo" id="FamilySerialNo" readonly="readonly" type="text" class="form-control"/>
                         </div>
-                        <div class="form-group hide">
+                        <div class="form-group position-relative">
                             <div class="neighbors_fields_wrap">
-                                <label for="Neighbors">Neighbors (at least 2)</label>
-                                <input type="text" name="neighbor[]" class="form-control" placeholder="Enter Neighbors' Name" />
+                                <label for="Neighbors">Neighbor (for reference)</label>
+                                <input type="text" id="NeighborName" name="neighbor" class="form-control"  autocomplete="off" placeholder="Enter Neighbor's Name" />
+                                
+                                <ul class="dropdown-menu txtresident" style="margin-left:15px;margin-right:0px;" role="menu" aria-labelledby="dropdownMenu"  id="DropdownNeighborName">
+                            </ul>
+                            <input type="hidden" class="form-control" name="NeighborNameID" id="NeighborNameID">
                             </div>
-                            <div class="text-right"> <a href="#" class="fa fa-plus-circle btn btn-vk add_neighbor_button"> add neighbor</a></div>
+                            
                         </div>
                         <div class="form-group">
                             <label for="ContactNumber">Contact Number</label>
@@ -491,5 +495,37 @@ EDIT NLNG WALA NA UPDATE :)
         });
     });
 // spouse ajax lookup END
+
+// NeighborName ajax lookup
+    $(document).ready(function () {
+        $("#NeighborName").keyup(function () {
+            $.ajax({
+                type: "POST",
+                url: "<?php echo base_url(); ?>autocomplete/get_res_val/get_row",
+                data: {
+                    keyword: $("#NeighborName").val()
+                },
+                dataType: "json",
+                success: function (data) {
+                    if (data.length > 0) {
+                        $('#DropdownNeighborName').empty();
+                        $('#NeighborName').attr("data-toggle", "dropdown");
+                        $('#DropdownNeighborName').dropdown('toggle');
+                    } else if (data.length == 0) {
+                        $('#NeighborName').attr("data-toggle", "");
+                    }
+                    $.each(data, function (key, value) {
+                        if (data.length >= 0)
+                            $('#DropdownNeighborName').append('<li role="displayResident" ><a role="menuitem dropdownResidentli" class="dropdownlivalue" id="' + value['res_id'] + '"><span>' + value['res_firstname'] + ' ' + value['res_middlename'] + ' ' + value['res_lastname'] + ' ' + value['res_extension'] + '</span> - (' + value['res_dob'] + ')</a></li>');
+                    });
+                }
+            });
+        });
+        $('ul#DropdownNeighborName').on('click', 'li a', function () {
+            $('#NeighborName').val($(this).find("span").text());
+            $('#NeighborNameID').val($(this).attr("id"));
+        });
+    });
+// NeighborName ajax lookup END
 
 </script>

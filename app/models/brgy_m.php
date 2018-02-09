@@ -19,11 +19,11 @@ class brgy_m extends CI_Model {
 
     // get brgy END
     // edit brgy
-    public function edit_brgy_m() {
+    public function edit_brgy_m($logourl) {
         $bpid = 1;
 
         $form_fields = array(
-            'bp_name' => ucwords(strtolower(trim(stripslashes($this->input->post('bp_name'))))),
+            'bp_name' => trim(stripslashes($this->input->post('bp_name'))),
             'bp_address' => ucwords(strtolower(trim(stripslashes($this->input->post('bp_address'))))),
             'bp_captain' => ucwords(strtolower(trim(stripslashes($this->input->post('bp_captain'))))),
             'bp_k1' => ucwords(strtolower(trim(stripslashes($this->input->post('bp_k1'))))),
@@ -36,9 +36,9 @@ class brgy_m extends CI_Model {
             'bp_secretary' => ucwords(strtolower(trim(stripslashes($this->input->post('bp_secretary'))))),
             'bp_treasurer' => ucwords(strtolower(trim(stripslashes($this->input->post('bp_treasurer'))))),
             'bp_city' => ucwords(strtolower(trim(stripslashes($this->input->post('bp_city'))))),
-            'bp_province' => ucwords(strtolower(trim(stripslashes($this->input->post('bp_province'))))),
+            'bp_province' => trim(stripslashes($this->input->post('bp_province'))),
             'bp_region' => trim(stripslashes($this->input->post('bp_region'))),
-            'bp_logo' => strtolower(trim(stripslashes($this->input->post('bp_logo'))))
+            'bp_logo' => $logourl
         );
         
         
@@ -53,6 +53,26 @@ class brgy_m extends CI_Model {
     }
 
     // edit brgy END
+    
+    
+    // edit brgy LOGO
+    public function edit_brgy_logo_m($logourl) {
+        $bpid = 1;
+        $form_fields = array(
+            'bp_logo' => $logourl
+        );
+        
+        $this->db->where('bp_id', $bpid);
+        $query = $this->db->update('barangay_profile', $form_fields);
+        
+        if($query){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    // edit brgy LOGO END
     
     
     

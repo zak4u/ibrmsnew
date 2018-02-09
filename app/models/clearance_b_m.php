@@ -24,6 +24,7 @@ class clearance_b_m extends CI_Model{
             'bc_business_name' =>ucwords(strtolower(trim(stripslashes($this->input->post('BusinessName'))))),
             'bc_business_type' =>ucwords(trim(stripslashes($this->input->post('BusinessType')))),
             'bc_business_address' =>trim(stripslashes($this->input->post('BusinessAddress'))),
+            'bc_purpose' =>trim(stripslashes($this->input->post('Purpose'))),
             'bc_issued' =>trim(stripslashes($this->input->post('DateIssued'))),
             'bc_validity' =>trim(stripslashes($this->input->post('DateExpire'))),
             'bc_created' =>globTimeNow
@@ -57,6 +58,7 @@ class clearance_b_m extends CI_Model{
             'bc_business_name' =>ucwords(strtolower(trim(stripslashes($this->input->post('BusinessName'))))),
             'bc_business_type' =>ucwords(trim(stripslashes($this->input->post('BusinessType')))),
             'bc_business_address' =>trim(stripslashes($this->input->post('BusinessAddress'))),
+            'bc_purpose' =>trim(stripslashes($this->input->post('Purpose'))),
         );
         
         $this->db->where('bc_id', $bc_id);

@@ -50,7 +50,7 @@
           <div class="form-group">
             <div class="col-lg-6 no-pad-left">
               <label for="Date">Date <span class="req">*</span></label>
-              <input type="text" name="" class="form-control datepicker" />
+              <input type="text" name="" class="form-control datepicker" value="<?php echo date("m/d/Y"); ?>" />
             </div>
             <div class="col-lg-6 bootstrap-timepicker">
               <label for="Time">Time <span class="req">*</span></label>

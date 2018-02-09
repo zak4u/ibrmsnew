@@ -29,7 +29,7 @@ search kg linking.. future module
             <tr>
               <th width="15%">Household ID No.</th>
               <th width="15%">Family Serial No.</th>
-              <th width="30%">Members</th>
+              
               <th width="10%">Date Added</th>
               <th width="10%">&nbsp;</th>
             </tr>
@@ -38,7 +38,7 @@ search kg linking.. future module
             <tr>
               <th width="15%">Household ID No.</th>
               <th width="15%">Family Serial No.</th>
-              <th width="30%">Members</th>
+             
               <th width="10%">Date Added</th>
               <th width="10%">&nbsp;</th>
             </tr>
@@ -51,7 +51,7 @@ search kg linking.. future module
             <tr>
               <td><?php echo $list->hh_idnumber; ?></td>
               <td><?php echo $list->hh_family_serial; ?></td>
-              <td></td>
+              
               <td><?php echo date("M-d-Y",$list->hh_created); ?></td>
               <td class="text-right"><a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url('household/edit/' . $list->hh_id); ?>" class="glyphicon glyphicon-pencil editbtn text-green"></a><a title="Delete" data-toggle="tooltip" data-placement="top" href="<?php echo base_url('household/delete/' . $list->hh_id); ?>" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
             </tr>

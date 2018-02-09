@@ -14,7 +14,7 @@
     <!-- small box -->
     <div class="small-box bg-yellow">
       <div class="inner">
-        <h3>162</h3>
+        <h3><?php echo $count_jcases; ?></h3>
         <p>Unresolved Cases</p>
       </div>
       <div class="icon"> <i class="ion ion-social-buffer"></i> </div>

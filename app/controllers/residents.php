@@ -18,6 +18,7 @@ class Residents extends CI_Controller {
         $this->load->model('brgy_m', 'brgy_m');
         $this->load->model('purok_m', 'purok_m');
         $this->load->model('household_m', 'household_m');
+        $this->load->model('kp07_m', 'kp07_m');
     }
 
     public function index() {
@@ -27,6 +28,8 @@ class Residents extends CI_Controller {
         $data['pagesubname'] = 'List of Barangay Residents';
 
         $data['lists'] = $this->resident_m->list_resident_m();
+        
+         
 
         $this->load->view('layouts/main', $data);
     }
@@ -36,7 +39,7 @@ class Residents extends CI_Controller {
         $data['main_content'] = 'resident_add';
         $data['pagename'] = 'Add Resident Record';
         $data['pagesubname'] = 'New Resident Profile';
-        
+
         $data['brgy'] = $this->brgy_m->get_brgy_m();
         $data['listpurok'] = $this->purok_m->list_purok_m();
         $data['listhh'] = $this->household_m->list_household_m();
@@ -45,7 +48,19 @@ class Residents extends CI_Controller {
     }
 
     public function add_resident() {
-        $result = $this->resident_m->add_resident_m();
+
+        if ($_FILES['UploadPhoto']['size'] < 528385) {
+
+            $filename = $this->input->post('res_id_num') . '_' . $this->input->post('LastName') . '_' . $this->input->post('FirstName').time();
+            $url = './resident-photo/' . $filename . '.jpg';
+
+            $tmp_name = $_FILES['UploadPhoto']['tmp_name'];
+            move_uploaded_file($tmp_name, "$url");
+        } else {
+            redirect('residents/add');
+        }
+
+        $result = $this->resident_m->add_resident_m($url);
         if ($result == FALSE) {
             $this->session->set_flashdata('msg', "Failed!");
         } else {
@@ -63,8 +78,8 @@ class Residents extends CI_Controller {
 
         $data['lists'] = $this->resident_m->get_resident_m($rid);
         $data['respurok'] = $this->resident_m->get_res_purok($rid);
-        
-        
+        $data['rescase'] = $this->kp07_m->get_res_case($rid);
+
 
         $this->load->view('layouts/main', $data);
     }
@@ -92,6 +107,27 @@ class Residents extends CI_Controller {
         redirect('residents');
     }
 
+    public function edit_resident_photo($rid) {
+
+        if ($_FILES['UploadPhoto']['size'] < 528385) {
+
+            $filename = $this->input->post('res_id_num') . '_' . $this->input->post('LastName') . '_' . $this->input->post('FirstName').time();
+            $url = './resident-photo/' . $filename . '.jpg';
+
+            $tmp_name = $_FILES['UploadPhoto']['tmp_name'];
+            move_uploaded_file($tmp_name, "$url");
+        } else {
+            redirect('residents/edit');
+        }
+        $result = $this->resident_m->edit_resident_photo_m($rid,$url);
+        if ($result == FALSE) {
+            $this->session->set_flashdata('msg', "Failed!");
+        } else {
+            $this->session->set_flashdata('msg', "Resident updated!");
+        }
+        redirect('residents');
+    }
+
     public function delete($rid) {
         $result = $this->resident_m->delete_resident_m($rid);
         if ($result == FALSE) {
@@ -110,6 +146,5 @@ class Residents extends CI_Controller {
 
         $this->load->view('layouts/main', $data);
     }
-    
 
 }

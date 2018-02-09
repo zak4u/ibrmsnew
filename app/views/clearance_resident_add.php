@@ -9,7 +9,7 @@ if ($lists) {
         // END for age
         ?>
 
-        <form  action="<?php echo base_url('clearance/clearance_resident_add'); ?>" method="post" name="resident_clearance_form" class="validate">
+        <form  action="<?php echo base_url('clearance/clearance_resident_add/'.$list->res_id); ?>" method="post" name="resident_clearance_form" class="validate">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="box box-primary">
@@ -23,7 +23,8 @@ if ($lists) {
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="ResidentName">Resident Name <span class="req">*</span></label>
-                                    <input name="ResidentName" id="ResidentName"  type="text" class="form-control" autocomplete="off" placeholder="Enter Resident Name" value="<?php echo $list->res_firstname . ' ' . $list->res_middlename . ' ' . $list->res_lastname.' '.$list->res_extension; ?>" readonly="readonly" />
+                                    <input name="ResidentName" id="ResidentName"  type="text" class="form-control" autocomplete="off" placeholder="Enter Resident Name" value="<?php echo $list->res_firstname . ' ' . $list->res_middlename . ' ' . $list->res_lastname . ' ' . $list->res_extension; ?>" readonly="readonly" />
+                                    <input name="ResidentNameID" id="ResidentNameID" type="hidden" class="form-control" value="<?php echo $list->res_id; ?>" readonly="readonly" />
                                 </div>
                                 <div class="form-group">
                                     <label for="Age">Age <span class="req">*</span></label>
@@ -31,7 +32,12 @@ if ($lists) {
                                 </div>
                                 <div class="form-group">
                                     <label for="Address">Address <span class="req">*</span></label>
-                                    <input name="Address" type="text" class="form-control" value="<?php echo $list->res_house_number . ' ' . $list->res_street . ' ' . $list->res_purok; ?>" readonly="readonly" />
+                                    <input name="Address" type="text" class="form-control" value="<?php
+                                    echo $list->res_house_number . ' ' . $list->res_street . ', Purok ';
+                                    foreach ($respurok as $respurok) {
+                                        echo $respurok->purok_name;
+                                    }
+                                    ?>" readonly="readonly" />
                                 </div>
 
                                 <!-- /.form-group --> 
@@ -42,9 +48,14 @@ if ($lists) {
                         <!-- right -->
 
                         <div class="col-lg-6">
+
                             <div class="form-group">
                                 <label for="PurposeOfClearance">Clearance Purpose <span class="req">*</span></label>
-                                <textarea name="PurposeOfClearance" type="text" class="form-control" placeholder="Enter Purpose" style="height: 100px;"></textarea>
+                                <textarea name="PurposeOfClearance" type="text" class="form-control" placeholder="Enter Purpose" style="height: 80px;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="O.R. Number">O.R. Number <span class="req">*</span></label>
+                                <input name="ornum" id="ornum" type="text" class="form-control" autocomplete="off" placeholder="Enter O.R. Number" />
                             </div>
                             <div class="form-group">
                                 <div class="col-lg-6 no-pad-left">

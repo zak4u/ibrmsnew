@@ -42,6 +42,14 @@ jQuery(function () {
     });
 });
 
+//res img
+if (jQuery(".res-large img").attr("src") === '') {
+    jQuery(".res-large img").attr("src", "../../resident-photo/img-empty-200.jpg");
+}
+if (jQuery(".res-sml img").attr("src") === '') {
+    jQuery(".res-sml img").attr("src", "../../resident-photo/img-empty-100.jpg");
+}
+
 //iCheck for checkbox and radio inputs
 jQuery('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
     checkboxClass: 'icheckbox_minimal-blue',
@@ -79,63 +87,7 @@ jQuery(document).ready(function () {
         }
     });
 });
-//resident
-jQuery(document).ready(function () {
-    jQuery('form.validate[name="resident_form"]').attr("onsubmit", "return check_resident_form(this)");
-});
-function check_resident_form(theform) {
-    var why = '';
-    if (theform.ResIDNUm.value == '') {
-        why += "- ResIDNUm should not be empty\n";
-    }
-    if (theform.FirstName.value == '') {
-        why += "- First Name should not be empty\n";
-    }
-    if (theform.MiddleName.value == '') {
-        why += "- Middle Name should not be empty\n";
-    }
-    if (theform.LastName.value == '') {
-        why += "- Last Name should not be empty\n";
-    }
-    if (theform.DOB.value == '') {
-        why += "- Date of Birth should not be empty\n";
-    }
-    if (theform.POB.value == '') {
-        why += "- Place of Birth should not be empty\n";
-    }
-    if (theform.Nationality.value == '') {
-        why += "- Nationality should not be empty\n";
-    }
-    if (theform.Religion.value == '') {
-        why += "- Religion should not be empty\n";
-    }
-    if (theform.gender.value == '') {
-        why += "- Gender should not be empty\n";
-    }
-    if (theform.Bloodtype.value == '') {
-        why += "- Bloodtype should not be empty\n";
-    }
-    if (theform.CivilStatus.value == '') {
-        why += "- Civil Status should not be empty\n";
-    }
-    if (theform.CivilStatus.value == 'Married') {
-        if (theform.Spouse.value == '') {
-            why += "- Spouse should not be empty\n";
-        }
-    }
 
-    if (theform.HomeOwnership.value == '') {
-        why += "- Home Ownership should not be empty\n";
-    }
-    if (theform.Purok.value == '') {
-        why += "- Purok should not be empty\n";
-    }
-    if (why != "") {
-        alert(why);
-        return false;
-    }
-}
-//resident END
 // login
 function check_login(theform) {
     var why = '';
@@ -151,104 +103,9 @@ function check_login(theform) {
     }
 }
 //login END
-//resident clearance
-jQuery(document).ready(function () {
-    jQuery('form.validate[name="resident_clearance_form"]').attr("onsubmit", "return check_resident_clearance_form(this)");
-});
-function check_resident_clearance_form(theform) {
-    var why = '';
-    if (theform.ResidentName.value == '') {
-        why += "- Resident Name should not be empty\n";
-    }
-    if (theform.Age.value == '') {
-        why += "- Age should not be empty\n";
-    }
-    if (theform.Address.value == '') {
-        why += "- Address should not be empty\n";
-    }
-    if (theform.PurposeOfClearance.value == '') {
-        why += "- Purpose of Clearance should not be empty\n";
-    }
-    if (theform.DateIssued.value == '') {
-        why += "- Date Issued should not be empty\n";
-    }
-    if (theform.DateExpire.value == '') {
-        why += "- Validity should not be empty\n";
-    }
-    if (why != "") {
-        alert(why);
-        return false;
-    }
-}
-//resident clearance END
-//business clearance
-jQuery(document).ready(function () {
-    jQuery('form.validate[name="business_clearance_form"]').attr("onsubmit", "return check_business_clearance_form(this)");
-});
-function check_business_clearance_form(theform) {
-    var why = '';
-    if (theform.Title.value == '') {
-        why += "- Title should not be empty\n";
-    }
-    if (theform.OwnersName.value == '') {
-        why += "- Owner's Name should not be empty\n";
-    }
-    if (theform.Address.value == '') {
-        why += "- Address should not be empty\n";
-    }
-    if (theform.BusinessType.value == '') {
-        why += "- Business Type should not be empty\n";
-    }
-    if (theform.BusinessAddress.value == '') {
-        why += "- Business Address should not be empty\n";
-    }
-    if (theform.ORNumber.value == '') {
-        why += "- O.R. Number should not be empty\n";
-    }
-    if (theform.DateIssued.value == '') {
-        why += "- Date Issued should not be empty\n";
-    }
-    if (theform.DateExpire.value == '') {
-        why += "- Validity should not be empty\n";
-    }
-    if (why != "") {
-        alert(why);
-        return false;
-    }
-}
-//business clearance END
+ 
 
-//judicial
-jQuery(document).ready(function () {
-    jQuery('form.validate[name="judicial_form"]').attr("onsubmit", "return check_judicial_form(this)");
-});
-function check_judicial_form(theform) {
-    var why = '';
-    if (theform.CaseNum.value == '') {
-        why += "- Case No. should not be empty\n";
-    }
-    if (theform.kp07Num.value == '') {
-        why += "- Form No. should not be empty\n";
-    }
-    if (jQuery(".complainant").val() == '') {
-        why += "- Complainant should not be empty\n";
-    }
-    if (jQuery(".respondent").val() == '') {
-        why += "- Rsespondent should not be empty\n";
-    }
-    if (theform.Complaint.value == '') {
-        why += "- Complaint Details should not be empty\n";
-    }
-    if (theform.DateIssued.value == '') {
-        why += "- Date Issued should not be empty\n";
-    }
 
-    if (why != "") {
-        alert(why);
-        return false;
-    }
-}
-//judicial END
 
 //KP08
 jQuery(document).ready(function () {
@@ -681,17 +538,6 @@ function check_resident_form(theform) {
     if (theform.CivilStatus.value == '') {
         why += "- Civil Status should not be empty\n";
     }
-    if (theform.CivilStatus.value == 'Married') {
-        if (theform.Spouse.value == '') {
-            why += "- Spouse should not be empty\n";
-        }
-    }
-    if (theform.FathersName.value == '') {
-        why += "- Father's Name should not be empty\n";
-    }
-    if (theform.MothersName.value == '') {
-        why += "- Mother's Name should not be empty\n";
-    }
     if (theform.HomeOwnership.value == '') {
         why += "- Home Ownership should not be empty\n";
     }
@@ -726,6 +572,9 @@ function check_resident_clearance_form(theform) {
     }
     if (theform.PurposeOfClearance.value == '') {
         why += "- Clearance Purpose should not be empty\n";
+    }
+    if (theform.ornum.value == '') {
+        why += "- O.R. Number should not be empty\n";
     }
     if (theform.DateIssued.value == '') {
         why += "- Date Issued should not be empty\n";
@@ -770,6 +619,9 @@ function check_business_clearance_form(theform) {
     }
     if (theform.BusinessAddress.value == '') {
         why += "- Business Address should not be empty\n";
+    }
+    if (theform.Purpose.value == '') {
+        why += "- Purpose should not be empty\n";
     }
     if (theform.DateIssued.value == '') {
         why += "- Date Issued should not be empty\n";
@@ -858,3 +710,280 @@ function check_itr_form(theform) {
     }
 }
 // Medical ITR END
+
+
+// Medical PEDIA
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="pedia_form"]').attr("onsubmit", "return check_pedia_form(this)");
+});
+function check_pedia_form(theform) {
+    var why = '';
+    if (theform.CaseIDNum.value == '') {
+        why += "- Case ID Number should not be empty\n";
+    }
+
+    if (theform.ConsultationDate.value == '') {
+        why += "- Consultation Date should not be empty\n";
+    }
+    if (theform.ConsultationTime.value == '') {
+        why += "- Consultation Time should not be empty\n";
+    }
+    if (theform.NutritionalStatus.value == '') {
+        why += "- Nutritional Status should not be empty\n";
+    }
+    if (theform.BirthHistory.value == '') {
+        why += "- Birth History should not be empty\n";
+    }
+    if (theform.FeedingHistory.value == '') {
+        why += "- Feeding History should not be empty\n";
+    }
+    if (theform.CardiacRate.value == '') {
+        why += "- Cardiac Rate should not be empty\n";
+    }
+    if (theform.RespiratoryRate.value == '') {
+        why += "- Respiratory Rate should not be empty\n";
+    }
+    if (theform.Temperature.value == '') {
+        why += "- Temperature should not be empty\n";
+    }
+
+    if (theform.HeredofamilialDesease.value == '') {
+        why += "- Heredofamilial Desease should not be empty\n";
+    }
+    if (theform.Allergies.value == '') {
+        why += "- Allergies should not be empty\n";
+    }
+    if (theform.Complaints.value == '') {
+        why += "- Complaints should not be empty\n";
+    }
+    if (theform.PhysicalExaminations.value == '') {
+        why += "- Physical Examinations should not be empty\n";
+    }
+    if (theform.DiagnosisTreatment.value == '') {
+        why += "- Diagnosis/Treatment should not be empty\n";
+    }
+    if (theform.HealthCareProvider.value == '') {
+        why += "- Health Care Provider should not be empty\n";
+    }
+
+
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+// Medical PEDIA END
+
+// Medical ADULT
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="adult_form"]').attr("onsubmit", "return check_adult_form(this)");
+});
+function check_adult_form(theform) {
+    var why = '';
+    if (theform.CaseIDNum.value == '') {
+        why += "- Case ID Number should not be empty\n";
+    }
+    if (theform.ConsultationDate.value == '') {
+        why += "- Consultation Date should not be empty\n";
+    }
+    if (theform.ConsultationTime.value == '') {
+        why += "- Consultation Time should not be empty\n";
+    }
+    if (theform.BloodPressure.value == '') {
+        why += "- Blood Pressure should not be empty\n";
+    }
+
+    if (theform.HeredofamilialDesease.value == '') {
+        why += "- Heredofamilial Desease should not be empty\n";
+    }
+    if (theform.Allergies.value == '') {
+        why += "- Allergies should not be empty\n";
+    }
+    if (theform.Complaints.value == '') {
+        why += "- Complaints should not be empty\n";
+    }
+    if (theform.PhysicalExaminations.value == '') {
+        why += "- Physical Examinations should not be empty\n";
+    }
+    if (theform.DiagnosisTreatment.value == '') {
+        why += "- Diagnosis/Treatment should not be empty\n";
+    }
+    if (theform.HealthCareProvider.value == '') {
+        why += "- Health Care Provider should not be empty\n";
+    }
+
+
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+// Medical ADULT END
+
+// Medical PRENATAL
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="prenatal_form"]').attr("onsubmit", "return check_prenatal_form(this)");
+});
+function check_prenatal_form(theform) {
+    var why = '';
+    if (theform.CaseIDNum.value == '') {
+        why += "- Case ID Number should not be empty\n";
+    }
+    if (theform.ConsultationDate.value == '') {
+        why += "- Consultation Date should not be empty\n";
+    }
+    if (theform.ConsultationTime.value == '') {
+        why += "- Consultation Time should not be empty\n";
+    }
+
+    if (theform.Gravida.value == '') {
+        why += "- Gravida should not be empty\n";
+    }
+    if (theform.Primi.value == '') {
+        why += "- Primi should not be empty\n";
+    }
+    if (theform.Death.value == '') {
+        why += "- Death should not be empty\n";
+    }
+    if (theform.LMP.value == '') {
+        why += "- LMP should not be empty\n";
+    }
+    if (theform.EDC.value == '') {
+        why += "- EDC should not be empty\n";
+    }
+    if (theform.BHW.value == '') {
+        why += "- BHW Name should not be empty\n";
+    }
+    if (theform.BP.value == '') {
+        why += "- Blood Pressure should not be empty\n";
+    }
+    if (theform.Weight.value == '') {
+        why += "- Weight should not be empty\n";
+    }
+    if (theform.Height.value == '') {
+        why += "- Height should not be empty\n";
+    }
+    if (theform.FH.value == '') {
+        why += "- Fundal Height should not be empty\n";
+    }
+    if (theform.FHB.value == '') {
+        why += "- Fetal Heartbeat should not be empty\n";
+    }
+
+    if (theform.DiagnosisTreatment.value == '') {
+        why += "- Diagnosis/Treatment should not be empty\n";
+    }
+    if (theform.HealthCareProvider.value == '') {
+        why += "- Health Care Provider should not be empty\n";
+    }
+
+
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+// Medical PRENATAL END
+
+
+// Medical PRENATAL
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="referral_form"]').attr("onsubmit", "return check_referral_form(this)");
+});
+function check_referral_form(theform) {
+    var why = '';
+    if (theform.CaseIDNum.value == '') {
+        why += "- Case ID Number should not be empty\n";
+    }
+    if (theform.ConsultationDate.value == '') {
+        why += "- Consultation Date should not be empty\n";
+    }
+    if (theform.ConsultationTime.value == '') {
+        why += "- Consultation Time should not be empty\n";
+    }
+
+    if (theform.AttendingProvider.value == '') {
+        why += "- Attending Provider should not be empty\n";
+    }
+    if (theform.Subjective.value == '') {
+        why += "- S.ubjective should not be empty\n";
+    }
+    if (theform.Objective.value == '') {
+        why += "- O.bjective should not be empty\n";
+    }
+    if (theform.Assessment.value == '') {
+        why += "- A.ssessment should not be empty\n";
+    }
+    if (theform.Plan.value == '') {
+        why += "- P.lan should not be empty\n";
+    }
+
+
+
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+// Medical PRENATAL END
+
+
+
+
+
+// JUDICIAL KP07
+jQuery(document).ready(function () {
+    jQuery('form.validate[name="kp_07_form"]').attr("onsubmit", "return check_kp_07_form(this)");
+});
+function check_kp_07_form(theform) {
+    var why = '';
+    if (theform.CaseIDNum.value == '') {
+        why += "- Case ID Number should not be empty\n";
+    }
+    if (theform.FormIDNum.value == '') {
+        why += "- Form ID Number should not be empty\n";
+    }
+    if (jQuery('.complainant').val() == '') {
+        why += "- Complainant should not be empty\n";
+    }
+    if (jQuery('.respondent').val() == '') {
+        why += "- Respondent should not be empty\n";
+    }
+    if (theform.Complaint.value == '') {
+        why += "- Complaint should not be empty\n";
+    }
+    if (theform.Status.value == '') {
+        why += "- Status should not be empty\n";
+    }
+    if (why != "") {
+        alert(why);
+        return false;
+    }
+}
+//JUDICIAL KP07 END
+
+
+
+//printpreview
+
+jQuery(".printpreviewbtn").click(function () {
+    /*var theurl = jQuery(this).attr("href");
+     window.open(theurl,"width=816,height=576");
+     return false;
+     */
+    event.preventDefault();
+    window.open($(this).attr("href"), "popupWindow", "width=1000,height=642,scrollbars=no");
+
+});
+
+
+
+// check image size
+jQuery(".imgfile").on("change", function(){
+    if(this.files[0].size>528385){
+        alert("Image Size should not be greater than max file size");
+        $(".imgfile").val("");
+        
+        return false;
+    }
+});

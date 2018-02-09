@@ -40,6 +40,8 @@
 <!-- typesearch -->
 <script src="<?php echo base_url(); ?>template/sourcefiles/js/typesearch.js"></script>
 
+ 
+
 
 <!-- AdminLTE App -->
 <script src="<?php echo base_url(); ?>template/dist/js/adminlte.min.js"></script>

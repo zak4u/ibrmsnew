@@ -10,6 +10,7 @@ and open the template in the editor.
 
 
 
+
 .dataTable a.glyphicon {
     font-size: 15px;
     padding: 0 0 0 5px;
@@ -66,7 +67,6 @@ h3.box-title .readonlyfld {
     margin: auto;
     display: block;
     max-width: 200px;
-    margin-bottom: 20px;
 }
 .btn-padded {
     display: inline-block;
@@ -128,3 +128,39 @@ h3.box-title .readonlyfld {
     top: 70%;
     width: 90%;
 }
+
+.casestatus {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #ffffff;
+    padding: 0px 60px;
+}
+.casestatus-Dismissed{
+    background: #f39c12;
+}
+.casestatus-Resolved{
+    background: #00a65a;
+}
+.casestatus-On-going{
+    background: #dd4b39;
+}
+
+
+.printpreview * {
+    background:  transparent !important;
+}
+.printpreview .main-header, .printpreview .main-sidebar, .printpreview .main-footer, .printpreview .content-header{
+    display: none;
+}
+.printpreview .content-wrapper{
+    margin: 0;
+}
+
+#printable{
+    width: 760px;
+    margin: auto;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: "Century Gothic"
+}
+

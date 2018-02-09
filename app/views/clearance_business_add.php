@@ -1,4 +1,4 @@
-<form  action="<?php echo base_url('clearance/clearance_business_add'); ?>" method="post" name="business_clearance_form" class="validate">
+<form  action="<?php echo base_url('clearance/add_clearance_business'); ?>" method="post" name="business_clearance_form" class="validate">
   <div class="row">
     <div class="col-lg-12">
       <div class="box box-primary">
@@ -54,6 +54,10 @@
             <div class="form-group">
               <label for="BusinessAddress">Business Address <span class="req">*</span></label>
               <input name="BusinessAddress" type="text" class="form-control" placeholder="Enter Business Address" />
+            </div>
+            <div class="form-group">
+              <label for="Purpose">Purpose <span class="req">*</span></label>
+              <input name="Purpose" type="text" class="form-control" placeholder="Enter Purpose" />
             </div>
             
           <div class="form-group">

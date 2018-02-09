@@ -24,6 +24,8 @@ class Dashboard extends CI_Controller {
         $data['pagesubname'] = 'System Overview';
 
         $data['count_res'] = $this->dashboard_m->count_data('resident','res_id!=0');
+        $data['count_jcases'] = $this->dashboard_m->count_data('kp07','kp07_status="On-going"');
+        
         
         $this->load->view('layouts/main', $data);
     }

@@ -21,9 +21,11 @@ class clearance_r_m extends CI_Model {
         $form_fields = array(
             'rc_idnumber' => trim(stripslashes($this->input->post('clearance_resident_id'))),
             'rc_name' => ucwords(strtolower(trim(stripslashes($this->input->post('ResidentName'))))),
+            'res_id' => trim(stripslashes($this->input->post('ResidentNameID'))),
             'rc_age' => trim(stripslashes($this->input->post('Age'))),
             'rc_address' => trim(stripslashes($this->input->post('Address'))),
             'rc_purpose' => trim(stripslashes($this->input->post('PurposeOfClearance'))),
+            'rc_or_number' => trim(stripslashes($this->input->post('ornum'))),
             'rc_issued' => trim(stripslashes($this->input->post('DateIssued'))),
             'rc_validity' => trim(stripslashes($this->input->post('DateExpire'))),
             'rc_created' => globTimeNow
@@ -46,15 +48,31 @@ class clearance_r_m extends CI_Model {
     }
 
     // get clearance_resident ID
+    // get get_res_clearance_r_m
+    public function get_res_clearance_r_m($rid) {
+
+        $this->db->where('res_id', $rid);
+        $query = $this->db->get('clearance_resident');
+
+        if ($query->num_rows() > 0) {
+            return $query->result();
+        } else {
+            return false;
+        }
+    }
+
+    // get get_res_clearance_r_m END
     // edit clearance_resident
     public function edit_clearance_resident_m() {
         $rc_id = $this->input->post('rc_id');
 
         $form_fields = array(
             'rc_name' => ucwords(strtolower(trim(stripslashes($this->input->post('ResidentName'))))),
+            'res_id' => trim(stripslashes($this->input->post('ResidentNameID'))),
             'rc_age' => trim(stripslashes($this->input->post('Age'))),
             'rc_address' => trim(stripslashes($this->input->post('Address'))),
             'rc_purpose' => trim(stripslashes($this->input->post('PurposeOfClearance'))),
+            'rc_or_number' => trim(stripslashes($this->input->post('ornum'))),
             'rc_issued' => trim(stripslashes($this->input->post('DateIssued'))),
             'rc_validity' => trim(stripslashes($this->input->post('DateExpire')))
         );

@@ -63,6 +63,10 @@
               <label for="BusinessAddress">Business Address <span class="req">*</span></label>
               <input name="BusinessAddress" type="text" class="form-control" value="<?php echo $list->bc_business_address; ?>" />
             </div>
+            <div class="form-group">
+              <label for="Purpose">Purpose <span class="req">*</span></label>
+              <input name="Purpose" type="text" class="form-control" placeholder="Enter Purpose" value="<?php echo $list->bc_purpose; ?>" />
+            </div>
             
           <div class="form-group">
             <div class="col-lg-6 no-pad-left">

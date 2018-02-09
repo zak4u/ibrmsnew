@@ -14,6 +14,7 @@ class Judicial extends CI_Controller {
             'foot_content' => 'layouts/page_specific/blank'
         );
         // $this->data can be accessed from anywhere in the controller.
+        $this->load->model('kp07_m', 'kp07_m');
     }
 
     public function index() {
@@ -22,73 +23,84 @@ class Judicial extends CI_Controller {
         $data['pagename'] = 'Judicial Cases';
         $data['pagesubname'] = 'List of Barangay Judicial Cases';
 
-
+        $data['lists'] = $this->kp07_m->list_kp07_status_m('On-going');
+//        foreach ($data['lists'] as $list) {
+//            $casenum = $list->kp07_casenumber;
+//        }
+//
+//        $data['listsinvolved'] = $this->kp07_m->list_kp07_involved_case_m($casenum);
 
         $this->load->view('layouts/main', $data);
     }
-    public function add() {
+
+//////////////// KP 07
+    public function kp07_view($casenum) {
         $data = $this->data;
-        $data['main_content'] = 'judicial_add';
+        $data['main_content'] = 'judicial_view_case';
+        $data['pagename'] = 'Judicial Case';
+        $data['pagesubname'] = 'Resident Case Overview';
+
+        $data['kp07s'] = $this->kp07_m->get_kp07_m($casenum);
+        $data['listscaseinvolved'] = $this->kp07_m->list_kp07_involved_case_m($casenum);
+
+        $this->load->view('layouts/main', $data);
+    }
+
+    public function kp07_add() {
+        $data = $this->data;
+        $data['main_content'] = 'judicial_kp07_add';
         $data['pagename'] = 'Judicial Case';
         $data['pagesubname'] = 'KP 07 - Complaint Form';
 
-
-
         $this->load->view('layouts/main', $data);
     }
-    public function edit() {
+
+    public function add_kp07() {
+        $result = $this->kp07_m->add_kp07_m();
+
+        if ($result == FALSE) {
+            $this->session->set_flashdata('msg', "Failed!");
+        } else {
+            $this->session->set_flashdata('msg', "Case successfully added!");
+        }
+
+        redirect('judicial');
+    }
+
+    public function kp07_edit($casenum) {
         $data = $this->data;
-        $data['main_content'] = 'judicial_edit';
+        $data['main_content'] = 'judicial_kp07_edit';
         $data['pagename'] = 'Edit Case';
         $data['pagesubname'] = 'KP 07 - Complaint Form';
-
-
-
-        $this->load->view('layouts/main', $data);
-    }
-
-    public function judicial_resident_cases() {
-        $data = $this->data;
-        $data['main_content'] = 'judicial_resident_cases';
-        $data['pagename'] = 'Resident Judicial Cases';
-        $data['pagesubname'] = 'Resident Case Overview';
-
-
+        
+        $data['listscase'] = $this->kp07_m->get_kp07_m($casenum);
+        $data['listscaseC'] = $this->kp07_m->list_kp07_involved_case_restype_m($casenum,'Complainant');
+        $data['listscaseR'] = $this->kp07_m->list_kp07_involved_case_restype_m($casenum,'Respondent');
 
         $this->load->view('layouts/main', $data);
     }
-
-    public function kp07add() {
-        $data = $this->data;
-        $data['main_content'] = 'judicial_kp07add';
-        $data['pagename'] = 'Add Form';
-        $data['pagesubname'] = 'KP Form No. 07 - Complaint';
-
-
-
-        $this->load->view('layouts/main', $data);
+    
+    public function edit_kp07($casenum) {
+        $result = $this->kp07_m->edit_kp07_m();
+        if($result == FALSE){
+             $this->session->set_flashdata('msg',"Failed!");
+        }else{
+             $this->session->set_flashdata('msg',"Purok updated!");
+        }
+        redirect('judicial/kp07_view/'.$casenum);
     }
 
-    public function kp07edit() {
-        $data = $this->data;
-        $data['main_content'] = 'judicial_kp07edit';
-        $data['pagename'] = 'Edit Form';
-        $data['pagesubname'] = 'KP Form No. 07 - Complaint';
-
-
-
-        $this->load->view('layouts/main', $data);
+    public function kp07_delete($casenum) {
+        $result = $this->kp07_m->delete_kp07_m($casenum);
+        if($result == FALSE){
+             $this->session->set_flashdata('msg',"Failed!");
+        }else{
+             $this->session->set_flashdata('msg',"Purok removed!");
+        }
+        redirect('judicial');
     }
-    public function kp07print() {
-        $data = $this->data;
-        $data['main_content'] = 'judicial_kp07print';
-        $data['pagename'] = 'Print Form';
-        $data['pagesubname'] = 'KP Form No. 07 - Complaint';
 
-
-
-        $this->load->view('layouts/main', $data);
-    }
+    //////////////// KP 07 END
 
     public function kp08add() {
         $data = $this->data;
@@ -111,6 +123,7 @@ class Judicial extends CI_Controller {
 
         $this->load->view('layouts/main', $data);
     }
+
     public function kp08print() {
         $data = $this->data;
         $data['main_content'] = 'judicial_kp08print';
@@ -143,6 +156,7 @@ class Judicial extends CI_Controller {
 
         $this->load->view('layouts/main', $data);
     }
+
     public function kp09print() {
         $data = $this->data;
         $data['main_content'] = 'judicial_kp09print';

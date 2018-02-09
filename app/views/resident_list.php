@@ -1,4 +1,4 @@
-kulang::   links on fields ()
+
 <div class="row">
   <div class="col-lg-4 col-xs-12 position-relative"> 
     <!-- search form (Optional) -->
@@ -20,8 +20,7 @@ kulang::   links on fields ()
   <div class="clearboth"></div>
   <br/>
   <br/>
-  <br/>
-  <br/>
+  
   <div class="col-lg-12">
     <div class="box box-solid">
       <div class="box-body">
@@ -66,14 +65,7 @@ kulang::   links on fields ()
                             echo 'No record(s) to display.';
                         }
                         ?>
-            <tr>
-              <td>2017-1234567</td>
-              <td>de la Cruz</td>
-              <td>Juan</td>
-              <td>Male</td>
-              <td>41</td>
-              <td class="text-right"><a href="<?php echo base_url(); ?>judicial/judicial_resident_cases" title="Pending Case(s)" data-toggle="tooltip" data-placement="top"   class="fa fa-balance-scale casebtn text-danger"></a> <a title="View" data-toggle="tooltip" data-placement="top"  href="<?php echo base_url(); ?>residents/view" class="glyphicon glyphicon-eye-open viewbtn text-info"></a> <a title="Edit" data-toggle="tooltip" data-placement="top" href="<?php echo base_url(); ?>residents/edit" class="glyphicon glyphicon-pencil editbtn text-green"></a> <a title="Delete" data-toggle="tooltip" data-placement="top" href="#" class="glyphicon glyphicon-trash deletebtn text-danger"></a></td>
-            </tr>
+             
           </tbody>
         </table>
       </div>

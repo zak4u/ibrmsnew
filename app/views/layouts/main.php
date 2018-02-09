@@ -31,7 +31,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 </head>
 
-<body class="hold-transition skin-blue sidebar-mini <?php echo $session_data['user_role'];?>">
+<body class="hold-transition skin-blue sidebar-mini <?php echo $session_data['user_role']; ?> <?php echo $this->uri->segment(1); ?> <?php echo $this->uri->segment(2); ?>">
 <div class="wrapper"> 
   
   <!-- Main Header -->
@@ -67,12 +67,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </li>
               <!-- Menu Body --> 
               
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-right"> <a href="<?php echo base_url('logout'); ?>" class="btn btn-default btn-flat">Sign out</a> </div>
-              </li>
+              
             </ul>
           </li>
+          <li><a href="<?php echo base_url('logout'); ?>" class="btn btn-flat"><i class="fa fa-sign-out"></i>Sign out</a></li>
         </ul>
       </div>
     </nav>

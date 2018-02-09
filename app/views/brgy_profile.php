@@ -99,9 +99,16 @@ $session_data = $this->session->userdata('logged_in');
                     <div class="form-group res-photo">
                         <div class="col-lg-5">
                             <label for="UploadPhoto">Upload Logo</label>
-                            <input name="bp_logo" type="file" id=""/>
+                            <small>(max size: 3mb)</small>
+                            <input name="bp_logo" type="file" id="bp_logo" accept='image/*' class="imgfile"/>
+                            <br/>
+                            <div class="res-photo res-large text-center"><img height="120" src="<?php
+                                        if (!empty($list->bp_logo)) {
+                                            echo base_url() . $list->bp_logo;
+                                        }
+                                        ?>" alt="" /><br/><a href="#" data-toggle="modal" data-target="#modal-default">(update?)</a></div>
                         </div>
-                        <img width="100%" style="max-width: 100px" src="template/sourcefiles/images/brgy2-logo-trans.png" />
+                         
                         
                         <div class="clearBoth"></div>
                     </div>
@@ -121,3 +128,42 @@ $session_data = $this->session->userdata('logged_in');
                     }
                 }
     ?>
+
+
+
+
+<!--############ MODAL PHOTO UPDATE -->
+<div class="modal fade" id="modal-default">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Update Barangay Logo</h4>
+            </div>
+            <div class="modal-body">
+                <div class="res-photo res-large col-lg-4"><img height="120" src="<?php
+                    if (!empty($list->bp_logo)) {
+                        echo base_url() . $list->bp_logo;
+                    }
+                    ?>" alt="" />
+
+                </div>
+                <div class="col-lg-8"><form  action="<?php echo base_url('brgy/edit_brgy_logo/') . $list->bp_id; ?>" method="post" name="brgylogo_form"  enctype="multipart/form-data" class="validate">
+                        <small>(max size: 3mb)</small>
+                        <input name="bp_logo" type="file" id="" accept='image/*' class="imgfile" /><br/><input type="submit" value="Update Photo" class="btn btn-success" /></form></div>
+                <div class="clearboth"></div>
+
+            </div>
+            <div class="modal-footer">
+                <!--                <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!--############ MODAL PHOTO UPDATE END -->
